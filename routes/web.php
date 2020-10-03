@@ -20,6 +20,10 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/', 'HomeController@index');
 
 
+	Route::get('/settings', 'Settings\ViewController@index');
+	Route::post('/settings/user', 'Settings\PostController@edit');
+	Route::post('/settings/password', 'Settings\PostController@password');
+
 	Route::get('/kasus/striktur-uretra', 'Kasus\StrikturUretra\ViewController@index');
 	Route::get('/kasus/striktur-uretra/{id}/form', 'Kasus\StrikturUretra\ViewController@form');
 	Route::post('/kasus/striktur-uretra/{id}/save', 'Kasus\StrikturUretra\PostController@save');

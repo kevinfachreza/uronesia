@@ -15,6 +15,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('css/plugins/sweetalert2.min.css')}}">
 
     
     
@@ -118,6 +119,7 @@
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="{{asset('js/plugins/sweetalert2.min.js')}}"></script>
 
     <script type="text/javascript">
         $('.js-select2').select2({
@@ -132,7 +134,28 @@
             $("input[name="+name+"][value="+value+"]").parent().addClass('active');
         });
 
+    </script>   
+
+
+    @if (session('status') == 1)
+    <script type="text/javascript">
+        swal({
+          type: 'success',
+          title: "{{session('title')}}",
+          text: "{{ session('message') }}",
+      });
     </script>
+
+    @elseif (session('status') == -1)
+
+    <script type="text/javascript">
+        swal({
+          type: 'error',
+          title: "{{session('title')}}",
+          text: "{{ session('message') }}",
+      });
+    </script>
+    @endif
 
     @yield('js')
 </body>
