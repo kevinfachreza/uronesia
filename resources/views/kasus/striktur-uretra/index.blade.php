@@ -3,10 +3,11 @@
 @section('content')
 <div class="container pt-4">
     <div class="row">
-        <div class="col-lg-9 col-md-12">
+        <div class="col-lg-8 col-md-12">
             <h4>Daftar Kasus Striktur Uretra</h4>
         </div>
-        <div class="col-lg-3 col-md-12">
+        <div class="col-lg-4 col-md-12">
+            <a href="{{url('kasus')}}/striktur-uretra/print" class="btn btn-success" target="_blank"><i class="fa fa-print"></i> Print</a>
             <a href="{{url('kasus')}}/baru?jenis=striktur-uretra" class="btn btn-primary"><i class="fa fa-plus"></i> Buat Kasus Baru</a>
         </div>
     </div>
@@ -14,80 +15,81 @@
     <table id="example" class="display nowrap dataTable no-footer table-bordered" style="width: 100%;">
         <thead>
             <tr>
-                <td colspan="11">Data Pasien</td>
-                <td colspan="8">Pre Ops</td>
-                <td colspan="23">Intra Ops</td>
-                <td colspan="14">Post Ops</td>
+                <th colspan="11">Data Pasien</th>
+                <th colspan="8">Pre Ops</th>
+                <th colspan="23">Intra Ops</th>
+                <th colspan="13">Post Ops</th>
+                <th rowspan="4">Form</th>
             </tr>
             <tr>
-                <td rowspan="3">No</td>
-                <td rowspan="3">Nama</td>
-                <td rowspan="3">No RM</td>
-                <td rowspan="3">Tgl Lahir</td>
-                <td rowspan="3">Usia</td>
-                <td rowspan="3">JK</td>
-                <td rowspan="3">TB</td>
-                <td rowspan="3">BB</td>
-                <td rowspan="3">BMI</td>
-                <td rowspan="3">No Telp</td>
-                <td rowspan="3">Tanggal Ops</td>
-                <td rowspan="3">Lama Perawatan (Hari)</td>
-                <td rowspan="3">Diagnosis</td>
-                <td rowspan="3">Jenis Kasus</td>
-                <td rowspan="3">Komorbid</td>
-                <td rowspan="3">Riwayat Operasi</td>
-                <td rowspan="3">Hasil Radiologi</td>
-                <td rowspan="3">Hasil Lab</td>
-                <td rowspan="3">Operator</td>
-                <td colspan="13">Tindakan Operasi</td>
-                <td colspan="5">Graft/Flap</td>
-                <td colspan="3">Striktur</td>
-                <td colspan="2">Foto Klinis</td>
-                <td colspan="2">Skor Ereksi</td>
-                <td rowspan="3">Chordee</td>
-                <td colspan="2">Panjang Penis (cm)</td>
-                <td rowspan="3">Perikateter Urethrografi</td>
-                <td colspan="7">Uroflowmetri</td>
+                <th rowspan="3">No</th>
+                <th rowspan="3">Nama</th>
+                <th rowspan="3">No RM</th>
+                <th rowspan="3">Tgl Lahir</th>
+                <th rowspan="3">Usia</th>
+                <th rowspan="3">JK</th>
+                <th rowspan="3">TB</th>
+                <th rowspan="3">BB</th>
+                <th rowspan="3">BMI</th>
+                <th rowspan="3">No Telp</th>
+                <th rowspan="3">Tanggal Ops</th>
+                <th rowspan="3">Lama Perawatan (Hari)</th>
+                <th rowspan="3">Diagnosis</th>
+                <th rowspan="3">Jenis Kasus</th>
+                <th rowspan="3">Komorbid</th>
+                <th rowspan="3">Riwayat Operasi</th>
+                <th rowspan="3">Hasil Radiologi</th>
+                <th rowspan="3">Hasil Lab</th>
+                <th rowspan="3">Operator</th>
+                <th colspan="13">Tindakan Operasi</th>
+                <th colspan="5">Graft/Flap</th>
+                <th colspan="3">Striktur</th>
+                <th colspan="2">Foto Klinis</th>
+                <th colspan="2">Skor Ereksi</th>
+                <th rowspan="3">Chordee</th>
+                <th colspan="2">Panjang Penis (cm)</th>
+                <th rowspan="3">Perikateter Urethrografi</th>
+                <th colspan="7">Uroflowmetri</th>
 
             </tr>
             <tr>
-                <td rowspan="2">Sachse</td>
-                <td colspan="4">EPA</td>
-                <td rowspan="2">One Side Dissection</td>
-                <td rowspan="2">Johansen</td>
-                <td rowspan="2">Perineal Urethrostomy</td>
-                <td rowspan="2">Double Face</td>
-                <td rowspan="2">Ventral</td>
-                <td rowspan="2">Dorsal Onlay</td>
-                <td rowspan="2">Dorsal Inlay</td>
-                <td rowspan="2">Asopa</td>
-                <td rowspan="2">Cheek</td>
-                <td rowspan="2">Upper Lip</td>
-                <td rowspan="2">Lower Lip</td>
-                <td rowspan="2">Lingual</td>
-                <td rowspan="2">Gracilis</td>
-                <td rowspan="2">Lokasi</td>
-                <td rowspan="2">Panjang (cm)</td>
-                <td rowspan="2">Penyebab</td>
-                <td rowspan="2">Pre Ops</td>
-                <td rowspan="2">Post Ops</td>
-                <td rowspan="2">Pre Ops</td>
-                <td rowspan="2">Post Ops</td>
-                <td rowspan="2">Pre Ops</td>
-                <td rowspan="2">Post Ops</td>
-                <td rowspan="2">Bulan Ke 1</td>
-                <td rowspan="2">Bulan Ke 3</td>
-                <td rowspan="2">Bulan Ke 6</td>
-                <td rowspan="2">Bulan Ke 9</td>
-                <td rowspan="2">Bulan Ke 12</td>
-                <td rowspan="2">Tahun Ke 2</td>
-                <td rowspan="2">Tahun Ke 5</td>
+                <th rowspan="2">Sachse</th>
+                <th colspan="4">EPA</th>
+                <th rowspan="2">One Side Dissection</th>
+                <th rowspan="2">Johansen</th>
+                <th rowspan="2">Perineal Urethrostomy</th>
+                <th rowspan="2">Double Face</th>
+                <th rowspan="2">Ventral</th>
+                <th rowspan="2">Dorsal Onlay</th>
+                <th rowspan="2">Dorsal Inlay</th>
+                <th rowspan="2">Asopa</th>
+                <th rowspan="2">Cheek</th>
+                <th rowspan="2">Upper Lip</th>
+                <th rowspan="2">Lower Lip</th>
+                <th rowspan="2">Lingual</th>
+                <th rowspan="2">Gracilis</th>
+                <th rowspan="2">Lokasi</th>
+                <th rowspan="2">Panjang (cm)</th>
+                <th rowspan="2">Penyebab</th>
+                <th rowspan="2">Pre Ops</th>
+                <th rowspan="2">Post Ops</th>
+                <th rowspan="2">Pre Ops</th>
+                <th rowspan="2">Post Ops</th>
+                <th rowspan="2">Pre Ops</th>
+                <th rowspan="2">Post Ops</th>
+                <th rowspan="2">Bulan Ke 1</th>
+                <th rowspan="2">Bulan Ke 3</th>
+                <th rowspan="2">Bulan Ke 6</th>
+                <th rowspan="2">Bulan Ke 9</th>
+                <th rowspan="2">Bulan Ke 12</th>
+                <th rowspan="2">Tahun Ke 2</th>
+                <th rowspan="2">Tahun Ke 5</th>
             </tr>
             <tr>
-                <td>Bulbar Mobilisasi</td>
-                <td>Crural Separasi</td>
-                <td>Inferior Pubektomi</td>
-                <td>Supracrural Rerouting</td>
+                <th>Bulbar Mobilisasi</th>
+                <th>Crural Separasi</th>
+                <th>Inferior Pubektomi</th>
+                <th>Supracrural Rerouting</th>
             </tr>
         </thead>
 
@@ -102,7 +104,7 @@
                 <td>{{$item->pasien->jenis_kelamin}}</td>
                 <td>{{$item->tb}}</td>
                 <td>{{$item->bb}}</td>
-                <td>{{$item->bb / ($item->tb*$item->tb) }}</td>
+                <td>{{number_format($item->bb / ($item->tb*$item->tb/100/100),2) }}</td>
                 <td>{{$item->pasien->nomor_telpon}}</td>
                 <td>{{$item->tanggal_operasi}}</td>
                 <td>{{$item->lama_perawatan_hari}}</td>
@@ -174,6 +176,7 @@
                         -
                     </td>
                 @endfor
+                <td><a href="{{url()->current()}}/{{$item->id}}/form" class="btn btn-secondary">Form</a></td>
                 
             </tr>
             @endforeach

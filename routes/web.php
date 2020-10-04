@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/settings/password', 'Settings\PostController@password');
 
 	Route::get('/kasus/striktur-uretra', 'Kasus\StrikturUretra\ViewController@index');
+	Route::get('/kasus/striktur-uretra/print', 'Kasus\StrikturUretra\ViewController@print');
 	Route::get('/kasus/striktur-uretra/{id}/form', 'Kasus\StrikturUretra\ViewController@form');
 	Route::post('/kasus/striktur-uretra/{id}/save', 'Kasus\StrikturUretra\PostController@save');
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
