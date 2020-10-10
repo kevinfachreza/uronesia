@@ -13,6 +13,7 @@
         @endforeach
     </ul>
 </div>  
+
 <div class="card shadow">
     <div class="card-body">
         <div class="tab-content" id="myTabContent">
@@ -31,7 +32,7 @@
                             Volume
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_volume[{{$bulan}}]" value="{{$default[$bulan]->volume}}">
+                            <input class="form-control" type="number" name="uriflowmetry_volume[{{$bulan}}]" value="{{$default[$bulan]->volume ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -39,7 +40,7 @@
                             Max Rate
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_max_rate[{{$bulan}}]" value="{{$default[$bulan]->max_rate}}">
+                            <input class="form-control" type="number" name="uriflowmetry_max_rate[{{$bulan}}]" value="{{$default[$bulan]->max_rate ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -47,7 +48,7 @@
                             Average Rate
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_average_rate[{{$bulan}}]" value="{{$default[$bulan]->average_rate}}">
+                            <input class="form-control" type="number" name="uriflowmetry_average_rate[{{$bulan}}]" value="{{$default[$bulan]->average_rate ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -55,7 +56,7 @@
                             Voiding Time
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_voiding_time[{{$bulan}}]" value="{{$default[$bulan]->voiding_time}}">
+                            <input class="form-control" type="number" name="uriflowmetry_voiding_time[{{$bulan}}]" value="{{$default[$bulan]->voiding_time ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -63,7 +64,7 @@
                             Flow Time
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_flow_time[{{$bulan}}]" value="{{$default[$bulan]->flow_time}}">
+                            <input class="form-control" type="number" name="uriflowmetry_flow_time[{{$bulan}}]" value="{{$default[$bulan]->flow_time ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -71,7 +72,7 @@
                             Time to Max Flow
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_time_to_max_flow[{{$bulan}}]" value="{{$default[$bulan]->time_to_max_flow}}">
+                            <input class="form-control" type="number" name="uriflowmetry_time_to_max_flow[{{$bulan}}]" value="{{$default[$bulan]->time_to_max_flow ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -79,9 +80,10 @@
                             Position
                         </div>
                         <div class="col-lg-9 col-8">
+                            @php $position = $default[$bulan]->position  ?? '' @endphp
                             <select class="form-control" name="uriflowmetry_position[{{$bulan}}]">
-                                <option value="standing" @if($default[$bulan]->position == 'standing') selected @endif >Standing</option>
-                                <option value="sitting" @if($default[$bulan]->position == 'sitting') selected @endif>Sitting</option>
+                                <option value="standing" @if($position == 'standing') selected @endif >Standing</option>
+                                <option value="sitting" @if($position == 'sitting') selected @endif>Sitting</option>
                             </select>
                         </div>
                     </div>
@@ -90,7 +92,7 @@
                             Weight
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_weight[{{$bulan}}]" value="{{$default[$bulan]->weight}}">
+                            <input class="form-control" type="number" name="uriflowmetry_weight[{{$bulan}}]" value="{{$default[$bulan]->weight ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -98,7 +100,7 @@
                             Symptomps
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_symptomps[{{$bulan}}]" value="{{$default[$bulan]->symptomps}}">
+                            <input class="form-control" type="number" name="uriflowmetry_symptomps[{{$bulan}}]" value="{{$default[$bulan]->symptomps ?? ''}}">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -106,7 +108,7 @@
                             Advice
                         </div>
                         <div class="col-lg-9 col-8">
-                            <input class="form-control" type="number" name="uriflowmetry_advice[{{$bulan}}]" value="{{$default[$bulan]->advice}}">
+                            <input class="form-control" type="number" name="uriflowmetry_advice[{{$bulan}}]" value="{{$default[$bulan]->advice ?? ''}}">
                         </div>
                     </div>
                 </div>

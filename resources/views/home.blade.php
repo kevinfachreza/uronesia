@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row text-center justify-content-center">
             <div class="col-lg-8">
-                <h3 class="display-3 text-white"><span class="text-white">Database Kasus Urologi</span> URONESIA</h3>
+                <h3 class="display-3 text-white"><span class="text-white">Database Kasus Urologi</span> Urodatanesia</h3>
             </div>
         </div>
         <div class="row row-grid mt-5 social-line social-line-big-icons">

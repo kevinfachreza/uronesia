@@ -78,7 +78,7 @@
                 <div class="row align-items-center justify-content-md-between">
                     <div class="col-md-6">
                         <div class="copyright">
-                            &copy; 2020 <a href="" target="_blank">Uronesia</a>.
+                            &copy; 2020 <a href="" target="_blank">Urodatanesia</a>.
                         </div>
                     </div>
                 </div>
