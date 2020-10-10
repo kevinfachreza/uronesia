@@ -20,6 +20,7 @@ Route::get('/clear-cache', function() {
 
 Route::group(['middleware' => ['auth']], function () {
 	Route::get('/', 'HomeController@index');
+	Route::get('/home', 'HomeController@index');
 
 
 	Route::get('/settings', 'Settings\ViewController@index');
