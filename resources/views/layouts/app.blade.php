@@ -9,6 +9,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="manifest" href="{{url('')}}/manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -28,6 +40,8 @@
     <!-- CSS Files -->
     <link href="{{url('')}}/css/argon-design-system.css?v=1.0.2" rel="stylesheet" />
     <link href="{{url('')}}/css/app.css" rel="stylesheet" />
+
+
 </head>
 <body>
     <div id="app">
@@ -155,7 +169,19 @@
           text: "{{ session('message') }}",
       });
     </script>
-    @endif
+    @endif 
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+          .register('{{url('')}}/js/service-worker.js')
+          .then(() => {
+              console.log('Service worker registered');
+          })
+          .catch(err => {
+              console.log('Service worker registration failed: ' + err);
+          });
+      }
+    </script>
 
     @yield('js')
 </body>
