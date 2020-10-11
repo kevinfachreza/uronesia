@@ -4,7 +4,7 @@
     <div class="container main-content py-4">
         <div class="row">
             <div class="col-12">
-                <h4 class="display-3">Buat Kasus Baru Striktur Uretra</h4>
+                <h4 class="display-3">Kasus Striktur Uretra</h4>
                 <hr>
                 <form method="POST" action="{{url('kasus/striktur-uretra')}}/{{$kasus->id}}/save" enctype="multipart/form-data">
                     {{csrf_field()}}
@@ -36,13 +36,13 @@
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Tinggi Badan (kg)</label>
+                                <label class="label">Tinggi Badan (cm)</label>
                                 <input type="number" class="form-control" name="tb" value="{{$kasus->tb}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Berat Badan (cm)</label>
+                                <label class="label">Berat Badan (kg)</label>
                                 <input type="number" class="form-control" name="bb" value="{{$kasus->bb}}">
                             </div>
                         </div>
@@ -171,8 +171,8 @@
                         <div class="col-12 mt-2">
                             <div class="row">
                                 @foreach($kasus->penunjang_pre as $penunjang)
-                                <div class="col-2">
-                                    <div style="border:solid 1px #eee; text-align: center;height: 200px">
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div style="border:solid 1px #eee; text-align: center;height: 100px">
                                         <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 200px; max-width: 100px;">
 
                                     </div>
@@ -194,8 +194,8 @@
                         <div class="col-12 mt-2">
                             <div class="row">
                                 @foreach($kasus->penunjang_post as $penunjang)
-                                <div class="col-2">
-                                    <div style="border:solid 1px #eee; text-align: center;height: 200px">
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div style="border:solid 1px #eee; text-align: center;height: 100px">
                                         <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 200px; max-width: 100px;">
 
                                     </div>
@@ -237,13 +237,13 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label class="label">Pre Ops</label>
-                            <input type="number" class="form-control" name="ops_panjang_penis_pre_ops" value="{{$kasus->ops_skor_ereksi_pre_ops}}">
+                            <input type="number" class="form-control" name="ops_panjang_penis_pre_ops" value="{{$kasus->ops_panjang_penis_pre_ops}}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label class="label">Post Ops</label>
-                            <input type="number" class="form-control" name="ops_panjang_penis_post_ops" value="{{$kasus->ops_skor_ereksi_post_ops}}">
+                            <input type="number" class="form-control" name="ops_panjang_penis_post_ops" value="{{$kasus->ops_panjang_penis_post_ops}}">
                         </div>
                     </div>
                     <div class="col-12">

@@ -26,4 +26,9 @@ class Kasus extends Model
     {
         return $this->hasMany('App\Models\KasusUriflowmetry', 'kasus_id', 'id')->orderBy('bulan_ke');
     }
+
+    public function creator()
+    {
+        return $this->hasOne('App\User', 'id', 'created_by');
+    }
 }

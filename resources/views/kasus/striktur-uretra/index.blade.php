@@ -4,7 +4,7 @@
 <div class="container pt-4">
     <div class="row">
         <div class="col-lg-8 col-md-12">
-            <h4>Daftar Kasus Striktur Uretra</h4>
+            <h4><small>Daftar Kasus</small><br>Striktur Uretra</h4>
         </div>
         <div class="col-lg-4 col-md-12">
             <a href="{{url('kasus')}}/striktur-uretra/print" class="btn btn-success" target="_blank"><i class="fa fa-print"></i> Print</a>
@@ -12,7 +12,7 @@
         </div>
     </div>
     <hr style="width: 100%">
-    <table id="example" class="display nowrap dataTable no-footer table-bordered" style="width: 100%;">
+    <!-- <table id="example" class="display nowrap dataTable no-footer table-bordered" style="width: 100%;">
         <thead>
             <tr>
                 <th colspan="11">Data Pasien</th>
@@ -181,7 +181,28 @@
             </tr>
             @endforeach
         </tbody>
-    </table>
+    </table> -->
+
+
+    @foreach($kasus as $item)
+    <div class="card card-px">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <div class="card-text">#{{$loop->iteration}} - {{$item->creator->name ?? ''}}</div>
+                    <div class="card-title">{{$item->pasien->nama}}</div>
+                    <div class="card-text">{{$item->pasien->age}} {{$item->pasien->jenis_kelamin}}</div>
+                    <div class="card-text">{{Carbon\Carbon::parse($item->tanggal_operasi)->format('d F Y')}}
+                    </div>
+                </div>
+                <div class="col-4">
+                    <a href="{{url('')}}/kasus/striktur-uretra/{{$item->id}}/form-view" class="btn btn-primary">Lihat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
 </div>
 @endsection
 

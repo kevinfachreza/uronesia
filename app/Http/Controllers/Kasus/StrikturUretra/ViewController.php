@@ -11,7 +11,7 @@ class ViewController extends Controller
 {
     public function index()
     {
-        $data['kasus'] = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','uriflowmetry')->get();
+        $data['kasus'] = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','uriflowmetry','creator')->get();
     	return view('kasus.striktur-uretra.index',$data);
     }
 
@@ -29,6 +29,22 @@ class ViewController extends Controller
         $data['uriflowmetry'] = $uri_arr;
     	return view('kasus.striktur-uretra.form',$data);
     }
+
+
+    public function formView($kasus_id)
+    {
+        $data['kasus'] = Kasus::where('id',$kasus_id)->with('pasien','penunjang_pre','penunjang_post')->first();
+        $uriflowmetry = $data['kasus']->uriflowmetry;
+        $uri_arr = [];
+        foreach($uriflowmetry as $item)
+        {
+            $uri_arr[$item->bulan_ke] = $item;
+        }
+
+        $data['uriflowmetry'] = $uri_arr;
+        return view('kasus.striktur-uretra.form-view',$data);
+    }
+
 
 
     public function print()

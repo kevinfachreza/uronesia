@@ -1,24 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="section features-3" style="background-image: url('{{url('')}}/img/ill/p31.svg')">
+<div class="pt-3" style="background-image: url('{{url('')}}/img/ill/p31.svg')">
     <div class="container">
-        <div class="row text-center justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="display-3 text-white"><span class="text-white">Database Kasus Urologi</span> Urodatanesia</h3>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-left">
+                <h3 class="font-w700 italic "><span class="font-w400">Halo</span>, {{Auth::user()->name}}</h3>
             </div>
         </div>
-        <div class="row row-grid mt-5 social-line social-line-big-icons">
-            <div class="col-lg-6">
-                <a href="{{url('kasus/striktur-uretra')}}" class="btn btn-gradient-twitter btn-footer">
-                    <p class="title">Striktur Urethra</p>
-                    <p class="subtitle">125 Kasus</p>
-                </a>
+        <div class="card card-statistic bg-primary-light">
+            <div class="card-body">
+                <div class="card-text">{{$count_kasus_self}}</div>
+                <div class="card-title">Kasus Terisi</div>
             </div>
+        </div>
+        <h4 class="font-w700 p-0">Daftar Kasus</h4>
+        <div class="row row-grid social-line social-line-big-icons">
             <div class="col-lg-6">
-                <a href="{{url('kasus/trauma')}}" class="btn btn-gradient-facebook btn-footer">
-                    <p class="title">Trauma</p>
-                    <p class="subtitle">50 Kasus</p>
+                <a href="{{url('kasus/striktur-uretra')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Striktur Urethra</p>
+                    <p class="subtitle">{{$count_kasus_striktur_uretra}} Kasus</p>
                 </a>
             </div>
         </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kasus;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user_id = Auth::user()->id;
+        $data['count_kasus_self'] = Kasus::where('created_by',$user_id)->count();
+        $data['count_kasus_striktur_uretra'] = Kasus::where('jenis_kasus','striktur-uretra')->count();
+        return view('home',$data);
     }
 }

@@ -9,21 +9,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="manifest" href="{{url('')}}/manifest.json" />
+    <link rel="manifest" href="{{url('')}}/manifestv1.1.json" />
     <!-- ios support -->
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-72x72.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-96x96.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-128x128.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-144x144.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-152x152.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-192x192.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-384x384.png" />
-    <link rel="apple-touch-icon" href="{{url('')}}/images/icons/icon-512x512.png" />
-    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
-    <meta name="theme-color" content="#db4938" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#f8bf1f" />
+    <meta name="theme-color" content="#f8bf1f" />
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
@@ -48,18 +48,18 @@
 
         @guest
         @else
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{url('')}}/img/brand/white.png"></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{url('')}}/img/urodatanesia-navbar-logo-sm.jpg"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-primary">
                     <div class="navbar-collapse-header">
                         <div class="row">
                             <div class="col-6 collapse-brand">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{url('')}}/img/brand/blue.png">
+                                    <img src="{{url('')}}/img/urodatanesia-navbar-logo-sm.jpg">
                                 </a>
                             </div>
                             <div class="col-6 collapse-close">
@@ -87,7 +87,7 @@
         @yield('content')
 
 
-        <footer class="footer">
+      <!--   <footer class="footer">
             <div class="container">
                 <div class="row align-items-center justify-content-md-between">
                     <div class="col-md-6">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
 
     </div>
 
