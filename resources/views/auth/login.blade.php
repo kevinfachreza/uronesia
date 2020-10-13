@@ -4,7 +4,7 @@
 
 <div class="register-page">
     <div class="wrapper">
-        <div class="page-header bg-default">
+        <div class="page-header bg-primary">
             <div class="page-header-image" style="background-image: url('{{url('')}}/img/ill/register_bg.png');"></div>
             @php $class_register = '' @endphp
             <div class="container {{$class_register}}" id="container">
@@ -14,7 +14,7 @@
                         {{ csrf_field() }}
                         <h2>URODATANESIA</h2>
                         <h2>Sign in</h2>
-                        <p>Masukkan email dan password untuk memulai</p>
+                        <p style="font-weight: 400">Masukkan email dan password untuk memulai</p>
 
 
                         <div class="row justify-content-center" style="width: 100%">
@@ -23,7 +23,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
                                 </div>
                                 @if ($errors->has('email'))
                                 <div class="alert alert-warning mt-2" role="alert">
@@ -47,23 +47,24 @@
                                 @endif
                             </div>
                         </div>
-                        <a href="{{ route('password.request') }}">Lupa Password?</a>
                         <button class="btn btn-primary mt-3">Sign In</button>
 
                         <hr>
                         <span>Belum punya akun? <br> <a class="bg-success text-white btn-sm" href="{{url('register')}}">Klik Disini Untuk Register</a></span>
+                        <hr>
+                        <span>Lupa Password? <br> <a class="bg-success text-white btn-sm" href="{{ route('password.request') }}">Klik Disini Untuk Reset Password</a></span>
 
                     </form>
                 </div>
             </div>
         </div>
 
-        <footer class="footer">
+        <footer class="footer bg-primary">
             <div class="container">
                 <div class="row row-grid align-items-center mb-5">
                     <div class="col-lg-6">
-                        <h3 class="text-primary font-weight-light mb-2">Uronesia</h3>
-                        <h4 class="mb-0 font-weight-light">Adalah aplikasi database penelitian untuk kasus kasus urologi</h4>
+                        <h3 class="font-w700 mb-2" style="color: #000">Uronesia</h3>
+                        <h4 class="mb-0 font-weight-light" style="color: #000">Adalah aplikasi database penelitian untuk kasus kasus urologi</h4>
                     </div>
                 </div>
             </div>

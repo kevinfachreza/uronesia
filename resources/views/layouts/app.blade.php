@@ -39,18 +39,33 @@
     <link href="{{url('')}}/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="{{url('')}}/css/argon-design-system.css?v=1.0.2" rel="stylesheet" />
-    <link href="{{url('')}}/css/app.css" rel="stylesheet" />
+    <link href="{{url('')}}/css/appv1.1.css" rel="stylesheet" />
+    <style type="text/css">
+        .globalLoading
+        {
+            width: 100%;
+            position: fixed;
+            top:20vh;
+            text-align:center;
+            z-index: 10000;
+        }
+        .globalLoading i
+        {
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+        }
+    </style>
 
 
 </head>
 <body>
     <div id="app">
-
         @guest
         @else
         <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{url('')}}/img/urodatanesia-navbar-logo-sm.jpg"></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{url('')}}/img/urodatanesia-logo.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
                 </button>
@@ -59,7 +74,7 @@
                         <div class="row">
                             <div class="col-6 collapse-brand">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{url('')}}/img/urodatanesia-navbar-logo-sm.jpg">
+                                    <img src="{{url('')}}/img/urodatanesia-logo.png">
                                 </a>
                             </div>
                             <div class="col-6 collapse-close">
@@ -72,7 +87,7 @@
                     </div>
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                            <a class="nav-link dropdown-toggle" href="" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
                                 <a class="dropdown-item" href="{{url('settings')}}">Settings</a>
                                 <a class="dropdown-item" href="{{url('logout')}}">Logout</a>
@@ -100,6 +115,7 @@
         </footer> -->
 
     </div>
+    <div id="globalLoading" class="globalLoading" style="display: none"> <i class="fa fa-spinner fa-spin text-primary fa-2x"></i> </div>
 
     <!-- Scripts -->
     <script src="{{url('')}}/js/core/jquery.min.js" type="text/javascript"></script>
@@ -181,6 +197,17 @@
               console.log('Service worker registration failed: ' + err);
           });
       }
+    </script>
+
+    <script type="text/javascript">
+        $('a').click(function(event){
+            var href = $(this).attr('href');
+            if(href != '')
+                $('#globalLoading').show();
+        })
+        $('form').submit(function(){
+            $('#globalLoading').show();
+        })
     </script>
 
     @yield('js')

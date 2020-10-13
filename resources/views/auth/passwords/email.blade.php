@@ -3,7 +3,7 @@
 @section('content')
 <div class="reset-page">
     <div class="wrapper">
-        <div class="page-header bg-default">
+        <div class="page-header bg-primary">
             <div class="page-header-image" style="background-image: url('{{url('')}}/img/ill/reset.svg');"></div>
             <div class="container">
                 <div class="col-lg-5 col-md-8 mx-auto">
@@ -13,7 +13,7 @@
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <small>Enter email address to reset password</small>
+                                <small>Masukkan Email Untuk Reset Password</small>
                             </div>
                             @if (session('status'))
                             <div class="alert alert-success">
@@ -39,7 +39,7 @@
                                 @endif
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary my-4">Send</button>
+                                    <button type="submit" class="btn btn-primary my-4">Kirim</button>
                                 </div>
                             </form>
                         </div>

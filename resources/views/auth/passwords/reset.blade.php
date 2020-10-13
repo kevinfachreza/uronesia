@@ -4,7 +4,7 @@
 @section('content')
 <div class="reset-page">
     <div class="wrapper">
-        <div class="page-header bg-default">
+        <div class="page-header bg-primary">
             <div class="page-header-image" style="background-image: url('{{url('')}}/img/ill/reset.svg');"></div>
             <div class="container">
                 <div class="col-lg-5 col-md-8 mx-auto">
@@ -14,7 +14,7 @@
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <small>Enter email address to reset password</small>
+                                <small>Masukkan email untuk reset passwords</small>
                             </div>
                             <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                             {{ csrf_field() }}
