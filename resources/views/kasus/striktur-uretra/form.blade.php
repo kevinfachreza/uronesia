@@ -146,6 +146,10 @@
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_lower_lip, 'label'=>'Lower Lip','name'=>'ops_graft_lower_lip'])
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_lingual, 'label'=>'Lingual','name'=>'ops_graft_lingual'])
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_gracilis, 'label'=>'Gracilis','name'=>'ops_graft_gracilis'])
+                            <div class="form-group">
+                                <label class="label">Gracilis Other</label>
+                                <input type="text" class="form-control" name="ops_graft_garcilis_other" value="{{$kasus->ops_graft_garcilis_other}}">
+                            </div>
                         </div>
 
                         <div class="col-12">
@@ -166,14 +170,17 @@
 
                         <div class="col-12">
                             <h5>Foto Klinis PreOps</h5>
-                            <input type="file" name="file_pre[]" multiple>
+                            <input type="file" name="file_pre[]">
+                            <div id="foto-klinis-pre-ops-container">
+                            </div>
+                            <button class="btn btn-info btn-sm mt-3"  type="button"  id="foto-klinis-pre-ops-add"><i class="fa fa-plus"></i> Tambah</button>
                         </div>
                         <div class="col-12 mt-2">
                             <div class="row">
                                 @foreach($kasus->penunjang_pre as $penunjang)
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div style="border:solid 1px #eee; text-align: center;height: 100px">
-                                        <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 200px; max-width: 100px;">
+                                        <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
 
                                     </div>
                                     <div class="form-group mt-1">
@@ -189,14 +196,17 @@
 
                         <div class="col-12">
                             <h5>Foto Klinis PostOps</h5>
-                            <input type="file" name="file_post[]" multiple>
+                            <input type="file" name="file_post[]">
+                            <div id="foto-klinis-post-ops-container">
+                            </div>
+                            <button class="btn btn-info btn-sm mt-3"  type="button"  id="foto-klinis-post-ops-add"><i class="fa fa-plus"></i> Tambah</button>
                         </div>
                         <div class="col-12 mt-2">
                             <div class="row">
                                 @foreach($kasus->penunjang_post as $penunjang)
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div style="border:solid 1px #eee; text-align: center;height: 100px">
-                                        <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 200px; max-width: 100px;">
+                                        <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
 
                                     </div>
                                     <div class="form-group mt-1">
@@ -250,7 +260,7 @@
                         @include('kasus.components-form.radio-button-2-opsi',['default'=> $kasus->ops_perikateter_urethrografi,'label'=>'Perikateter Urethrografi','name'=>'ops_perikateter_urethrografi','options' => ['Tidak','Leakage']])
                     </div>
                     <div class="col-12">
-                        <h5>Uriflowmetry</h5>
+                        <h5>Uroflowmetry</h5>
                         @include('kasus.components-form.uriflowmetry',['bulan_ke'=>[1,3,6,9,12,24,60],'default' => $uriflowmetry])
                     </div>
 
@@ -267,5 +277,13 @@
 
 @section('js')
 <script type="text/javascript">
+    $('#foto-klinis-post-ops-add').click(function(){
+        var file_input = `<div class="mt-2"><input type="file" name="file_post[]"></div>`
+        $('#foto-klinis-post-ops-container').append(file_input)
+    })
+    $('#foto-klinis-pre-ops-add').click(function(){
+        var file_input = `<div class="mt-2"><input type="file" name="file_pre[]"></div>`
+        $('#foto-klinis-pre-ops-container').append(file_input)
+    })
 </script>
 @endsection

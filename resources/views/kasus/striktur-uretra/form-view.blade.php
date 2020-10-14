@@ -168,7 +168,7 @@
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div style="border:solid 1px #eee; text-align: center;height: 100px">
                                         <a href="{{url('')}}/{{$penunjang->path}}">
-                                            <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 200px; max-width: 100px;">
+                                            <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
                                         </a>
                                     </div>
                                 </div>
@@ -183,7 +183,7 @@
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div style="border:solid 1px #eee; text-align: center;height: 100px">
                                         <a href="{{url('')}}/{{$penunjang->path}}">
-                                            <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 200px; max-width: 100px;">
+                                            <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
                                         </a>
                                     </div>
                                 </div>
@@ -232,7 +232,7 @@
                         @include('kasus.components-form.radio-button-2-opsi-view',['default'=> $kasus->ops_perikateter_urethrografi,'label'=>'Perikateter Urethrografi','name'=>'ops_perikateter_urethrografi','options' => ['Tidak','Leakage']])
                     </div>
                     <div class="col-12">
-                        <h5>Uriflowmetry</h5>
+                        <h5>Uroflowmetry</h5>
                         @include('kasus.components-form.uriflowmetry-view',['bulan_ke'=>[1,3,6,9,12,24,60],'default' => $uriflowmetry])
                     </div>
                 </div>

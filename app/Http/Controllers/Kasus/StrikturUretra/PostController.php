@@ -53,6 +53,7 @@ class PostController extends Controller
     	$kasus->ops_graft_lower_lip = $request->ops_graft_lower_lip;
     	$kasus->ops_graft_lingual = $request->ops_graft_lingual;
     	$kasus->ops_graft_gracilis = $request->ops_graft_gracilis;
+        $kasus->ops_graft_garcilis_other = $request->ops_graft_garcilis_other;
     	$kasus->ops_striktur_lokasi = $request->ops_striktur_lokasi;
     	$kasus->ops_striktur_panjang = $request->ops_striktur_panjang;
     	$kasus->ops_striktur_penyebab = $request->ops_striktur_penyebab;
