@@ -7,12 +7,12 @@
             <div class="form-check-inline">
                 <label class="form-check-label form-check-label-yes-no 
                 @if($default == 0 || empty($default)) active @endif">
-                    <input type="radio" class="form-check-input form-check-input-yes-no " name="{{$name}}" @if($default == 0 || empty($default)) checked @endif value="0">Tidak
+                    <input type="radio" class="form-check-input form-check-input-yes-no " name="{{$name}}" @if($default == 0 || empty($default)) checked @endif value="0">No
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label form-check-label-yes-no @if($default == 1) active @endif">
-                    <input type="radio" class="form-check-input form-check-input-yes-no" name="{{$name}}" value="1" @if($default == 1) checked @endif >Ya
+                    <input type="radio" class="form-check-input form-check-input-yes-no" name="{{$name}}" value="1" @if($default == 1) checked @endif >Yes
                 </label>
             </div>
         </div>

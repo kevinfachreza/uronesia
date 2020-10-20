@@ -28,6 +28,7 @@
     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/plugins/sweetalert2.min.css')}}">
+    <link rel="icon" sizes="512x512" href="{{url('')}}/images/icons-urodatanesia/icon-512x512.png">
 
     
     
@@ -40,6 +41,38 @@
     <!-- CSS Files -->
     <link href="{{url('')}}/css/argon-design-system.css?v=1.0.2" rel="stylesheet" />
     <link href="{{url('')}}/css/appv1.1.css" rel="stylesheet" />
+
+    <link href="/images/icons-urodatanesia/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1242x2208.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+    <!-- Tile for Win8 -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/icons-urodatanesia/icon-512x512.png">
+
+    <script type="text/javascript">
+        // Initialize the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('{{url('')}}/serviceworker.js', {
+                scope: '.'
+            }).then(function (registration) {
+                // Registration was successful
+                console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                // registration failed :(
+                console.log('Laravel PWA: ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>   
+
+
     <style type="text/css">
         .globalLoading
         {
@@ -186,21 +219,10 @@
       });
     </script>
     @endif 
-    <script type="text/javascript">
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker
-          .register('{{url('')}}/js/service-worker.js')
-          .then(() => {
-              console.log('Service worker registered');
-          })
-          .catch(err => {
-              console.log('Service worker registration failed: ' + err);
-          });
-      }
-    </script>
 
     <script type="text/javascript">
         $('a').click(function(event){
+            if($(this).hasClass('disable-loading')) return
             var href = $(this).attr('href');
             if(href != '')
                 $('#globalLoading').show();

@@ -4,31 +4,31 @@
     <div class="container main-content py-4">
         <div class="row">
             <div class="col-12">
-                <h4 class="display-3">Kasus Striktur Uretra</h4>
+                <h4 class="display-3">Striktur Uretra Cases</h4>
                 <hr>
                 <form method="POST" action="{{url('kasus/striktur-uretra')}}/{{$kasus->id}}/save" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="row">
                         <div class="col-12">
-                            <h4  class="display-4">DATA PASIEN</h4>
+                            <h4  class="display-4">PATIENTS DATA</h4>
                             <table class="table table-no-border">
                                 <tr>
-                                    <td style="width: 100px">No RM</td>
+                                    <td style="width: 100px">MEDICAL RECORD</td>
                                     <td>:</td>
                                     <td>{{$kasus->pasien->no_rm}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Nama</td>
+                                    <td>NAME</td>
                                     <td style="width: 10px">:</td>
                                     <td>{{$kasus->pasien->nama}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Jenis Kelamin</td>
+                                    <td>GENDER</td>
                                     <td>:</td>
                                     <td>{{$kasus->pasien->jenis_kelamin}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Usia</td>
+                                    <td>AGE (Years)</td>
                                     <td>:</td>
                                     <td>{{$kasus->pasien->age}}</td>
                                 </tr>
@@ -36,13 +36,13 @@
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Tinggi Badan (cm)</label>
+                                <label class="label">Height (cm)</label>
                                 <input type="number" class="form-control" name="tb" value="{{$kasus->tb}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Berat Badan (kg)</label>
+                                <label class="label">Weight (kg)</label>
                                 <input type="number" class="form-control" name="bb" value="{{$kasus->bb}}">
                             </div>
                         </div>
@@ -50,17 +50,17 @@
                     <div class="row">
                         <div class="col-12">
                             <hr style="width: 100%">
-                            <h1 class="display-4">PRE OPERASI</h1>
+                            <h1 class="display-4">PRE OPERATION</h1>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Tanggal Operasi</label>
+                                <label class="label">Operation Date</label>
                                 <input type="date" class="form-control" name="tanggal_operasi" value="{{$kasus->tanggal_operasi}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Lama Rawat Inap (hari)</label>
+                                <label class="label">Length of Stay (hari)</label>
                                 <input type="number" class="form-control" name="lama_perawatan_hari" value="{{$kasus->lama_perawatan_hari}}">
                             </div>
                         </div>
@@ -72,34 +72,34 @@
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Komorbid</label>
+                                <label class="label">Comorbid</label>
                                 <input type="text" class="form-control" name="komorbid" value="{{$kasus->komorbid}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Jenis kasus</label>
+                                <label class="label">Case</label>
                                 <select class="form-control" name="is_kasus_baru">
-                                    <option value="0" @if($kasus->is_kasus_baru == 0) selected @endif>Lama</option>
-                                    <option value="1" @if($kasus->is_kasus_baru == 1) selected @endif>Baru</option>
+                                    <option value="0" @if($kasus->is_kasus_baru == 0) selected @endif>Redo</option>
+                                    <option value="1" @if($kasus->is_kasus_baru == 1) selected @endif>New</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Riwayat Operasi</label>
+                                <label class="label">Surgical History</label>
                                 <input type="text" class="form-control" name="riwayat_operasi" value="{{$kasus->riwayat_operasi}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Hasil Radiologi</label>
+                                <label class="label">Radiology Result</label>
                                 <input type="text" class="form-control" name="penunjang_radiologi" value="{{$kasus->penunjang_radiologi}}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
-                                <label class="label">Hasil Lab</label>
+                                <label class="label">Laboratory Result</label>
                                 <input type="text" class="form-control" name="penunjang_lab" value="{{$kasus->penunjang_lab}}">
                             </div>
                         </div>
@@ -108,7 +108,7 @@
 
                         <div class="col-12">
                             <hr style="width: 100%">
-                            <h4 class="display-4">INTRA OPERASI</h4>
+                            <h4 class="display-4">INTRA OPERATION</h4>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
@@ -118,36 +118,69 @@
                         </div>
 
                         <div class="col-12">
-                            <h5>TINDAKAN OPERASI</h5>
-                            @include('kasus.components-form.radio-button-yes-no',
-                            ['default'=> $kasus-> ops_tindakan_sachse, 'label'=>'Sachse',
-                            'name'=>'ops_tindakan_sachse'])
-                            <h6 style="font-weight: 600">EPA</h6>
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_bulbar_mobilisasi, 'label'=>'Bulbar Mobilisasi','name'=>'ops_tindakan_bulbar_mobilisasi'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus-> ops_tindakan_crucal_separasi,'label'=>'Crucal Separasi','name'=>'ops_tindakan_crucal_separasi'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus-> ops_tindakan_inferior_pubektomi,'label'=>'Inferior Pubektomi','name'=>'ops_tindakan_inferior_pubektomi'])
+                            <h5>SURGICAL TECHNIQUES</h5>
+                           <h6 style="font-weight: 600" class="text-primary">DILATATION</h6>
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dilatation_bougi, 'label'=>'Bougi Mobilisasi','name'=>'ops_tindakan_dilatation_bougi'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dilatation_shape, 'label'=>'S-Shape Dilator Mobilisasi','name'=>'ops_tindakan_dilatation_shape'])
+
+                           <h6 style="font-weight: 600" class="text-primary">DVIU</h6>
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dilatation_cold_knife, 'label'=>'Cold Knife Mobilisasi','name'=>'ops_tindakan_dilatation_cold_knife'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dilatation_laser, 'label'=>'Laser Mobilisasi','name'=>'ops_tindakan_dilatation_laser'])
+
+                            <h6 style="font-weight: 600" class="text-primary">EPA TRANSPERINEAL</h6>
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_bulbar_mobilisasi, 'label'=>'Bulbar Mobilization Mobilisasi','name'=>'ops_tindakan_bulbar_mobilisasi'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus-> ops_tindakan_crucal_separasi,'label'=>'Crural Separation Separasi','name'=>'ops_tindakan_crucal_separasi'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus-> ops_tindakan_inferior_pubektomi,'label'=>'Inferior Pubectomy Pubektomi','name'=>'ops_tindakan_inferior_pubektomi'])
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_supercrucal_rerouting ,'label'=>'Supracrural Rerouting','name'=>'ops_tindakan_supercrucal_rerouting'])
+
+                            <h6 style="font-weight: 600" class="text-primary">EPA TRANSABDOMINAL</h6>
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_omental_wrap ,'label'=>'Omental Wrap','name'=>'ops_tindakan_omental_wrap'])
                             <hr>
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_one_side_dissection, 'label'=>'One Side Dissection','name'=>'ops_tindakan_one_side_dissection'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_johansen, 'label'=>'Johansen','name'=>'ops_tindakan_johansen'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_perineal_urethrostomy, 'label'=>'Perineal Urethrostomy','name'=>'ops_tindakan_perineal_urethrostomy'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_double_face, 'label'=>'Double Face','name'=>'ops_tindakan_double_face'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_ventral, 'label'=>'Ventral','name'=>'ops_tindakan_ventral'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dorsal_onlay, 'label'=>'Dorsal Onlay','name'=>'ops_tindakan_dorsal_onlay'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_non_transecting, 'label'=>'Non Transecting','name'=>'ops_tindakan_non_transecting'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_johansen, 'label'=>'Johanson','name'=>'ops_tindakan_johansen'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_staged, 'label'=>'Staged','name'=>'ops_tindakan_staged'])
+
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dorsal_inlay, 'label'=>'Dorsal Inlay','name'=>'ops_tindakan_dorsal_inlay'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_asopa, 'label'=>'Asopa','name'=>'ops_tindakan_asopa'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_dorsal_onlay, 'label'=>'Dorsal Onlay','name'=>'ops_tindakan_dorsal_onlay'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_one_side_dissection, 'label'=>'One Side Dissection','name'=>'ops_tindakan_one_side_dissection'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_ventral_inlay, 'label'=>'Ventral Inlay','name'=>'ops_tindakan_ventral_inlay'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_ventral_onlay, 'label'=>'Ventral Onlay','name'=>'ops_tindakan_ventral_onlay'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_double_face, 'label'=>'Double Face','name'=>'ops_tindakan_double_face'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_perineal_urethrostomy, 'label'=>'Perineal Urethrostomy','name'=>'ops_tindakan_perineal_urethrostomy'])
+
+                            <div class="form-group">
+                                <label class="label">Other</label>
+                                <input type="text" class="form-control" name="ops_tindakan_other" value="{{$kasus->ops_tindakan_other}}">
+                            </div>
                         </div>
 
 
                         <div class="col-12">
                             <h5>Graft/Flap</h5>
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_cheek, 'label'=>'Cheek','name'=>'ops_graft_cheek'])
+
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_upper_lip, 'label'=>'Upper Lip','name'=>'ops_graft_upper_lip'])
+
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_lower_lip, 'label'=>'Lower Lip','name'=>'ops_graft_lower_lip'])
+
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_lingual, 'label'=>'Lingual','name'=>'ops_graft_lingual'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_preputial, 'label'=>'Preputial','name'=>'ops_graft_preputial'])
+
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_penlie_skin, 'label'=>'Penlie Skin','name'=>'ops_graft_penlie_skin'])
+
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_gracilis, 'label'=>'Gracilis','name'=>'ops_graft_gracilis'])
                             <div class="form-group">
-                                <label class="label">Gracilis Other</label>
+                                <label class="label">Other</label>
                                 <input type="text" class="form-control" name="ops_graft_garcilis_other" value="{{$kasus->ops_graft_garcilis_other}}">
                             </div>
                         </div>
@@ -155,21 +188,21 @@
                         <div class="col-12">
                             <h5>Striktur</h5>
                             <div class="form-group">
-                                <label class="label">Lokasi</label>
+                                <label class="label">Location</label>
                                 <input type="text" class="form-control" name="ops_striktur_lokasi" value="{{$kasus->ops_striktur_lokasi}}">
                             </div>
                             <div class="form-group">
-                                <label class="label">Panjang (cm)</label>
+                                <label class="label">Length (cm)</label>
                                 <input type="text" class="form-control" name="ops_striktur_panjang" value="{{$kasus->ops_striktur_panjang}}">
                             </div>
                             <div class="form-group">
-                                <label class="label">Penyebab</label>
+                                <label class="label">Etiology</label>
                                 <input type="text" class="form-control" name="ops_striktur_penyebab" value="{{$kasus->ops_striktur_penyebab}}">
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <h5>Foto Klinis PreOps</h5>
+                            <h5>Clinical Picture PreOps</h5>
                             <input type="file" name="file_pre[]">
                             <div id="foto-klinis-pre-ops-container">
                             </div>
@@ -185,8 +218,8 @@
                                     </div>
                                     <div class="form-group mt-1">
                                         <select class="form-control" name="kasus_penunjang_delete[{{$penunjang->id}}]">
-                                            <option value="0">Simpan Foto</option>
-                                            <option value="1">Hapus</option>
+                                            <option value="0">Keep Picture</option>
+                                            <option value="1">Delete</option>
                                         </select>
                                     </div>
                                 </div>
@@ -195,7 +228,33 @@
                         </div>
 
                         <div class="col-12">
-                            <h5>Foto Klinis PostOps</h5>
+                            <h5>Clinical Picture IntraOps</h5>
+                            <input type="file" name="file_pre[]">
+                            <div id="foto-klinis-pre-ops-container">
+                            </div>
+                            <button class="btn btn-info btn-sm mt-3"  type="button"  id="foto-klinis-pre-ops-add"><i class="fa fa-plus"></i> Tambah</button>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <div class="row">
+                                @foreach($kasus->penunjang_pre as $penunjang)
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div style="border:solid 1px #eee; text-align: center;height: 100px">
+                                        <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
+
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <select class="form-control" name="kasus_penunjang_delete[{{$penunjang->id}}]">
+                                            <option value="0">Keep Picture</option>
+                                            <option value="1">Delete</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <h5>Clinical Picture PostOps</h5>
                             <input type="file" name="file_post[]">
                             <div id="foto-klinis-post-ops-container">
                             </div>
@@ -211,8 +270,8 @@
                                     </div>
                                     <div class="form-group mt-1">
                                         <select class="form-control" name="kasus_penunjang_delete[{{$penunjang->id}}]">
-                                            <option value="0">Simpan Foto</option>
-                                            <option value="1">Hapus</option>
+                                            <option value="0">Keep Picture</option>
+                                            <option value="1">Delete</option>
                                         </select>
                                     </div>
                                 </div>
@@ -222,8 +281,8 @@
                     </div>
                     <div class="col-12 mt-2">
                         <hr style="width: 100%">
-                        <h4 class="display-4">POST OPERASI</h4>
-                        <h5>Skor Ereksi</h5>
+                        <h4 class="display-4">POST OPERATION</h4>
+                        <h5>Erection Hardness Score</h5>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
@@ -242,7 +301,7 @@
                         <hr>
                         @include('kasus.components-form.radio-button-2-opsi',['default'=> $kasus->ops_post_chordee,'label'=>'Chordee','name'=>'ops_post_chordee','options' => ['Tidak','Ada']])
                         <hr>
-                        <h5>Panjang Penis (cm)</h5>
+                        <h5>Penile Length (cm)</h5>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
@@ -257,8 +316,33 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        @include('kasus.components-form.radio-button-2-opsi',['default'=> $kasus->ops_perikateter_urethrografi,'label'=>'Perikateter Urethrografi','name'=>'ops_perikateter_urethrografi','options' => ['Tidak','Leakage']])
+                        @include('kasus.components-form.radio-button-2-opsi',['default'=> $kasus->ops_perikateter_urethrografi,'label'=>'Pericatheter Urethrography','name'=>'ops_perikateter_urethrografi','options' => ['Tidak','Leakage']])
                     </div>
+                    <div class="col-12">
+                            <h5>Pericatheter Urethrography Picture</h5>
+                            <input type="file" name="file_post[]">
+                            <div id="foto-klinis-post-ops-container">
+                            </div>
+                            <button class="btn btn-info btn-sm mt-3"  type="button"  id="foto-klinis-post-ops-add"><i class="fa fa-plus"></i> Tambah</button>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <div class="row">
+                                @foreach($kasus->penunjang_post as $penunjang)
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div style="border:solid 1px #eee; text-align: center;height: 100px">
+                                        <img src="{{url('')}}/{{$penunjang->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
+
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <select class="form-control" name="kasus_penunjang_delete[{{$penunjang->id}}]">
+                                            <option value="0">Keep Picture</option>
+                                            <option value="1">Delete</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
                     <div class="col-12">
                         <h5>Uroflowmetry</h5>
                         @include('kasus.components-form.uriflowmetry',['bulan_ke'=>[1,3,6,9,12,24,60],'default' => $uriflowmetry])
