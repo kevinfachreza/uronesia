@@ -14,7 +14,6 @@ class PostController extends Controller
     public function save(Request $request,$kasus_id)
     {
 		DB::beginTransaction();
-
     	$kasus = Kasus::find($kasus_id);
     	if(empty($kasus))
 		{
@@ -33,8 +32,28 @@ class PostController extends Controller
     	$kasus->is_kasus_baru = $request->is_kasus_baru;
     	$kasus->riwayat_operasi = $request->riwayat_operasi;
     	$kasus->penunjang_radiologi = $request->penunjang_radiologi;
-    	$kasus->penunjang_lab = $request->penunjang_lab;
+    	$kasus->penunjang_lab_hb = $request->penunjang_lab_hb;
+        $kasus->penunjang_lab_ht = $request->penunjang_lab_ht;
+        $kasus->penunjang_lab_l = $request->penunjang_lab_l;
+        $kasus->penunjang_lab_tr = $request->penunjang_lab_tr;
+        $kasus->penunjang_lab_ur = $request->penunjang_lab_ur;
+        $kasus->penunjang_lab_cr = $request->penunjang_lab_cr;
+        $kasus->penunjang_lab_bacteria = $request->penunjang_lab_bacteria;
+        $kasus->penunjang_lab_sensitive = $request->penunjang_lab_sensitive;
+        $kasus->penunjang_lab_resistance = $request->penunjang_lab_resistance;
     	$kasus->ops_operator = $request->ops_operator;
+        $kasus->ops_tindakan_dilatation_bougi = $request->ops_tindakan_dilatation_bougi;
+        $kasus->ops_tindakan_dilatation_cold_knife = $request->ops_tindakan_dilatation_cold_knife;
+        $kasus->ops_tindakan_dilatation_shape = $request->ops_tindakan_dilatation_shape;
+        $kasus->ops_tindakan_dilatation_laser = $request->ops_tindakan_dilatation_laser;
+        $kasus->ops_tindakan_omental_wrap = $request->ops_tindakan_omental_wrap;
+        $kasus->ops_tindakan_non_transecting = $request->ops_tindakan_non_transecting;
+        $kasus->ops_tindakan_staged = $request->ops_tindakan_staged;
+        $kasus->ops_tindakan_ventral_inlay = $request->ops_tindakan_ventral_inlay;
+        $kasus->ops_tindakan_ventral_onlay = $request->ops_tindakan_ventral_onlay;
+        $kasus->ops_tindakan_other = $request->ops_tindakan_other;
+        $kasus->ops_graft_preputial = $request->ops_graft_preputial;
+        $kasus->ops_graft_penlie_skin = $request->ops_graft_penlie_skin;
     	$kasus->ops_tindakan_sachse = $request->ops_tindakan_sachse;
     	$kasus->ops_tindakan_bulbar_mobilisasi = $request->ops_tindakan_bulbar_mobilisasi;
     	$kasus->ops_tindakan_crucal_separasi = $request->ops_tindakan_crucal_separasi;
@@ -93,6 +112,38 @@ class PostController extends Controller
     		}
     	}
 
+        if(!empty($request->file_intra))
+        {
+            $path = [];
+            foreach($request->file_intra as $file)
+            {
+                $path = app('App\Http\Controllers\Functions\ImageUploader')->upload($file,'kasus-'.$kasus_id);
+                $path = app('App\Http\Controllers\KasusPenunjang\PostController')->create($kasus_id,'intra-ops',$path);
+            }
+        }
+
+        if(!empty($request->file_urethrography))
+        {
+            $path = [];
+            foreach($request->file_urethrography as $file)
+            {
+                $path = app('App\Http\Controllers\Functions\ImageUploader')->upload($file,'kasus-'.$kasus_id);
+                $path = app('App\Http\Controllers\KasusPenunjang\PostController')->create($kasus_id,'urethrography',$path);
+            }
+        }
+
+        if(!empty($request->file_radiology))
+        {
+            $path = [];
+            foreach($request->file_radiology as $file)
+            {
+                $path = app('App\Http\Controllers\Functions\ImageUploader')->upload($file,'kasus-'.$kasus_id);
+                $path = app('App\Http\Controllers\KasusPenunjang\PostController')->create($kasus_id,'radiology',$path);
+            }
+        }
+
+
+
     	$uriflowmetry_bulan = [1,3,6,9,12,24,60];
 
 		app('App\Http\Controllers\KasusUriflowmetry\PostController')->deleteDataKasus($kasus_id);
@@ -112,6 +163,7 @@ class PostController extends Controller
     		$data['weight'] = $request->uriflowmetry_weight[$bulan];
     		$data['symptomps'] = $request->uriflowmetry_symptomps[$bulan];
     		$data['advice'] = $request->uriflowmetry_advice[$bulan];
+            $data['residual_urine'] = $request->uriflowmetry_residual_urine[$bulan];
 
     		$uriflow = app('App\Http\Controllers\KasusUriflowmetry\PostController')->create($data);
     	}

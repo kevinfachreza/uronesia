@@ -25,6 +25,7 @@ class PostController extends Controller
     	$new->weight = $data['weight'];
     	$new->symptomps = $data['symptomps'];
     	$new->advice = $data['advice'];
+        $new->residual_urine = $data['residual_urine'];
     	$new->created_by = Auth::user()->id;
     	$new->save();
 

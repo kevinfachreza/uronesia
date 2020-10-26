@@ -16,7 +16,7 @@
                     <input type="email" class="form-control" name="email" value="{{$user->email}}">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -28,20 +28,20 @@
                 {{csrf_field()}}
                 <h4 class="ct-title">Ganti Password</h4>
                 <div class="form-group">
-                    <label>Password Saat Ini</label>
+                    <label>Current Password</label>
                     <input type="password" class="form-control" name="password_current">
                 </div>
                 <div class="form-group">
-                    <label>Password Baru</label>
+                    <label>New Password</label>
                     <input type="password" class="form-control" name="password_new">
                     <small>Minimal 6 karakter</small>
                 </div>
                 <div class="form-group">
-                    <label>Password Baru Konfirmasi</label>
+                    <label>New Password Confirmation</label>
                     <input type="password" class="form-control" name="password_new_confirmation">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>

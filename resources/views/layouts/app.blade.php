@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Urodatanesia</title>
     <link rel="manifest" href="{{url('')}}/manifestv1.1.json" />
     <!-- ios support -->
     <link rel="apple-touch-icon" href="{{url('')}}/images/icons-urodatanesia/icon-72x72.png" />

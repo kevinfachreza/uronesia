@@ -19,17 +19,17 @@ class Pasien extends Model
         if($year == 0 && $month == 0)
         {
             $date = new Carbon($this->tanggal_lahir);
-            return $date->diff($created_at)->format('%d Hari');
+            return $date->diff($created_at)->format('%d Days Old');
         }
         elseif($year == 0)
         {
             $date = new Carbon($this->tanggal_lahir);
-            return $date->diff($created_at)->format('%m Bulan');
+            return $date->diff($created_at)->format('%m Months Old');
         }
         else
         {
             $date = new Carbon($this->tanggal_lahir);
-            return $date->diff($created_at)->format('%y Tahun');
+            return $date->diff($created_at)->format('%y Years Old');
         }
     }
 }

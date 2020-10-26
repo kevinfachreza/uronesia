@@ -22,6 +22,25 @@ class Kasus extends Model
     {
         return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','post-ops');
     }
+
+    public function penunjang_intra()
+    {
+        return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','intra-ops');
+    }
+
+    public function penunjang_urethrography()
+    {
+        return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','urethrography');
+    }
+
+
+    public function penunjang_radiology()
+    {
+        return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','radiology');
+    }
+
+
+
     public function uriflowmetry()
     {
         return $this->hasMany('App\Models\KasusUriflowmetry', 'kasus_id', 'id')->orderBy('bulan_ke');
