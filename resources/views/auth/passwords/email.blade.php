@@ -13,7 +13,7 @@
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <small>Masukkan Email Untuk Reset Password</small>
+                                <small>Fill email to reset password</small>
                             </div>
                             @if (session('status'))
                             <div class="alert alert-success">
@@ -39,7 +39,7 @@
                                 @endif
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary my-4">Kirim</button>
+                                    <button type="submit" class="btn btn-primary my-4">Send Link</button>
                                 </div>
                             </form>
                         </div>

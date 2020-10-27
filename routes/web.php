@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/kasus/baru', 'Kasus\PostController@create');
 
 
+	Route::get('/admin', 'Admin\ViewController@index');
+	Route::get('/admin/admin-status/{user_id}/{status}', 'Admin\PostController@adminStatus');
+	Route::get('/admin/active-status/{user_id}/{status}', 'Admin\PostController@activeStatus');
 
 	Route::get('/api/pasien/get/{id}', 'Pasien\ViewController@apiGetPasien');
 

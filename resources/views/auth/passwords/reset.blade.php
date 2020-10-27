@@ -14,7 +14,7 @@
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <small>Masukkan email untuk reset passwords</small>
+                                <small>Fill Email and New Password</small>
                             </div>
                             <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                             {{ csrf_field() }}
@@ -46,14 +46,14 @@
                                         <span class="alert-inner--text">{{ $errors->first('password') }}</span>
                                     </div>
                                     @endif
-                                    <small>Minimal 6 Karakter</small>
+                                    <small>Min 6 Characters</small>
                                 </div>
                                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Konfirmasi Password" type="password"  name="password_confirmation" required="">
+                                        <input class="form-control" placeholder="Password Confirmation" type="password"  name="password_confirmation" required="">
                                     </div>
                                     @if ($errors->has('password_confirmation'))
                                     <div class="alert alert-warning mt-2" role="alert">

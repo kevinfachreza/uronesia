@@ -4,7 +4,7 @@
 <div class="container pt-4">
     <div class="row">
         <div class="col-lg-8 col-md-12">
-            <h4>Striktur Uretra Cases</h4>
+            <h4>Urethral Stricture Cases</h4>
         </div>
         <div class="col-lg-4 col-md-12">
             <a href="{{url('kasus')}}/striktur-uretra/print" class="btn btn-success" target="_blank"><i class="fa fa-print"></i> Print</a>

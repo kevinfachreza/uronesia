@@ -122,6 +122,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+                                @if(Auth::user()->admin)
+                                <a class="dropdown-item" href="{{url('admin')}}">Admin</a>
+                                @endif
                                 <a class="dropdown-item" href="{{url('settings')}}">Settings</a>
                                 <a class="dropdown-item" href="{{url('logout')}}">Logout</a>
                             </div>

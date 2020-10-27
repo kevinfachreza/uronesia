@@ -18,7 +18,7 @@ class PostController extends Controller
     	if(empty($kasus))
 		{
 			return back()			
-			->with('message','Kasus tidak ditemukan')
+			->with('message','Case not found')
 			->with('status', -1)
 			->with('title', 'Error');	
 		}
@@ -172,8 +172,8 @@ class PostController extends Controller
 
 		DB::commit();
 		return redirect('kasus/'.$kasus->jenis_kasus)	
-		->with('message','Kasus berhasil dibuat')
+		->with('message','Case Created')
 		->with('status', 1)
-		->with('title', 'Berhasil');
+		->with('title', 'Success');
     }
 }

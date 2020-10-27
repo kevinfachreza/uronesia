@@ -11,7 +11,9 @@ class ViewController extends Controller
 	public function create(Request $request)
 	{
 		$data['jenis'] = $request->jenis;
-		$data['jenis_display'] = str_replace("-", ' ', $request->jenis);
+
+		if($data['jenis'] == 'striktur-uretra') $jenis_display = 'Urethral Stricture';
+		$data['jenis_display'] = str_replace("-", ' ', $jenis_display);
 		$data['pasien'] = Pasien::all();
 		return view('kasus.create',$data);
 	}

@@ -4,7 +4,7 @@
 <div class="container main-content py-4">
     <div class="row">
         <div class="col-lg-9 col-md-12">
-            <h4 style="text-transform: capitalize;">Buat Kasus Baru {{$jenis_display}} </h4>
+            <h4 style="text-transform: capitalize;">Create New Case {{$jenis_display}} </h4>
             <hr>
             <form method="POST" action="{{url('kasus')}}/baru">
                 {{csrf_field()}}
@@ -12,57 +12,57 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label class="label">Status Pasien</label><br>
+                            <label class="label">Patient Status</label><br>
                             <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="status_pasien" checked value="lama">Lama
+                                    <input type="radio" class="form-check-input" name="status_pasien" checked value="lama">Old Patient
                                 </label>
                             </div>
                             <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="status_pasien" value="baru" >Baru
+                                    <input type="radio" class="form-check-input" name="status_pasien" value="baru" >New Patient
                                 </label>
                             </div>
                         </div>
                         <div class="form-group form-group-lama">
-                            <label class="label">Cari Pasien</label><br>
+                            <label class="label">Search Patient</label><br>
                             <select class="form-control js-select2 select-pasien" data-trigger name="pasien_id">
-                                <option disabled selected>Cari Pasien</option>
+                                <option disabled selected>Search Patient</option>
                                 @foreach($pasien as $px)
-                                <option value="{{$px->id}}">#{{$px->no_rm}} - {{$px->nama}} - {{strtoupper($px->jenis_kelamin)}} - {{$px->age}}</option>
+                                <option value="{{$px->id}}">#{{$px->no_rm}} - {{$px->nama}} - {{strtoupper($px->jenis_kelamin == 'lk' ? 'Man' : 'Woman')}} - {{$px->age}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <hr style="width: 100%">
                         <div class="row form-pasien" style="display: none">
-                            <div class="col-12 mb-3">DATA PASIEN</div>
+                            <div class="col-12 mb-3">Patient Data</div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">ID PASIEN</label>
+                                    <label class="label">ID</label>
                                     <input type="text" class="form-control" name="pasien_id" readonly>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">No RM</label>
+                                    <label class="label">Medical Record</label>
                                     <input type="text" class="form-control" name="pasien_no_rm">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Nama Pasien</label>
+                                    <label class="label">Patient Name</label>
                                     <input type="text" class="form-control" name="pasien_nama" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Tanggal Lahir</label>
+                                    <label class="label">Date of Birth</label>
                                     <input type="date" class="form-control" name="pasien_tanggal_lahir" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Jenis Kelamin</label><br>
+                                    <label class="label">Gender</label><br>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
                                             <input type="radio" class="form-check-input" name="pasien_jenis_kelamin" checked value="lk" id="input-radio-px-jk-lk">Laki Laki
@@ -78,24 +78,24 @@
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Nomor Telpon</label>
+                                    <label class="label">Phone Number</label>
                                     <input type="text" class="form-control" name="pasien_nomor_telpon">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Tinggi Badan (kg)</label>
+                                    <label class="label">Weight (kg)</label>
                                     <input type="number" class="form-control" name="pasien_tb">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Berat Badan (cm)</label>
+                                    <label class="label">Height (cm)</label>
                                     <input type="number" class="form-control" name="pasien_bb">
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Buat Kasus</button>
+                                <button type="submit" class="btn btn-primary">Create Case</button>
                             </div>
                         </div>
                     </div>

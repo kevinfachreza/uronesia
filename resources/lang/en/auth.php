@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Email atau password salah.',
+    'failed' => 'Email or password does not match.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

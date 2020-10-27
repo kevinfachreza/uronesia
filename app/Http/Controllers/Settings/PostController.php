@@ -18,9 +18,9 @@ class PostController extends Controller
 		$user->save();
 
 		return back()
-		->with('message','Data berhasil diperbarui')
+		->with('message','Data successfully updated')
 		->with('status', 1)
-		->with('title', 'Berhasil');
+		->with('title', 'Success');
 
 	}
 
@@ -31,26 +31,26 @@ class PostController extends Controller
 
 		if(!Hash::check($request->password_current, $user->password)){
     		$status = -1;
-    		$message = 'Password yang anda masukkan tidak sama dengan password saat ini';
-    		$title = 'Gagal!';
+    		$message = 'Password does not match with your current password';
+    		$title = 'Error!';
     	}
     	elseif (strcmp($request->password_current, $request->password_new) == 0) {
     		$status = -1;
-    		$message = 'Password baru tidak boleh sama dengan password sebelumnya';
-    		$title = 'Gagal!';
+    		$message = 'New password is same with old password';
+    		$title = 'Error!';
     	}
     	elseif (strcmp($request->password_new, $request->password_new_confirmation) != 0) {
     		$status = -1;
-    		$message = 'Pastikan password yang anda masukkan pada kolom Password Baru dan Verifikasi Password Baru sama';
-    		$title = 'Gagal!';
+    		$message = 'Password confirmation does not match';
+    		$title = 'Error!';
     	}
     	else{
     		$user->password = bcrypt($request->password_new);
     		$user->save();
     		
     		$status = 1;
-    		$message = 'Password berhasil diubah!';
-    		$title = 'Sukses!';
+    		$message = 'Password successfully changed';
+    		$title = 'Success!';
 
     	}
 

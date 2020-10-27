@@ -14,7 +14,7 @@
                         {{ csrf_field() }}
                         <h2>URODATANESIA</h2>
                         <h2>Sign in</h2>
-                        <p style="font-weight: 400">Masukkan email dan password untuk memulai</p>
+                        <p style="font-weight: 400">Fill Email and Password</p>
 
 
                         <div class="row justify-content-center" style="width: 100%">
@@ -50,9 +50,9 @@
                         <button class="btn btn-primary mt-3">Sign In</button>
 
                         <hr>
-                        <span>Belum punya akun? <br> <a class="bg-success text-white btn-sm" href="{{url('register')}}">Klik Disini Untuk Register</a></span>
+                        <span>Doesn't Have Account?<br> <a class="bg-success text-white btn-sm" href="{{url('register')}}">Create Account</a></span>
                         <hr>
-                        <span>Lupa Password? <br> <a class="bg-success text-white btn-sm" href="{{ route('password.request') }}">Klik Disini Untuk Reset Password</a></span>
+                        <span>Forgot Password? <br> <a class="bg-success text-white btn-sm" href="{{ route('password.request') }}">Click here for Reset Password</a></span>
 
                     </form>
                 </div>
@@ -63,8 +63,8 @@
             <div class="container">
                 <div class="row row-grid align-items-center mb-5">
                     <div class="col-lg-6">
-                        <h3 class="font-w700 mb-2" style="color: #000">Uronesia</h3>
-                        <h4 class="mb-0 font-weight-light" style="color: #000">Adalah aplikasi database penelitian untuk kasus kasus urologi</h4>
+                        <h3 class="font-w700 mb-2" style="color: #000">Urodatanesia</h3>
+                        <h4 class="mb-0 font-weight-light" style="color: #000">Is a databased urology case application for all urologists in the world</h4>
                     </div>
                 </div>
             </div>

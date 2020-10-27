@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Password minimal 6 karakter',
-    'reset' => 'Password telah berhasil di reset',
-    'sent' => 'Link untuk mereset password telah dikirim',
-    'token' => 'Token untuk me-reset password telah expired',
-    'user' => "Tidak ditemukan user dengan email tersebut",
+    'password' => 'Password Minimum 6 Characters',
+    'reset' => 'Password is successfully resetted',
+    'sent' => 'Link for resetting password is sent',
+    'token' => 'Your token is expired',
+    'user' => "We cant find user with that email",
 
 ];

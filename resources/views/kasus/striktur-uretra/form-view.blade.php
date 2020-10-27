@@ -4,7 +4,7 @@
     <div class="container main-content py-4">
         <div class="row">
             <div class="col-12">
-                <h4 class="display-3">Striktur Uretra Case</h4>
+                <h4 class="display-3">Urethral Stricture Case</h4>
                 <a class="btn btn-primary" href="{{url('')}}/kasus/striktur-uretra/{{$kasus->id}}/form"><i class="fa fa-pencil"></i> Edit</a>
                 <hr>
                     {{csrf_field()}}
@@ -191,8 +191,8 @@
 
                              <h6 style="font-weight: 600" class="text-primary">EPA TRANSPERINEAL</h6>
                             @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_tindakan_bulbar_mobilisasi, 'label'=>'Bulbar Mobilization','name'=>'ops_tindakan_bulbar_mobilisasi'])
-                            @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus-> ops_tindakan_crucal_separasi,'label'=>'Crural Separation','name'=>'ops_tindakan_crucal_separasi'])
-                            @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus-> ops_tindakan_inferior_pubektomi,'label'=>'Inferior Pubectomy','name'=>'ops_tindakan_inferior_pubektomi'])
+                            @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_tindakan_crucal_separasi,'label'=>'Crural Separation','name'=>'ops_tindakan_crucal_separasi'])
+                            @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_tindakan_inferior_pubektomi,'label'=>'Inferior Pubectomy','name'=>'ops_tindakan_inferior_pubektomi'])
                             @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_tindakan_supercrucal_rerouting ,'label'=>'Supracrural Rerouting','name'=>'ops_tindakan_supercrucal_rerouting'])
 
                             <h6 style="font-weight: 600" class="text-primary">EPA TRANSABDOMINAL</h6>
@@ -244,7 +244,7 @@
 
                             @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_graft_preputial, 'label'=>'Preputial','name'=>'ops_graft_preputial'])
 
-                            @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_graft_penlie_skin, 'label'=>'Penlie Skin','name'=>'ops_graft_penlie_skin'])
+                            @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_graft_penlie_skin, 'label'=>'Penile Skin','name'=>'ops_graft_penlie_skin'])
 
                             @include('kasus.components-form.radio-button-yes-no-view',['default'=> $kasus->ops_graft_gracilis, 'label'=>'Gracilis','name'=>'ops_graft_gracilis'])
 
@@ -280,7 +280,7 @@
                         </div>
 
                         <div class="col-12">
-                            <h5>Clinical Picture PreOps</h5>
+                            <h5>Clinical Picture Pre Operation</h5>
                             <div class="row">
                                 @foreach($kasus->penunjang_pre as $penunjang)
                                 <div class="col-lg-2 col-md-4 col-6">
@@ -295,7 +295,7 @@
                         </div>
 
                         <div class="col-12">
-                            <h5>Clinical Picture IntraOps</h5>
+                            <h5>Clinical Picture Intra Operation</h5>
                             <div class="row">
                                 @foreach($kasus->penunjang_intra as $penunjang)
                                 <div class="col-lg-2 col-md-4 col-6">
@@ -310,7 +310,7 @@
                         </div>
 
                         <div class="col-12">
-                            <h5>Clinical Picture PostOps</h5>
+                            <h5>Clinical Picture Post Operation</h5>
                             <div class="row">
                                 @foreach($kasus->penunjang_post as $penunjang)
                                 <div class="col-lg-2 col-md-4 col-6">
@@ -330,12 +330,12 @@
                         <h5>Erection Hardness Score</h5>
                         <table class="table table-no-border">
                             <tr>
-                                <td style="width: 150px">Pre Ops</td>
+                                <td style="width: 150px">Pre Operation</td>
                                 <td style="width: 20px">:</td>
                                 <td>{{$kasus->ops_skor_ereksi_pre_ops}}</td>
                             </tr>
                             <tr>
-                                <td>Post Ops</td>
+                                <td>Post Operation</td>
                                 <td>:</td>
                                 <td>{{$kasus->ops_skor_ereksi_post_ops}}</td>
                             </tr>
@@ -350,12 +350,12 @@
                         <h5>Penile Length (cm)</h5>
                         <table class="table table-no-border">
                             <tr>
-                                <td style="width: 150px">Pre Ops</td>
+                                <td style="width: 150px">Pre Operation</td>
                                 <td style="width: 20px">:</td>
                                 <td>{{$kasus->ops_panjang_penis_pre_ops}} cm</td>
                             </tr>
                             <tr>
-                                <td>Post Ops</td>
+                                <td>Post Operation</td>
                                 <td>:</td>
                                 <td>{{$kasus->ops_panjang_penis_post_ops}} cm</td>
                             </tr>

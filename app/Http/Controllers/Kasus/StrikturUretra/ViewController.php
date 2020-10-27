@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Kasus;
 use App\Exports\StrikturUretraExcel;
+use Auth;
 
 class ViewController extends Controller
 {
     public function index()
     {
-        $data['kasus'] = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','penunjang_intra','penunjang_urethrography','uriflowmetry','creator')->get();
+        $user_id = Auth::user()->id;
+        $data['kasus'] = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','penunjang_intra','penunjang_urethrography','uriflowmetry','creator')->where('created_by',$user_id)->get();
     	return view('kasus.striktur-uretra.index',$data);
     }
 
@@ -49,7 +51,8 @@ class ViewController extends Controller
 
     public function print()
     {
-        $result = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','uriflowmetry')->get();
+        $user_id = Auth::user()->id;
+        $result = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','uriflowmetry')->where('created_by',$user_id)->get();
 
 
         $data['kasus'] = $result;

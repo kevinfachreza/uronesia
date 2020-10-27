@@ -18,7 +18,7 @@
         <div class="row row-grid social-line social-line-big-icons">
             <div class="col-lg-6">
                 <a href="{{url('kasus/striktur-uretra')}}" class="btn btn-gradient-yellow btn-footer">
-                    <p class="title">Striktur Urethra</p>
+                    <p class="title">Urethral Stricture</p>
                     <p class="subtitle">{{$count_kasus_striktur_uretra}} Cases</p>
                 </a>
             </div>

@@ -4,7 +4,7 @@
     <div class="container main-content py-4">
         <div class="row">
             <div class="col-12">
-                <h4 class="display-3">Striktur Uretra Case</h4>
+                <h4 class="display-3">Urethral Stricture Case</h4>
                 <hr>
                 <form method="POST" action="{{url('kasus/striktur-uretra')}}/{{$kasus->id}}/save" enctype="multipart/form-data">
                     {{csrf_field()}}
@@ -209,8 +209,8 @@
 
                             <h6 style="font-weight: 600" class="text-primary">EPA TRANSPERINEAL</h6>
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_bulbar_mobilisasi, 'label'=>'Bulbar Mobilization','name'=>'ops_tindakan_bulbar_mobilisasi'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus-> ops_tindakan_crucal_separasi,'label'=>'Crural Separation ','name'=>'ops_tindakan_crucal_separasi'])
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus-> ops_tindakan_inferior_pubektomi,'label'=>'Inferior Pubectomy ','name'=>'ops_tindakan_inferior_pubektomi'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_crucal_separasi,'label'=>'Crural Separation ','name'=>'ops_tindakan_crucal_separasi'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_inferior_pubektomi,'label'=>'Inferior Pubectomy ','name'=>'ops_tindakan_inferior_pubektomi'])
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_supercrucal_rerouting ,'label'=>'Supracrural Rerouting','name'=>'ops_tindakan_supercrucal_rerouting'])
 
                             <h6 style="font-weight: 600" class="text-primary">EPA TRANSABDOMINAL</h6>
@@ -256,7 +256,7 @@
 
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_preputial, 'label'=>'Preputial','name'=>'ops_graft_preputial'])
 
-                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_penlie_skin, 'label'=>'Penlie Skin','name'=>'ops_graft_penlie_skin'])
+                            @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_penlie_skin, 'label'=>'Penile Skin','name'=>'ops_graft_penlie_skin'])
 
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_gracilis, 'label'=>'Gracilis','name'=>'ops_graft_gracilis'])
                             <div class="form-group">
@@ -366,13 +366,13 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label class="label">Pre Ops</label>
+                            <label class="label">Pre Operation</label>
                             <input type="number" class="form-control" name="ops_skor_ereksi_pre_ops" value="{{$kasus->ops_skor_ereksi_pre_ops}}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label class="label">Post Ops</label>
+                            <label class="label">Post Operation</label>
                             <input type="number" class="form-control" name="ops_skor_ereksi_post_ops" value="{{$kasus->ops_skor_ereksi_post_ops}}">
                         </div>
                     </div>
@@ -385,13 +385,13 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label class="label">Pre Ops</label>
+                            <label class="label">Pre Operation</label>
                             <input type="number" class="form-control" name="ops_panjang_penis_pre_ops" value="{{$kasus->ops_panjang_penis_pre_ops}}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label class="label">Post Ops</label>
+                            <label class="label">Post Operation</label>
                             <input type="number" class="form-control" name="ops_panjang_penis_post_ops" value="{{$kasus->ops_panjang_penis_post_ops}}">
                         </div>
                     </div>
