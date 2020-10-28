@@ -223,7 +223,7 @@
 
                             <table class="table table-no-border">
                                 <tr>
-                                    <td style="width: 150px">Other</td>
+                                    <td style="width: 150px">Others</td>
                                     <td style="width: 20px">:</td>
                                     <td>{{$kasus->ops_tindakan_other}}</td>
                                 </tr>
@@ -250,7 +250,7 @@
 
                             <table class="table table-no-border">
                                 <tr>
-                                    <td style="width: 150px">Other</td>
+                                    <td style="width: 150px">Others</td>
                                     <td style="width: 20px">:</td>
                                     <td>{{$kasus->ops_graft_garcilis_other}}</td>
                                 </tr>

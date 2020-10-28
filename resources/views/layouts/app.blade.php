@@ -40,18 +40,28 @@
     <link href="{{url('')}}/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="{{url('')}}/css/argon-design-system.css?v=1.0.2" rel="stylesheet" />
-    <link href="{{url('')}}/css/appv1.1.css" rel="stylesheet" />
+    <link href="{{url('')}}/css/appv1.2.css" rel="stylesheet" />
 
-    <link href="/images/icons-urodatanesia/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-1242x2208.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-    <link href="/images/icons-urodatanesia/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-640x1136.png" 
+    media="(min-device-width: 320px) and (min-device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-750x1334.png" 
+    media="(min-device-width: 375px) and (min-device-height: 667px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1242x2208.png" 
+    media="(min-device-width: 621px) and (min-device-height: 1104px) and (-webkit-min-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1125x2436.png" 
+    media="(min-device-width: 375px) and (min-device-height: 812px) and (-webkit-min-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-828x1792.png" 
+    media="(min-device-width: 414px) and (min-device-height: 896px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1242x2688.png" 
+    media="(min-device-width: 414px) and (min-device-height: 896px) and (-webkit-min-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1536x2048.png" 
+    media="(min-device-width: 768px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1668x2224.png" 
+    media="(min-device-width: 834px) and (min-device-height: 1112px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-1668x2388.png" 
+    media="(min-device-width: 834px) and (min-device-height: 1194px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="/images/icons-urodatanesia/splash-2048x2732.png" 
+    media="(min-device-width: 1024px) and (min-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 
     <!-- Tile for Win8 -->
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -98,7 +108,7 @@
         @else
         <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{url('')}}/img/urodatanesia-logo.png"></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{url('')}}/images/logo-urodatanesia.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
                 </button>
@@ -107,7 +117,7 @@
                         <div class="row">
                             <div class="col-6 collapse-brand">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{url('')}}/img/urodatanesia-logo.png">
+                                    <img src="{{url('')}}/images/logo-urodatanesia.png">
                                 </a>
                             </div>
                             <div class="col-6 collapse-close">

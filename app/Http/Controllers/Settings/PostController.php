@@ -15,6 +15,8 @@ class PostController extends Controller
 		$user = User::find(Auth::user()->id);
 		$user->name = $request->name;
 		$user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->institution = $request->institution;
 		$user->save();
 
 		return back()

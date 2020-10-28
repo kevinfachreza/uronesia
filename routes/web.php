@@ -18,7 +18,7 @@ Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
 });
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/', 'HomeController@index');
 	Route::get('/home', 'HomeController@index');
 

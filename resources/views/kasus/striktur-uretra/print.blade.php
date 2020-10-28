@@ -107,8 +107,8 @@
             <th rowspan="2">6th Month</th>
             <th rowspan="2">9th Month</th>
             <th rowspan="2">12th Month</th>
-            <th rowspan="2">Tahun Ke 2nd Year</th>
-            <th rowspan="2">Tahun Ke 5th Year</th>
+            <th rowspan="2">2nd Year</th>
+            <th rowspan="2">5th Year</th>
         </tr>
         <tr>
             <th>Bougi</th>

@@ -238,7 +238,7 @@
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_tindakan_perineal_urethrostomy, 'label'=>'Perineal Urethrostomy','name'=>'ops_tindakan_perineal_urethrostomy'])
 
                             <div class="form-group">
-                                <label class="label">Other</label>
+                                <label class="label">Others</label>
                                 <input type="text" class="form-control" name="ops_tindakan_other" value="{{$kasus->ops_tindakan_other}}">
                             </div>
                         </div>
@@ -260,7 +260,7 @@
 
                             @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->ops_graft_gracilis, 'label'=>'Gracilis','name'=>'ops_graft_gracilis'])
                             <div class="form-group">
-                                <label class="label">Other</label>
+                                <label class="label">Others</label>
                                 <input type="text" class="form-control" name="ops_graft_garcilis_other" value="{{$kasus->ops_graft_garcilis_other}}">
                             </div>
                         </div>
