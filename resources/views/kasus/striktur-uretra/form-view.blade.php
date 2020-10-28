@@ -25,7 +25,7 @@
                                 <tr>
                                     <td>GENDER</td>
                                     <td>:</td>
-                                    <td>{{$kasus->pasien->jenis_kelamin == 'lk' ? 'Men' : 'Woman'}}</td>
+                                    <td>{{$kasus->pasien->jenis_kelamin == 'lk' ? 'Man' : 'Woman'}}</td>
                                 </tr>
                                 <tr>
                                     <td>AGE (Years)</td>
@@ -179,14 +179,14 @@
                             ['default'=> $kasus->ops_tindakan_dilatation_bougi, 'label'=>'BOUGI '])
                             @include('kasus.components-form.radio-button-yes-no-view',
                             ['default'=> $kasus->ops_tindakan_dilatation_shape, 'label'=>'S-Shape Dilator ',
-                            'name'=>'ops_tindakan_dilatation_bougi'])
+                            'name'=>'ops_tindakan_dilatation_shape'])
 
                             <h6 style="font-weight: 600" class="text-primary">DVIU</h6>
                             @include('kasus.components-form.radio-button-yes-no-view',
-                            ['default'=> $kasus->ops_tindakan_dilatation_shape, 'label'=>'Cold Knife ',
+                            ['default'=> $kasus->ops_tindakan_dilatation_cold_knife, 'label'=>'Cold Knife ',
                             'name'=>'ops_tindakan_dilatation_cold_knife'])
                             @include('kasus.components-form.radio-button-yes-no-view',
-                            ['default'=> $kasus->ops_tindakan_dilatation_shape, 'label'=>'Laser ',
+                            ['default'=> $kasus->ops_tindakan_dilatation_laser, 'label'=>'Laser ',
                             'name'=>'ops_tindakan_dilatation_laser'])
 
                              <h6 style="font-weight: 600" class="text-primary">EPA TRANSPERINEAL</h6>

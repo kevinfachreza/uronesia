@@ -27,13 +27,14 @@ class StrikturUretraExcel implements FromView, WithEvents
                 $event->sheet->getRowDimension(2)->setRowHeight(100);
 
 
-                $event->sheet->getColumnDimension('AW')->setWidth(21);
-                $event->sheet->getColumnDimension('AX')->setWidth(21);
-                $event->sheet->getColumnDimension('AY')->setWidth(21);
-                $event->sheet->getColumnDimension('AZ')->setWidth(21);
-                $event->sheet->getColumnDimension('BA')->setWidth(21);
-                $event->sheet->getColumnDimension('BB')->setWidth(21);
-                $event->sheet->getColumnDimension('BC')->setWidth(21);
+                $event->sheet->getColumnDimension('R')->setWidth(37);
+                $event->sheet->getColumnDimension('BK')->setWidth(21);
+                $event->sheet->getColumnDimension('BL')->setWidth(21);
+                $event->sheet->getColumnDimension('BM')->setWidth(21);
+                $event->sheet->getColumnDimension('BN')->setWidth(21);
+                $event->sheet->getColumnDimension('BO')->setWidth(21);
+                $event->sheet->getColumnDimension('BP')->setWidth(21);
+                $event->sheet->getColumnDimension('BQ')->setWidth(21);
 
                 $alignment = 
                 [
@@ -64,10 +65,12 @@ class StrikturUretraExcel implements FromView, WithEvents
                     'color' => ['argb' => '00000000'],
                 ];
 
+                $data_total = count($this->data['kasus'])+4;
+
 
 
                 $event->sheet->styleCells(
-                    'A1:BC4',
+                    'A1:BQ4',
                     [
                         'alignment' => $alignment,
                         'font' => $bold,
@@ -77,7 +80,7 @@ class StrikturUretraExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'A4:BC4',
+                    'A4:BQ4'.$data_total,
                     [
                         'borders' => [
                             'bottom' => $border_thick
@@ -85,7 +88,7 @@ class StrikturUretraExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'K1:K4',
+                    'I1:I4',
                     [
                         'borders' => [
                             'right' => $border_thick
@@ -93,7 +96,7 @@ class StrikturUretraExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'S1:S4',
+                    'R1:R4',
                     [
                         'borders' => [
                             'right' => $border_thick
@@ -101,21 +104,22 @@ class StrikturUretraExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'AP1:AP4',
+                    'BA1:BA4',
                     [
                         'borders' => [
                             'right' => $border_thick
                         ],
                     ]
                 );
-
-                $data_total = count($this->data['kasus'])+10;
                 
 
                 $event->sheet->styleCells(
-                    'A5:AP'.$data_total,
+                    'A5:BQ'.$data_total,
                     [
                         'alignment' => $alignment_top,
+                        'borders' => [
+                            'allBorders' => $border_thin
+                        ],
                     ]
                 );
 

@@ -7,7 +7,7 @@
             <h4>Urethral Stricture Cases</h4>
         </div>
         <div class="col-lg-4 col-md-12">
-            <a href="{{url('kasus')}}/striktur-uretra/print" class="btn btn-success" target="_blank"><i class="fa fa-print"></i> Print</a>
+            <a href="{{url('kasus')}}/striktur-uretra/print" class="btn btn-success disable-loading" target="_blank"><i class="fa fa-print"></i> Print</a>
             <a href="{{url('kasus')}}/baru?jenis=striktur-uretra" class="btn btn-primary"><i class="fa fa-plus"></i> New Case</a>
         </div>
     </div>
