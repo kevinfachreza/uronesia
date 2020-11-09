@@ -17,6 +17,11 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
 });
+Route::get('/composer-dump-autoload', function()
+{
+    \Artisan::call('dump-autoload');
+    echo 'dump-autoload complete';
+});
 
 Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/', 'HomeController@index');
@@ -32,6 +37,14 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/striktur-uretra/{id}/form', 'Kasus\StrikturUretra\ViewController@form');
 	Route::get('/kasus/striktur-uretra/{id}/form-view', 'Kasus\StrikturUretra\ViewController@formView');
 	Route::post('/kasus/striktur-uretra/{id}/save', 'Kasus\StrikturUretra\PostController@save');
+
+
+	Route::get('/kasus/trauma', 'Kasus\Trauma\ViewController@index');
+	Route::get('/kasus/trauma/print', 'Kasus\Trauma\ViewController@print');
+	Route::get('/kasus/trauma/{id}/form', 'Kasus\Trauma\ViewController@form');
+	Route::get('/kasus/trauma/{id}/form-view', 'Kasus\Trauma\ViewController@formView');
+	Route::post('/kasus/trauma/{id}/save', 'Kasus\Trauma\PostController@save');
+
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
 	Route::post('/kasus/baru', 'Kasus\PostController@create');
 

@@ -13,6 +13,8 @@ class ViewController extends Controller
 		$data['jenis'] = $request->jenis;
 
 		if($data['jenis'] == 'striktur-uretra') $jenis_display = 'Urethral Stricture';
+		elseif($data['jenis'] == 'trauma') $jenis_display = 'Trauma';
+		else abort(404);
 		$data['jenis_display'] = str_replace("-", ' ', $jenis_display);
 		$data['pasien'] = Pasien::all();
 		return view('kasus.create',$data);

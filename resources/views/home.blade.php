@@ -22,6 +22,12 @@
                     <p class="subtitle">{{$count_kasus_striktur_uretra}} Cases</p>
                 </a>
             </div>
+            <div class="col-lg-6 mt-0 ">
+                <a href="{{url('kasus/trauma')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Trauma</p>
+                    <p class="subtitle">{{$count_kasus_trauma}} Cases</p>
+                </a>
+            </div>
         </div>
     </div>
 </div>

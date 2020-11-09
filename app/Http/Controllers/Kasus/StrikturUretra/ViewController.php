@@ -14,7 +14,9 @@ class ViewController extends Controller
     {
         $user_id = Auth::user()->id;
         $data['kasus'] = Kasus::where('jenis_kasus','striktur-uretra')->with('pasien','penunjang_pre','penunjang_post','penunjang_intra','penunjang_urethrography','uriflowmetry','creator')->where('created_by',$user_id)->get();
-    	return view('kasus.striktur-uretra.index',$data);
+        $data['title'] = 'Urethral Stricture';
+        $data['jenis_kasus'] = 'striktur-uretra';
+    	return view('kasus.layouts.index',$data);
     }
 
 
