@@ -70,7 +70,7 @@ class TraumaExcel implements FromView, WithEvents
 
 
                 $event->sheet->styleCells(
-                    'A1:BQ4',
+                    'A1:AZ4',
                     [
                         'alignment' => $alignment,
                         'font' => $bold,
@@ -79,8 +79,20 @@ class TraumaExcel implements FromView, WithEvents
                         ],
                     ]
                 );
+
+
                 $event->sheet->styleCells(
-                    'A4:BQ4'.$data_total,
+                    'A5:AZ'.$data_total,
+                    [
+                        'alignment' => $alignment_top,
+                        'borders' => [
+                            'allBorders' => $border_thin
+                        ],
+                    ]
+                );
+                
+                $event->sheet->styleCells(
+                    'A4:AZ4'.$data_total,
                     [
                         'borders' => [
                             'bottom' => $border_thick
@@ -88,7 +100,7 @@ class TraumaExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'I1:I4',
+                    'I1:I'.$data_total,
                     [
                         'borders' => [
                             'right' => $border_thick
@@ -96,7 +108,7 @@ class TraumaExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'R1:R4',
+                    'AK1:AK'.$data_total,
                     [
                         'borders' => [
                             'right' => $border_thick
@@ -104,21 +116,10 @@ class TraumaExcel implements FromView, WithEvents
                     ]
                 );
                 $event->sheet->styleCells(
-                    'BA1:BA4',
+                    'AV1:AV'.$data_total,
                     [
                         'borders' => [
                             'right' => $border_thick
-                        ],
-                    ]
-                );
-                
-
-                $event->sheet->styleCells(
-                    'A5:BQ'.$data_total,
-                    [
-                        'alignment' => $alignment_top,
-                        'borders' => [
-                            'allBorders' => $border_thin
                         ],
                     ]
                 );
