@@ -1,0 +1,5 @@
+
+#composer dump-autoload
+Run composer dump-autoload locally. Then, in your hosting site, you can update two files, autoload_classmap.php and autoload_static.php, manually in vendor/composer folder. I prefer to copy and paste the added classes from local to the hosting server.
+
+https://stackoverflow.com/questions/26109816/laravel-dump-autoload-without-shell-access

@@ -19,7 +19,7 @@ Route::get('/clear-cache', function() {
 });
 Route::get('/composer-dump-autoload', function()
 {
-    \Artisan::call('dump-autoload');
+    \Artisan::call('composer:dump-autoload');
     echo 'dump-autoload complete';
 });
 
