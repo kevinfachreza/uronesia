@@ -114,7 +114,7 @@
             <td>{{$item->diagnosis}}</td>
             <td>{{$item->is_kasus_baru == 1 ? 'New' : 'Redo'}}</td>
             <td>{{$item->komorbid}}</td>
-            <td>{{$item->riwaYest_operasi}}</td>
+            <td>{{$item->riwayat_operasi}}</td>
             <td>{{$item->penunjang_radiologi}}</td>
             <td>
                 @foreach($item->penunjang_radiology as $penunjang)
@@ -171,7 +171,7 @@
             <td>{{$item->postops_death == 1 ? 'Yes' : ''}}
                 @if($item->postops_death) - {{$item->postops_death_cause}} @endif
             </td>
-            <td>{{$item->postops_death != 1 ? '' : 'No'}}</td>
+            <td>{{$item->postops_death == 1 ? '' : 'No'}}</td>
             <td>{{$item->postops_icu_days}}</td>
             <td>
                 @if($item->postops_reoperation)
