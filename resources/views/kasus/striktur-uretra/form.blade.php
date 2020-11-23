@@ -11,6 +11,8 @@
                     
                     @include('kasus.layouts.form.patient-data')
                     @include('kasus.layouts.form.pre-ops')
+                    @include('kasus.layouts.form.pre-ops-radiology')
+                    @include('kasus.layouts.form.pre-ops-lab-sm')
 
                     <div class="row">
                         

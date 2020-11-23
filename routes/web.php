@@ -45,6 +45,20 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/trauma/{id}/form-view', 'Kasus\Trauma\ViewController@formView');
 	Route::post('/kasus/trauma/{id}/save', 'Kasus\Trauma\PostController@save');
 
+	Route::get('/kasus/urooncology', 'Kasus\UroOncology\ViewController@index');
+	Route::get('/kasus/urooncology/print', 'Kasus\UroOncology\ViewController@print');
+	Route::get('/kasus/urooncology/{id}/form', 'Kasus\UroOncology\ViewController@form');
+	Route::get('/kasus/urooncology/{id}/form-view', 'Kasus\UroOncology\ViewController@formView');
+	Route::post('/kasus/urooncology/{id}/save', 'Kasus\UroOncology\PostController@save');
+
+
+	Route::get('/kasus/benign-prostate-hiperplasia', 'Kasus\BenignProstateHiperplasia\ViewController@index');
+	Route::get('/kasus/benign-prostate-hiperplasia/print', 'Kasus\BenignProstateHiperplasia\ViewController@print');
+	Route::get('/kasus/benign-prostate-hiperplasia/{id}/form', 'Kasus\BenignProstateHiperplasia\ViewController@form');
+	Route::get('/kasus/benign-prostate-hiperplasia/{id}/form-view', 'Kasus\BenignProstateHiperplasia\ViewController@formView');
+	Route::post('/kasus/benign-prostate-hiperplasia/{id}/save', 'Kasus\BenignProstateHiperplasia\PostController@save');
+
+
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
 	Route::post('/kasus/baru', 'Kasus\PostController@create');
 
@@ -56,4 +70,9 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/api/pasien/get/{id}', 'Pasien\ViewController@apiGetPasien');
 
 
+});
+
+
+Route::get('/test-error', function() {
+    $testing = $test+$error;
 });

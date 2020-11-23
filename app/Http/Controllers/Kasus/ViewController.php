@@ -11,9 +11,10 @@ class ViewController extends Controller
 	public function create(Request $request)
 	{
 		$data['jenis'] = $request->jenis;
-
 		if($data['jenis'] == 'striktur-uretra') $jenis_display = 'Urethral Stricture';
 		elseif($data['jenis'] == 'trauma') $jenis_display = 'Trauma';
+		elseif($data['jenis'] == 'urooncology') $jenis_display = 'Uro-Oncology';
+		elseif($data['jenis'] == 'benign-prostate-hiperplasia') $jenis_display = 'Benign Prostate Hiperplasia';
 		else abort(404);
 		$data['jenis_display'] = str_replace("-", ' ', $jenis_display);
 		$data['pasien'] = Pasien::all();

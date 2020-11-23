@@ -13,6 +13,11 @@ class Kasus extends Model
         return $this->hasOne('App\Models\Pasien', 'id', 'pasien_id');
     }
 
+    public function penunjang()
+    {
+        return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id');
+    }
+
     public function penunjang_pre()
     {
         return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','pre-ops');
@@ -33,13 +38,40 @@ class Kasus extends Model
         return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','urethrography');
     }
 
-
     public function penunjang_radiology()
     {
         return $this->hasMany('App\Models\KasusPenunjang', 'kasus_id', 'id')->where('jenis','radiology');
     }
 
+    public function penunjang_lab_pre()
+    {
+        return $this->hasOne('App\Models\KasusPenunjangLab', 'kasus_id', 'id')->where('jenis','pre');
+    }
 
+    public function penunjang_lab_post()
+    {
+        return $this->hasOne('App\Models\KasusPenunjangLab', 'kasus_id', 'id')->where('jenis','post');
+    }
+
+    public function anamnesis()
+    {
+        return $this->hasOne('App\Models\KasusAnamnesis', 'kasus_id', 'id');
+    }
+
+    public function physical_exam()
+    {
+        return $this->hasOne('App\Models\KasusPhysicalExamination', 'kasus_id', 'id');
+    }
+
+    public function operative_intra()
+    {
+        return $this->hasOne('App\Models\KasusOperativeIntra', 'kasus_id', 'id');
+    }
+
+    public function operative_post()
+    {
+        return $this->hasOne('App\Models\KasusOperativePost', 'kasus_id', 'id');
+    }
 
     public function uriflowmetry()
     {

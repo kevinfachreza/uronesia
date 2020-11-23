@@ -28,6 +28,18 @@
                     <p class="subtitle">{{$count_kasus_trauma}} Cases</p>
                 </a>
             </div>
+            <div class="col-lg-6 mt-0 ">
+                <a href="{{url('kasus/urooncology')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Uro-Oncology</p>
+                    <p class="subtitle">{{$count_kasus_urooncology}} Cases</p>
+                </a>
+            </div>
+            <div class="col-lg-6 mt-0 ">
+                <a href="{{url('kasus/benign-prostate-hiperplasia')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Benign Prostate Hiperplasia</p>
+                    <p class="subtitle">{{$count_kasus_benign_prostate_hiperplasia}} Cases</p>
+                </a>
+            </div>
         </div>
     </div>
 </div>

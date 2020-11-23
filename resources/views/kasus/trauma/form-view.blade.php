@@ -11,6 +11,8 @@
 
             @include('kasus.layouts.form-view.patient-data')
             @include('kasus.layouts.form-view.pre-ops')
+            @include('kasus.layouts.form-view.pre-ops-radiology')
+            @include('kasus.layouts.form-view.pre-ops-lab-sm')
             <div class="row">
                 <div class="col-12">
                     <h6 class="display-4">History Taking</h6>

@@ -18,7 +18,7 @@ class ImageUploader extends Controller
         $ext_video = ["mp4", "webm", "3gp"];
         $ext = $file->extension();
 
-        $slug = Carbon::now()->format('dmy').$this->generateRandomString(3);
+        $slug = Carbon::now()->format('dmy').$this->generateRandomString(5);
         $uploaded_file = $file->store('/uploads');
         $name = $name.'-'.$slug.'.'.$ext;
         Storage::setVisibility($uploaded_file, 'public');

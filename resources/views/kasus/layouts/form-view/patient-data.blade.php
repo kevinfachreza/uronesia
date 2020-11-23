@@ -2,7 +2,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h4  class="display-4">PATIENTS DATA</h4>
-                            <table class="table table-no-border">
+                            <table class="table table-no-border view-data">
                                 <tr>
                                     <td style="width: 150px">MEDICAL RECORD</td>
                                     <td>:</td>

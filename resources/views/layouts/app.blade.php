@@ -40,7 +40,7 @@
     <link href="{{url('')}}/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="{{url('')}}/css/argon-design-system.css?v=1.0.2" rel="stylesheet" />
-    <link href="{{url('')}}/css/appv1.3.css" rel="stylesheet" />
+    <link href="{{url('')}}/css/appv1.3.1.css" rel="stylesheet" />
 
     <link href="/images/icons-urodatanesia/splash-640x1136.png" 
     media="(min-device-width: 320px) and (min-device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
