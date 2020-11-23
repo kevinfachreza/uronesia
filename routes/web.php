@@ -58,6 +58,18 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/benign-prostate-hiperplasia/{id}/form-view', 'Kasus\BenignProstateHiperplasia\ViewController@formView');
 	Route::post('/kasus/benign-prostate-hiperplasia/{id}/save', 'Kasus\BenignProstateHiperplasia\PostController@save');
 
+	Route::get('/kasus/kidney-transplant', 'Kasus\KidneyTransplant\ViewController@index');
+	Route::get('/kasus/kidney-transplant/print', 'Kasus\KidneyTransplant\ViewController@print');
+	Route::get('/kasus/kidney-transplant/{id}/form', 'Kasus\KidneyTransplant\ViewController@form');
+	Route::get('/kasus/kidney-transplant/{id}/form-view', 'Kasus\KidneyTransplant\ViewController@formView');
+	Route::post('/kasus/kidney-transplant/{id}/save', 'Kasus\KidneyTransplant\PostController@save');
+
+	Route::get('/kasus/laparoscopic', 'Kasus\Laparoscopic\ViewController@index');
+	Route::get('/kasus/laparoscopic/print', 'Kasus\Laparoscopic\ViewController@print');
+	Route::get('/kasus/laparoscopic/{id}/form', 'Kasus\Laparoscopic\ViewController@form');
+	Route::get('/kasus/laparoscopic/{id}/form-view', 'Kasus\Laparoscopic\ViewController@formView');
+	Route::post('/kasus/laparoscopic/{id}/save', 'Kasus\Laparoscopic\PostController@save');
+
 
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
 	Route::post('/kasus/baru', 'Kasus\PostController@create');

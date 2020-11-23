@@ -63,6 +63,11 @@ class Kasus extends Model
         return $this->hasOne('App\Models\KasusPhysicalExamination', 'kasus_id', 'id');
     }
 
+    public function operative_pre()
+    {
+        return $this->hasOne('App\Models\KasusOperativePre', 'kasus_id', 'id');
+    }
+
     public function operative_intra()
     {
         return $this->hasOne('App\Models\KasusOperativeIntra', 'kasus_id', 'id');

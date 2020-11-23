@@ -40,6 +40,18 @@
                     <p class="subtitle">{{$count_kasus_benign_prostate_hiperplasia}} Cases</p>
                 </a>
             </div>
+            <div class="col-lg-6 mt-0 ">
+                <a href="{{url('kasus/kidney-transplant')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Kidney Transplant</p>
+                    <p class="subtitle">{{$count_kasus_kidney_transplant}} Cases</p>
+                </a>
+            </div>
+            <div class="col-lg-6 mt-0 ">
+                <a href="{{url('kasus/laparoscopic')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Laparoscopic</p>
+                    <p class="subtitle">{{$count_kasus_laparoscopic}} Cases</p>
+                </a>
+            </div>
         </div>
     </div>
 </div>

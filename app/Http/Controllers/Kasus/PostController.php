@@ -76,6 +76,7 @@ class PostController extends Controller
 		$data_split['penunjang_lab_pre'] = [];
 		$data_split['penunjang_lab_post'] = [];
 		$data_split['file'] = [];
+		$data_split['pre_operative'] = [];
 		$data_split['intra_operative'] = [];
 		$data_split['post_operative'] = [];
 		$data_split['uroflowmetry'] = [];
@@ -107,6 +108,10 @@ class PostController extends Controller
 			$data_split['penunjang_lab_post']['kasus_id'] = $kasus_id;
 			$data_split['penunjang_lab_post']['jenis'] = 'post';
 			app('App\Http\Controllers\KasusPenunjangLab\PostController')->save($data_split['penunjang_lab_post']);
+		}
+		if(count($data_split['pre_operative'])>0){
+			$data_split['pre_operative']['kasus_id'] = $kasus_id;
+			app('App\Http\Controllers\KasusOperativePre\PostController')->save($data_split['pre_operative']);
 		}
 		if(count($data_split['intra_operative'])>0){
 			$data_split['intra_operative']['kasus_id'] = $kasus_id;
