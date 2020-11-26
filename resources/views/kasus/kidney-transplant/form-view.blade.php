@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-12">
             <h4 class="display-3">Kidney Transplant Case</h4>
-            <a class="btn btn-primary" href="{{url('')}}/kasus/urooncology/{{$kasus->id}}/form"><i class="fa fa-pencil"></i> Edit</a>
+            <a class="btn btn-primary" href="{{url('')}}/kasus/kidney-transplant/{{$kasus->id}}/form"><i class="fa fa-pencil"></i> Edit</a>
             <hr>
             @include('kasus.layouts.form-view.patient-data')
             @include('kasus.kidney-transplant.form-view-components.pre-operative')
