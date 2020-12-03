@@ -120,7 +120,7 @@
                         </tr>
                     </table>
 
-                    <h4 class="display-4">INTRA OPERATION</h4>
+                    <h4 class="display-4">INTRA OPERATIVE</h4>
 
                     <table class="table table-no-border table-uppercase-first">
                         <tr>
@@ -197,7 +197,7 @@
 
                     <hr>
 
-                    <h4 class="display-4">POST OPERATION</h4>
+                    <h4 class="display-4">POST OPERATIVE</h4>
 
                     @include('kasus.components-form.radio-button-yes-no-view',
                     ['default'=> $kasus->postops_death, 'label'=>'Death '])

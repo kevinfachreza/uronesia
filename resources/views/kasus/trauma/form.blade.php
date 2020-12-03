@@ -142,7 +142,7 @@
                 <div class="row">
                     <div class="col-12 mt-2">
                         <hr style="width: 100%">
-                        <h4 class="display-4">INTRA OPERATION</h4>
+                        <h4 class="display-4">INTRA OPERATIVE</h4>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
@@ -212,7 +212,7 @@
                 <div class="row">
                     <div class="col-12 mt-2">
                         <hr style="width: 100%">
-                        <h4 class="display-4">POST OPERATION</h4>
+                        <h4 class="display-4">POST OPERATIVE</h4>
                     </div>
                     <div class="col-12">
                         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->postops_death, 'label'=>'Death','name'=>'postops_death'])

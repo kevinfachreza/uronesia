@@ -21,7 +21,7 @@
 
                         <div class="col-12">
                             <hr style="width: 100%">
-                            <h4 class="display-4">INTRA OPERATION</h4>
+                            <h4 class="display-4">INTRA OPERATIVE</h4>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
@@ -194,18 +194,18 @@
 
                         <div class="col-12 mt-2">
                             <hr style="width: 100%">
-                            <h4 class="display-4">POST OPERATION</h4>
+                            <h4 class="display-4">POST OPERATIVE</h4>
                             <h5>Erection Hardness Score</h5>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="label">Pre Operation</label>
+                                <label class="label">Pre Operative</label>
                                 <input type="number" class="form-control" name="ops_skor_ereksi_pre_ops" value="{{$kasus->ops_skor_ereksi_pre_ops}}">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="label">Post Operation</label>
+                                <label class="label">Post Operative</label>
                                 <input type="number" class="form-control" name="ops_skor_ereksi_post_ops" value="{{$kasus->ops_skor_ereksi_post_ops}}">
                             </div>
                         </div>
@@ -218,13 +218,13 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="label">Pre Operation</label>
+                                <label class="label">Pre Operative</label>
                                 <input type="number" class="form-control" name="ops_panjang_penis_pre_ops" value="{{$kasus->ops_panjang_penis_pre_ops}}">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="label">Post Operation</label>
+                                <label class="label">Post Operative</label>
                                 <input type="number" class="form-control" name="ops_panjang_penis_post_ops" value="{{$kasus->ops_panjang_penis_post_ops}}">
                             </div>
                         </div>
