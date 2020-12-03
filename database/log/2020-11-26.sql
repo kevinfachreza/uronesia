@@ -8,7 +8,7 @@ ALTER TABLE `kasus_operative_pre`
 	ADD COLUMN `comorbid_omphalocele` VARCHAR(6) NULL AFTER `comorbid_down_syndrome`,
 	ADD COLUMN `comorbid_gastrosciziz` VARCHAR(6) NULL AFTER `comorbid_omphalocele`;
 
-ALTER TABLE `urodatanesia`.`kasus_physical_examination`   
+ALTER TABLE `kasus_physical_examination`   
 	ADD COLUMN `testes_right_palpable_size` TEXT NULL AFTER `testes_hydrocele`,
 	ADD COLUMN `testes_right_palpable_pos` TEXT NULL AFTER `testes_right_palpable_size`,
 	ADD COLUMN `testes_right_palpable_non` TEXT NULL AFTER `testes_right_palpable_pos`,
@@ -32,7 +32,7 @@ ALTER TABLE `urodatanesia`.`kasus_physical_examination`
 	ADD COLUMN `child_hydro_urogical_suprapubic` TEXT NULL AFTER `child_hydro_urogical_flank`,
 	ADD COLUMN `child_hydro_ext_genitalia` TEXT NULL AFTER `child_hydro_urogical_suprapubic`;
 
-ALTER TABLE `urodatanesia`.`kasus_physical_examination`   
+ALTER TABLE `kasus_physical_examination`   
 	ADD COLUMN `testes_udt` TEXT NULL AFTER `penis_mass`,
 	ADD COLUMN `glans_hole` TEXT NULL AFTER `child_hydro_ext_genitalia`,
 	ADD COLUMN `glans_shape` TEXT NULL AFTER `glans_hole`,
@@ -53,13 +53,13 @@ ALTER TABLE `urodatanesia`.`kasus_physical_examination`
 	ADD COLUMN `hypospadia_others` TEXT NULL AFTER `hormonal_manipulated_before_surgery`,
 	ADD COLUMN `hypospadia_congenital_abnormalitis` TEXT NULL AFTER `hypospadia_others`;
 
-ALTER TABLE `urodatanesia`.`kasus_operative_pre`   
+ALTER TABLE `kasus_operative_pre`   
 	ADD COLUMN `chromosomal_analysis` TEXT NULL AFTER `hbsag_recipient`,
 	ADD COLUMN `renogram` TEXT NULL AFTER `chromosomal_analysis`,
 	ADD COLUMN `final_diagnosis` TEXT NULL AFTER `renogram`;
 
 
-ALTER TABLE `urodatanesia`.`kasus_operative_intra`   
+ALTER TABLE `kasus_operative_intra`   
 	ADD COLUMN `urinary_diversion_cystostomy_size` TEXT NULL AFTER `urethral_implantation_others`,
 	ADD COLUMN `urinary_diversion_ureter_cath_size` TEXT NULL AFTER `urinary_diversion_cystostomy_size`,
 	ADD COLUMN `urinary_diversion_ureter_cath_pos` TEXT NULL AFTER `urinary_diversion_ureter_cath_size`;
