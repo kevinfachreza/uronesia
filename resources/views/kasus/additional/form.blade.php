@@ -4,15 +4,15 @@
 <div class="container main-content py-4">
     <div class="row">
         <div class="col-12">
-            <h4 class="display-3">Laparoscopic Case</h4>
+            <h4 class="display-3">Additional Case</h4>
             <hr>
-            <form method="POST" action="{{url('kasus/laparoscopic')}}/{{$kasus->id}}/save" enctype="multipart/form-data">
+            <form method="POST" action="{{url('kasus/additional')}}/{{$kasus->id}}/save" enctype="multipart/form-data">
                 {{csrf_field()}}
                 @include('kasus.layouts.form.patient-data')
-                @include('kasus.layouts.form.pre-ops-2')
-                @include('kasus.laparoscopic.form-components.pre-operative')
-                @include('kasus.laparoscopic.form-components.intra-operative')
-                @include('kasus.laparoscopic.form-components.post-operative')
+                @include('kasus.layouts.form.pre-ops')
+                @include('kasus.additional.components-form.pre-operative')
+                @include('kasus.additional.components-form.intra-operative')
+                @include('kasus.additional.components-form.post-operative')
 
                 <div class="row mt-5">
                     <div class="col-12">
@@ -46,7 +46,14 @@ $('select[name=main_complaint_pain_location]').change(function(){
 
 $('select[name=main_complaint_pain_location]').trigger('change');
 
-@php $photo_slugs = ['radiology-pre-usg','radiology-pre-bno','radiology-pre-ivp','radiology-pre-ct','radiology-pre-mri','radiology-post-ct','radiology-post-mri','intra-operative-clinical','post-operative-bno'] @endphp
+
+
+@php 
+$photo_slugs = ['pre-radiology-result'];
+$photo_slugs[] = 'clinical-picture-pre-ops'; 
+$photo_slugs[] = 'clinical-picture-intra-ops'; 
+$photo_slugs[] = 'clinical-picture-post-ops'; 
+@endphp
 
 @foreach($photo_slugs as $slug)
 @php $slug_kebab = str_replace("-","_",$slug); @endphp

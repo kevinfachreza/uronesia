@@ -17,6 +17,8 @@ class ViewController extends Controller
 		elseif($data['jenis'] == 'benign-prostate-hiperplasia') $jenis_display = 'Benign Prostate Hiperplasia';
 		elseif($data['jenis'] == 'kidney-transplant') $jenis_display = 'Kidney Transplant';
 		elseif($data['jenis'] == 'laparoscopic') $jenis_display = 'Laparoscopic';
+		elseif($data['jenis'] == 'additional') $jenis_display = 'Additional';
+		elseif($data['jenis'] == 'congenital-abnormalities') $jenis_display = 'Congenital Abnormalities';
 		else abort(404);
 		$data['jenis_display'] = str_replace("-", ' ', $jenis_display);
 		$data['pasien'] = Pasien::all();

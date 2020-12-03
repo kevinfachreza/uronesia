@@ -16,42 +16,54 @@
         </div>
         <h4 class="font-w700 p-0">Cases List</h4>
         <div class="row row-grid social-line social-line-big-icons">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mb-3">
                 <a href="{{url('kasus/striktur-uretra')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Urethral Stricture</p>
                     <p class="subtitle">{{$count_kasus_striktur_uretra}} Cases</p>
                 </a>
             </div>
-            <div class="col-lg-6 mt-0 ">
+            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/trauma')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Trauma</p>
                     <p class="subtitle">{{$count_kasus_trauma}} Cases</p>
                 </a>
             </div>
-            <div class="col-lg-6 mt-0 ">
+            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/urooncology')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Uro-Oncology</p>
                     <p class="subtitle">{{$count_kasus_urooncology}} Cases</p>
                 </a>
             </div>
-            <div class="col-lg-6 mt-0 ">
+            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/benign-prostate-hiperplasia')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Benign Prostate Hiperplasia</p>
                     <p class="subtitle">{{$count_kasus_benign_prostate_hiperplasia}} Cases</p>
                 </a>
             </div>
-            <div class="col-lg-6 mt-0 ">
+            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/kidney-transplant')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Kidney Transplant</p>
                     <p class="subtitle">{{$count_kasus_kidney_transplant}} Cases</p>
                 </a>
             </div>
-            <div class="col-lg-6 mt-0 ">
+            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/laparoscopic')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Laparoscopic</p>
                     <p class="subtitle">{{$count_kasus_laparoscopic}} Cases</p>
                 </a>
             </div>
+            <div class="col-lg-6 mb-3 mt-0 ">
+                <a href="{{url('kasus/additional')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Additional</p>
+                    <p class="subtitle">{{$count_kasus_additional}} Cases</p>
+                </a>
+            </div>
+            <!-- <div class="col-lg-6 mb-3 mt-0 ">
+                <a href="{{url('kasus/congenital-abnormalities')}}" class="btn btn-gradient-yellow btn-footer">
+                    <p class="title">Congenital Abnormalities</p>
+                    <p class="subtitle">{{$count_kasus_congenital_abnormalities}} Cases</p>
+                </a>
+            </div> -->
         </div>
     </div>
 </div>
