@@ -170,12 +170,12 @@
             <tr>
                 <td style="width: 150px">Hernia</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->hernia ?? ''}}</td>
+                <td>{{$kasus->physical_exam->hernia == 1 ? 'Yes' : 'No'}}</td>
             </tr>
             <tr>
                 <td>Haemorrhoid</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->haemorrhoid ?? ''}}</td>
+                <td>{{$kasus->physical_exam->haemorrhoid == 1 ? 'Yes' : 'No'}}</td>
             </tr>
         </table>
 
