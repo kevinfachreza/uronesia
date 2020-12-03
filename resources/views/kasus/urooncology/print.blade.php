@@ -322,14 +322,14 @@
             <td>{{$item->operative_post->urethral_cath ?? ''}}</td>
             <td>{{$item->operative_post->bno ?? ''}}</td>
             <td>
-                HB : {{$item->penunjang_lab_pre->lab_hb ?? ''}}<br>
-                HT : {{$item->penunjang_lab_pre->lab_l ?? ''}}<br>
-                Leucocyte : {{$item->penunjang_lab_pre->lab_leucocyte ?? ''}}<br>
-                Trombocyte : {{$item->penunjang_lab_pre->lab_trombocyte ?? ''}}<br>
-                UR : {{$item->penunjang_lab_pre->lab_ur ?? ''}}<br>
-                CR : {{$item->penunjang_lab_pre->lab_cr ?? ''}}<br>
-                Na : {{$item->penunjang_lab_pre->lab_na ?? ''}}<br>
-                K : {{$item->penunjang_lab_pre->lab_k ?? ''}}<br>
+                HB : {{$item->penunjang_lab_post->lab_hb ?? ''}}<br>
+                HT : {{$item->penunjang_lab_post->lab_l ?? ''}}<br>
+                Leucocyte : {{$item->penunjang_lab_post->lab_leucocyte ?? ''}}<br>
+                Trombocyte : {{$item->penunjang_lab_post->lab_trombocyte ?? ''}}<br>
+                UR : {{$item->penunjang_lab_post->lab_ur ?? ''}}<br>
+                CR : {{$item->penunjang_lab_post->lab_cr ?? ''}}<br>
+                Na : {{$item->penunjang_lab_post->lab_na ?? ''}}<br>
+                K : {{$item->penunjang_lab_post->lab_k ?? ''}}<br>
             </td>
 
             @php 
