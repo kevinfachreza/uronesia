@@ -52,13 +52,14 @@
                     <p class="subtitle">{{$count_kasus_laparoscopic}} Cases</p>
                 </a>
             </div>
+            <!-- 
             <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/additional')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Additional</p>
                     <p class="subtitle">{{$count_kasus_additional}} Cases</p>
                 </a>
             </div>
-            <!-- <div class="col-lg-6 mb-3 mt-0 ">
+            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/congenital-abnormalities')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Congenital Abnormalities</p>
                     <p class="subtitle">{{$count_kasus_congenital_abnormalities}} Cases</p>

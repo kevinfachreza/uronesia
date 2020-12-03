@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-12">
         <h4 class="display-4">POST OPERATIVE</h4>
-        <h6 style="font-weight: 600" class="text-primary">Operator</h6>
         <table class="table table-no-border">
             <tr>
                 <td style="width: 150px">Drain (cc)</td>

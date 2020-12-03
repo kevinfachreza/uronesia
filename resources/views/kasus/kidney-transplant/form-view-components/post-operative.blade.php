@@ -42,42 +42,42 @@
             <tr>
                 <td style="width: 150px">HB</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_hb ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_hb ?? ''}}</td>
             </tr>
             <tr>
                 <td>Leucocyte</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_leucocyte ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_leucocyte ?? ''}}</td>
             </tr>
             <tr>
                 <td>Platelets</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_trombocyte ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_trombocyte ?? ''}}</td>
             </tr>
             <tr>
                 <td>Ureum</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_ur ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_ur ?? ''}}</td>
             </tr>
             <tr>
                 <td>Creatinine</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_cr ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_cr ?? ''}}</td>
             </tr>
             <tr>
                 <td>Na</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_na ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_na ?? ''}}</td>
             </tr>
             <tr>
                 <td>K</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_k ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_k ?? ''}}</td>
             </tr>
             <tr>
                 <td>Cl</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_cl ?? ''}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_cl ?? ''}}</td>
             </tr>
         </table>
 

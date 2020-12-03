@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/kidney-transplant/print', 'Kasus\KidneyTransplant\ViewController@print');
 	Route::get('/kasus/kidney-transplant/{id}/form', 'Kasus\KidneyTransplant\ViewController@form');
 	Route::get('/kasus/kidney-transplant/{id}/form-view', 'Kasus\KidneyTransplant\ViewController@formView');
-	Route::post('/kasus/kidney-transplant/{id}/save', 'Kasus\KidneyTransplant@globalSave');
+	Route::post('/kasus/kidney-transplant/{id}/save', 'Kasus\PostController@globalSave');
 
 	Route::get('/kasus/laparoscopic', 'Kasus\Laparoscopic\ViewController@index');
 	Route::get('/kasus/laparoscopic/print', 'Kasus\Laparoscopic\ViewController@print');
