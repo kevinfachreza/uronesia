@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-12">
         <hr style="width: 100%">
-        <h1 class="display-4">PRE OPERATION</h1>
+        <h1 class="display-4">PRE OPERATIVE</h1>
 
         <table class="table table-no-border view-data">
             <tr>

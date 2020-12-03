@@ -8,11 +8,13 @@
         </div>
         @php $count = 0 @endphp
         @foreach($files as $item)
-        @if($item->jenis == $slug_kebab)
+        @if($item->jenis == $slug_kebab || $item->jenis == $slug)
         @php $count++ @endphp
         <div class="col-lg-2 col-md-4 col-6">
             <div style="border:solid 1px #eee; text-align: center;height: 100px">
-                <img src="{{url('')}}/{{$item->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
+                <a href="{{url('')}}/{{$item->path}}" target="_blank" class="disable-loading">
+                    <img src="{{url('')}}/{{$item->path}}" class="img-fluid" style="max-height: 100%; max-width: 100%;">
+                </a>
             </div>
         </div>
         @endif
