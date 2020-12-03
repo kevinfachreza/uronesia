@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Kasus\UroOncology;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Kasus;
-use App\Exports\TraumaExcel;
+use App\Exports\UrooncologyExcel;
 use Auth;
 
 class ViewController extends Controller
@@ -47,12 +47,12 @@ class ViewController extends Controller
 	public function print()
 	{
 		$user_id = Auth::user()->id;
-		$result = Kasus::where('jenis_kasus','urooncology')->with('pasien','penunjang_radiology')->where('created_by',$user_id)->get();
+		$result = Kasus::where('jenis_kasus','urooncology')->with('pasien','penunjang_radiology','anamnesis')->where('created_by',$user_id)->get();
 
 
 		$data['kasus'] = $result;
 
 		$data['view'] = 'kasus.urooncology.print';
-		return (new TraumaExcel($data))->download('Trauma.xlsx');
+		return (new UrooncologyExcel($data))->download('Urooncology.xlsx');
 	}
 }

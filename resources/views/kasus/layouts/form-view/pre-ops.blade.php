@@ -28,7 +28,7 @@
             <tr>
                 <td>CASE</td>
                 <td>:</td>
-                <td>{{$kasus->is_kasus_baru == 1 ? 'Baru' : 'Lama'}}</td>
+                <td>{{$kasus->is_kasus_baru == 1 ? 'New' : 'Redo'}}</td>
             </tr>
             <tr>
                 <td>SURGICAL HISTORY</td>
