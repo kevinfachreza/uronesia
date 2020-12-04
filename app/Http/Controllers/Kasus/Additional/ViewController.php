@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Kasus\Additional;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Kasus;
-use App\Exports\TraumaExcel;
+use App\Exports\AdditionalExcel;
 use Auth;
 
 class ViewController extends Controller
@@ -53,6 +53,6 @@ class ViewController extends Controller
 		$data['kasus'] = $result;
 
 		$data['view'] = 'kasus.additional.print';
-		return (new TraumaExcel($data))->download('Trauma.xlsx');
+		return (new AdditionalExcel($data))->download('Additional.xlsx');
 	}
 }
