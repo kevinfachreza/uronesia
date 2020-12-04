@@ -36,6 +36,12 @@ class HomeController extends Controller
         $data['count_kasus_additional'] = Kasus::where('jenis_kasus','additional')->where('created_by',$user_id)->count();
         $data['count_kasus_congenital_abnormalities'] = Kasus::where('jenis_kasus','congenital-abnormalities')->where('created_by',$user_id)->count();
 
+        $data['count_kasus_stone'] = Kasus::where('jenis_kasus','stone')->where('created_by',$user_id)->count();
+        $data['count_kasus_male_infertility'] = Kasus::where('jenis_kasus','male-infertility')->where('created_by',$user_id)->count();
+        $data['count_kasus_penile_paraffinoma'] = Kasus::where('jenis_kasus','penile-paraffinoma')->where('created_by',$user_id)->count();
+        $data['count_kasus_urogenital_trauma'] = Kasus::where('jenis_kasus','urogenital-trauma')->where('created_by',$user_id)->count();
+        $data['count_kasus_uroginecology'] = Kasus::where('jenis_kasus','uroginecology')->where('created_by',$user_id)->count();
+
         
 
 

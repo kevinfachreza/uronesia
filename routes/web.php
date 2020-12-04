@@ -70,21 +70,24 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/laparoscopic/{id}/form-view', 'Kasus\Laparoscopic\ViewController@formView');
 	Route::post('/kasus/laparoscopic/{id}/save', 'Kasus\PostController@globalSave');
 
-	Route::get('/kasus/additional', 'Kasus\Additional\ViewController@index');
+	/*Route::get('/kasus/additional', 'Kasus\Additional\ViewController@index');
 	Route::get('/kasus/additional/print', 'Kasus\Additional\ViewController@print');
 	Route::get('/kasus/additional/{id}/form', 'Kasus\Additional\ViewController@form');
 	Route::get('/kasus/additional/{id}/form-view', 'Kasus\Additional\ViewController@formView');
-	Route::post('/kasus/additional/{id}/save', 'Kasus\PostController@globalSave');
+	Route::post('/kasus/additional/{id}/save', 'Kasus\PostController@globalSave');*/
 
-	Route::get('/kasus/congenital-abnormalities', 'Kasus\CongenitalAbnormalities\ViewController@index');
+	/*Route::get('/kasus/congenital-abnormalities', 'Kasus\CongenitalAbnormalities\ViewController@index');
 	Route::get('/kasus/congenital-abnormalities/print', 'Kasus\CongenitalAbnormalities\ViewController@print');
 	Route::get('/kasus/congenital-abnormalities/{id}/form', 'Kasus\CongenitalAbnormalities\ViewController@form');
 	Route::get('/kasus/congenital-abnormalities/{id}/form-view', 'Kasus\CongenitalAbnormalities\ViewController@formView');
-	Route::post('/kasus/congenital-abnormalities/{id}/save', 'Kasus\PostController@globalSave');
+	Route::post('/kasus/congenital-abnormalities/{id}/save', 'Kasus\PostController@globalSave');*/
 
 
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
 	Route::post('/kasus/baru', 'Kasus\PostController@create');
+
+
+	Route::get('/kasus/{jenis_kasus}', 'Kasus\ViewController@kasusSingle');
 
 
 	Route::get('/admin', 'Admin\ViewController@index');
