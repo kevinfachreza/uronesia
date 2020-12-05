@@ -76,11 +76,11 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/additional/{id}/form-view', 'Kasus\Additional\ViewController@formView');
 	Route::post('/kasus/additional/{id}/save', 'Kasus\PostController@globalSave');
 
-	/*Route::get('/kasus/congenital-abnormalities', 'Kasus\CongenitalAbnormalities\ViewController@index');
+	Route::get('/kasus/congenital-abnormalities', 'Kasus\CongenitalAbnormalities\ViewController@index');
 	Route::get('/kasus/congenital-abnormalities/print', 'Kasus\CongenitalAbnormalities\ViewController@print');
 	Route::get('/kasus/congenital-abnormalities/{id}/form', 'Kasus\CongenitalAbnormalities\ViewController@form');
 	Route::get('/kasus/congenital-abnormalities/{id}/form-view', 'Kasus\CongenitalAbnormalities\ViewController@formView');
-	Route::post('/kasus/congenital-abnormalities/{id}/save', 'Kasus\PostController@globalSave');*/
+	Route::post('/kasus/congenital-abnormalities/{id}/save', 'Kasus\PostController@globalSave');
 
 
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
