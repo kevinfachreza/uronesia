@@ -1,0 +1,253 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <style type="text/css">
+      th{
+        border:solid 1px #000;
+      }
+  </style>
+</head>
+
+<body>
+<table id="example" class="" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="9">Patient Data</th>
+            <th colspan="23">Pre Operation</th>
+            <th colspan="47">Intra Operation</th> 
+            <th colspan="15">Post Operation</th>
+        </tr>
+        <tr>
+            <th rowspan="5">No</th>
+            <th rowspan="5">Name</th>
+            <th rowspan="5">Age (Years Old)</th>
+            <th rowspan="5">Gender</th>
+            <th rowspan="5">Height</th>
+            <th rowspan="5">Weight</th>
+            <th rowspan="5">BMI</th>
+            <th rowspan="5">Medical Record</th>
+            <th rowspan="5">Phone Number</th>
+
+            <th rowspan="5">Operation Date</th>
+            <th rowspan="5">Length of Stay (Day)</th>
+            <th rowspan="5">Diagnosis</th>
+            <th rowspan="5">Case</th>
+            <th rowspan="1" colspan="5">Comorbid</th>
+            <th rowspan="5">Surgical History</th>
+            <th colspan="5">Radiology Result</th>
+            <th rowspan="1" colspan="8">Laboratory Result</th>
+
+            <th rowspan="5">Operator</th>
+            <th rowspan="5">Position</th>
+            <th colspan="21">Surgical Techniques</th>
+            <th colspan="4">Fluoroscopy</th>
+            <th colspan="7">Stone Fragmentation</th>
+            <th colspan="4">Complication</th>
+            <th rowspan="5">Bleeding (cc)</th>
+            <th rowspan="5">Transfusion (Kolf)</th>
+            <th colspan="3">Failed Procedure</th>
+            <th colspan="4">Rest Stone</th>
+            <th rowspan="5">BNO Post Op</th>
+            <th colspan="8">Laboratory</th>
+            <th rowspan="5">VAS</th>
+            <th rowspan="5">Nefrostomy Production (cc/color) </th>
+            <th rowspan="5">Analgetics</th>
+            <th rowspan="5">Catheter Production (cc/color)</th>
+            <th rowspan="5">Transfusion (kolf)</th>
+            <th rowspan="5">Wound Dehicense</th>
+        </tr>
+        <tr>
+            <th rowspan="4">DM</th>
+            <th rowspan="4">Hypertension</th>
+            <th rowspan="4">CKD</th>
+            <th rowspan="4">Heart</th>
+            <th rowspan="4">Stroke</th>
+            <th rowspan="4">USG</th>
+            <th rowspan="4">BNO</th>
+            <th rowspan="4">IVP</th>
+            <th rowspan="4">CT</th>
+            <th rowspan="4">MRI</th>
+            <th rowspan="4">HB</th>
+            <th rowspan="4">HT</th>
+            <th rowspan="4">L</th>
+            <th rowspan="4">TR</th>
+            <th rowspan="4">UR</th>
+            <th rowspan="4">CR</th>
+            <th rowspan="4">Na</th>
+            <th rowspan="4">K</th>
+
+            <th rowspan="4">Open (Description)</th>
+            <th colspan="15">PCNL</th>
+            <th rowspan="4">RIRS</th>
+            <th rowspan="4">URS</th>
+            <th rowspan="4">Vesicolithotripsi</th>
+            <th rowspan="4">Liithotripsi Urethral stone</th>
+            <th rowspan="4">Time (Minutes)</th>
+            <th colspan="3">Yes</th>
+            <th rowspan="4">No</th>
+            <th rowspan="4">Pneumatic</th>
+            <th rowspan="4">Ultrasound</th>
+            <th rowspan="4">Laser</th>
+            <th rowspan="4">Lowsley</th>
+            <th rowspan="4">Stone Punch</th>
+            <th rowspan="4">Hendrikson</th>
+            <th rowspan="4">No</th>
+            <th rowspan="4">No</th>
+            <th colspan="3">Yes</th>
+            <th rowspan="4">No</th>
+            <th colspan="2">Yes</th>
+            <th rowspan="4">No</th>
+            <th colspan="3">Yes</th>
+            <th rowspan="4">HB</th>
+            <th rowspan="4">HT</th>
+            <th rowspan="4">L</th>
+            <th rowspan="4">TR</th>
+            <th rowspan="4">UR</th>
+            <th rowspan="4">CR</th>
+            <th rowspan="4">Na</th>
+            <th rowspan="4">K</th>
+        </tr>
+        <tr>
+            <th rowspan="3">Cystoscopy</th>
+            <th colspan="7">Operation Time (Minutes)</th>
+            <th colspan="5">Puncture</th>
+            <th colspan="2">Dilatation</th>
+
+            <th rowspan="3">Pre op Imaging</th>
+            <th rowspan="3">Post op Imaging</th>
+            <th rowspan="3">Time (Minutes)</th>
+
+            <th rowspan="3">Perforation</th>
+            <th rowspan="3">Intestinal Perforation</th>
+            <th rowspan="3">Hydrothorax</th>
+
+            <th rowspan="3">Cause</th>
+            <th rowspan="3">Open Conversion</th>
+
+            <th rowspan="3">Size</th>
+            <th rowspan="3">Plan</th>
+            <th rowspan="3">Clinical Picture</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Position</th>
+            <th colspan="5">PCNL</th>
+            <th rowspan="2">Total Time (Minutes)</th>
+
+            <th rowspan="2">Below Costa 12</th>
+            <th rowspan="2">Above Costa 12</th>
+            <th rowspan="2">Above Costa 11</th>
+            <th rowspan="2">Type</th>
+            <th rowspan="2">Multi puncture</th>
+            <th rowspan="2">Type</th>
+            <th rowspan="2">Number Amplatz (Fr)</th>
+        </tr>
+        <tr>
+            <th>Puncture</th>
+            <th>Dilatation</th>
+            <th>Lithotripsi</th>
+            <th>DJ Stent</th>
+            <th>Nefrostomy</th>
+        </tr>
+    </thead>
+    <tbody>
+                <tr role="row">
+            <td>1</td>
+            <td>Bambang</td>
+            <td>23 Years Old</td>
+            <td>Man</td>
+            <td>170</td>
+            <td>75</td>
+            <td>25.95</td>
+            <td>912301</td>
+            <td>082329123123</td>
+            
+            <td>2020-12-12</td>
+            <td>5</td>
+            <td>DIAGNOSIS</td>
+            <td>Residif</td>
+            <td>
+                                 Yes             </td>
+            <td>
+                                 Yes             </td>
+            <td>
+                                 Yes             </td>
+            <td>
+                                 Yes             </td>
+            <td>
+                                 Yes             </td>
+
+            <td>SURGICAL HISTORY</td>
+            
+             
+
+                        <td>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220eLKSH.jpeg" target="_blank">#File1</a><br>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220wFIZy.jpeg" target="_blank">#File2</a><br>
+                                                                            </td>
+                        <td>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220Ti7Gm.jpeg" target="_blank">#File3</a><br>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220M5TiN.jpeg" target="_blank">#File4</a><br>
+                                                                    </td>
+                        <td>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-12122052662.jpeg" target="_blank">#File5</a><br>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220i5OBy.jpeg" target="_blank">#File6</a><br>
+                                                            </td>
+                        <td>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220CWhkd.jpeg" target="_blank">#File7</a><br>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220qBBBb.jpeg" target="_blank">#File8</a><br>
+                                                    </td>
+                        <td>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220Q9mhG.jpeg" target="_blank">#File9</a><br>
+                <a class="" href="http://localhost/urodatanesia/public/uploads/kasus-23-121220HUxid.jpeg" target="_blank">#File10</a><br>
+                                            </td>
+            
+
+            <td>hb1</td>
+            <td>HT1</td>
+            <td>l1</td>
+            <td>TR1</td>
+            <td>UR1</td>
+            <td>CR1</td>
+            <td>NA1</td>
+            <td>K1</td>
+
+            <td>PERATOR</td>
+            <td>Left</td>
+                
+            <td>
+                                 
+                Surgical Technique DESCRIPTION
+                            </td>
+            <td>Prone</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>12</td>
+
+
+            <td>
+                                 Yes             </td>
+            <td>
+                                 Yes             </td>
+            <td>
+                                 Yes             </td>
+            <td>
+                Media
+                </td>
+            </td>
+            <td>
+                                 Yes             </td>
+
+        </tr>
+            </tbody>
+</table>
+</body>
+</html>

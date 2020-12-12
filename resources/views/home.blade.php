@@ -72,9 +72,9 @@
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/stone')}}" class="btn btn-gradient-info btn-footer">
+                <a href="{{url('kasus/stone')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Stone</p>
-                    <p class="subtitle">Coming Soon</p>
+                    <p class="subtitle">{{$count_kasus_stone}} Cases</p>
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
