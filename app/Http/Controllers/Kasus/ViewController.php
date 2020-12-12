@@ -21,6 +21,10 @@ class ViewController extends Controller
 		elseif($data['jenis'] == 'laparoscopic') $jenis_display = 'Laparoscopic';
 		elseif($data['jenis'] == 'additional') $jenis_display = 'Additional';
 		elseif($data['jenis'] == 'congenital-abnormalities') $jenis_display = 'Congenital Abnormalities';
+		elseif($data['jenis'] == 'stone') $jenis_display = 'Stone';
+		elseif($data['jenis'] == 'male-infertility') $jenis_display = 'Male Infertility';
+		elseif($data['jenis'] == 'penile-paraffinoma') $jenis_display = 'Penile Paraffinoma';
+		elseif($data['jenis'] == 'uroginecology') $jenis_display = 'Uroginecology';
 		else abort(404);
 		$data['jenis_display'] = str_replace("-", ' ', $jenis_display);
 		$data['pasien'] = Pasien::all();
@@ -43,11 +47,10 @@ class ViewController extends Controller
 		elseif($data['jenis'] == 'stone') $jenis_display = 'Stone';
 		elseif($data['jenis'] == 'male-infertility') $jenis_display = 'Male Infertility';
 		elseif($data['jenis'] == 'penile-paraffinoma') $jenis_display = 'Penile Paraffinoma';
-		elseif($data['jenis'] == 'urogenital-trauma') $jenis_display = 'Urogenital Trauma';
 		elseif($data['jenis'] == 'uroginecology') $jenis_display = 'Uroginecology';
 		else abort(404);
 
-		$coming_soon = ['congenital-abnormalities','stone','male-infertility','penile-paraffinoma','urogenital-trauma','uroginecology'];
+		$coming_soon = ['congenital-abnormalities','stone','male-infertility','urogenital-trauma','uroginecology'];
 		$data['title'] = str_replace("-", ' ', $jenis_display);
 		$data['jenis_kasus'] = $data['jenis'];
 		$data['coming_soon'] = in_array($data['jenis_kasus'], $coming_soon);

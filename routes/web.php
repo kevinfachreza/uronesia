@@ -82,6 +82,20 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/congenital-abnormalities/{id}/form-view', 'Kasus\CongenitalAbnormalities\ViewController@formView');
 	Route::post('/kasus/congenital-abnormalities/{id}/save', 'Kasus\PostController@globalSave');
 
+	
+	Route::get('/kasus/penile-paraffinoma', 'Kasus\PenileParaffinoma\ViewController@index');
+	Route::get('/kasus/penile-paraffinoma/print', 'Kasus\PenileParaffinoma\ViewController@print');
+	Route::get('/kasus/penile-paraffinoma/{id}/form', 'Kasus\PenileParaffinoma\ViewController@form');
+	Route::get('/kasus/penile-paraffinoma/{id}/form-view', 'Kasus\PenileParaffinoma\ViewController@formView');
+	Route::post('/kasus/penile-paraffinoma/{id}/save', 'Kasus\PostController@globalSave');
+
+	
+	Route::get('/kasus/stone', 'Kasus\Stone\ViewController@index');
+	Route::get('/kasus/stone/print', 'Kasus\Stone\ViewController@print');
+	Route::get('/kasus/stone/{id}/form', 'Kasus\Stone\ViewController@form');
+	Route::get('/kasus/stone/{id}/form-view', 'Kasus\Stone\ViewController@formView');
+	Route::post('/kasus/stone/{id}/save', 'Kasus\PostController@globalSave');
+
 
 	Route::get('/kasus/baru', 'Kasus\ViewController@create');
 	Route::post('/kasus/baru', 'Kasus\PostController@create');

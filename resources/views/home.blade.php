@@ -66,33 +66,27 @@
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/stone')}}" class="btn btn-gradient-yellow btn-footer">
-                    <p class="title">Stone</p>
-                    <p class="subtitle">{{$count_kasus_stone}} Cases</p>
-                </a>
-            </div>
-            <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/male-infertility')}}" class="btn btn-gradient-yellow btn-footer">
-                    <p class="title">Male Infertility</p>
-                    <p class="subtitle">{{$count_kasus_male_infertility}} Cases</p>
-                </a>
-            </div>
-            <div class="col-lg-6 mb-3 mt-0 ">
                 <a href="{{url('kasus/penile-paraffinoma')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Penile Paraffinoma</p>
                     <p class="subtitle">{{$count_kasus_penile_paraffinoma}} Cases</p>
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/urogenital-trauma')}}" class="btn btn-gradient-yellow btn-footer">
-                    <p class="title">Urogenital Trauma</p>
-                    <p class="subtitle">{{$count_kasus_urogenital_trauma}} Cases</p>
+                <a href="{{url('kasus/stone')}}" class="btn btn-gradient-info btn-footer">
+                    <p class="title">Stone</p>
+                    <p class="subtitle">Coming Soon</p>
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/uroginecology')}}" class="btn btn-gradient-yellow btn-footer">
+                <a href="{{url('kasus/male-infertility')}}" class="btn btn-gradient-info btn-footer">
+                    <p class="title">Male Infertility</p>
+                    <p class="subtitle">Coming Soon</p>
+                </a>
+            </div>
+            <div class="col-lg-6 mb-3 mt-0 ">
+                <a href="{{url('kasus/uroginecology')}}" class="btn btn-gradient-info btn-footer">
                     <p class="title">Uroginecology</p>
-                    <p class="subtitle">{{$count_kasus_uroginecology}} Cases</p>
+                    <p class="subtitle">Coming Soon</p>
                 </a>
             </div>
         </div>

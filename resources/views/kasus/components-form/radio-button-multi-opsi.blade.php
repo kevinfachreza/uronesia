@@ -7,7 +7,7 @@
             @foreach($options as $opsi)
             @php $active = 0 @endphp
             @php $value = slugify($opsi) @endphp
-            <div class="form-check-inline">
+            <div class="form-check-inline mb-2">
                 <label class="form-check-label form-check-label-yes-no 
                 @if(!empty($default)) 
                     @if($default == $value)
