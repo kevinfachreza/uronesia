@@ -88,6 +88,7 @@ class PostController extends Controller
     	$kasus->komorbid = $request->komorbid;
     	$kasus->is_kasus_baru = $request->is_kasus_baru;
     	$kasus->riwayat_operasi = $request->riwayat_operasi;
+    	$kasus->marital_status = $request->marital_status;
     	$kasus->save();
 	}
 

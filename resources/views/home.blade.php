@@ -78,9 +78,9 @@
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/male-infertility')}}" class="btn btn-gradient-info btn-footer">
+                <a href="{{url('kasus/male-infertility')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Male Infertility</p>
-                    <p class="subtitle">Coming Soon</p>
+                    <p class="subtitle">{{$count_kasus_male_infertility}} Cases</p>
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
