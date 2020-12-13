@@ -92,3 +92,27 @@ ALTER TABLE `urodatanesia`.`kasus_physical_examination`
 
 ALTER TABLE `urodatanesia`.`kasus_operative_intra`   
 	CHANGE `treatment_others` `treatment_others` TEXT CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL;
+
+
+ALTER TABLE `urodatanesia`.`kasus_operative_intra`   
+	ADD COLUMN `dj_stent_pos` TEXT NULL AFTER `dj_stent_size`,
+	ADD COLUMN `dj_stent_duration` TEXT NULL AFTER `dj_stent_pos`,
+	ADD COLUMN `urethro_sistocopy_diagnosis` TEXT NULL AFTER `invasive_anastomosis`,
+	ADD COLUMN `bladder_mucosa_biopsy` TEXT NULL AFTER `urethro_sistocopy_diagnosis`,
+	ADD COLUMN `rpg_pos` TEXT NULL AFTER `bladder_mucosa_biopsy`,
+	ADD COLUMN `ureter_cath` TEXT NULL AFTER `rpg_pos`,
+	ADD COLUMN `nefrostomy_type` TEXT NULL AFTER `ureter_cath`,
+	ADD COLUMN `nefrostomy_pos` TEXT NULL AFTER `nefrostomy_type`,
+	ADD COLUMN `trauma_ureter` TEXT NULL AFTER `nefrostomy_pos`,
+	ADD COLUMN `trauma_bladder` TEXT NULL AFTER `trauma_ureter`,
+	ADD COLUMN `trauma_urethra` TEXT NULL AFTER `trauma_bladder`,
+	ADD COLUMN `trauma_action` TEXT NULL AFTER `trauma_urethra`,
+	ADD COLUMN `identification` TEXT NULL AFTER `trauma_action`,
+	ADD COLUMN `release` TEXT NULL AFTER `identification`,
+	ADD COLUMN `obsgyn_operator` TEXT NULL AFTER `release`,
+	ADD COLUMN `obsgyn_action` TEXT NULL AFTER `obsgyn_operator`;
+
+ALTER TABLE `urodatanesia`.`kasus_operative_post`   
+	ADD COLUMN `apg` TEXT NULL AFTER `follow_up_other`,
+	ADD COLUMN `plan_type` TEXT NULL AFTER `apg`,
+	ADD COLUMN `plan_duration` TEXT NULL AFTER `plan_type`;

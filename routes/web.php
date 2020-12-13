@@ -96,6 +96,12 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/kasus/male-infertility/{id}/form-view', 'Kasus\MaleInfertility\ViewController@formView');
 	Route::post('/kasus/male-infertility/{id}/save', 'Kasus\PostController@globalSave');
 
+
+	Route::get('/kasus/uroginecology', 'Kasus\Uroginecology\ViewController@index');
+	Route::get('/kasus/uroginecology/print', 'Kasus\Uroginecology\ViewController@print');
+	Route::get('/kasus/uroginecology/{id}/form', 'Kasus\Uroginecology\ViewController@form');
+	Route::get('/kasus/uroginecology/{id}/form-view', 'Kasus\Uroginecology\ViewController@formView');
+	Route::post('/kasus/uroginecology/{id}/save', 'Kasus\PostController@globalSave');
 	
 	Route::get('/kasus/stone', 'Kasus\Stone\ViewController@index');
 	Route::get('/kasus/stone/print', 'Kasus\Stone\ViewController@print');
