@@ -84,9 +84,9 @@
                 </a>
             </div>
             <div class="col-lg-6 mb-3 mt-0 ">
-                <a href="{{url('kasus/uroginecology')}}" class="btn btn-gradient-info btn-footer">
+                <a href="{{url('kasus/uroginecology')}}" class="btn btn-gradient-yellow btn-footer">
                     <p class="title">Uroginecology</p>
-                    <p class="subtitle">Coming Soon</p>
+                    <p class="subtitle">{{$count_kasus_uroginecology}} Cases</p>
                 </a>
             </div>
         </div>

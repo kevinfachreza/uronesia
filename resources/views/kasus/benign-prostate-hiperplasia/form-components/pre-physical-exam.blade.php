@@ -5,46 +5,43 @@
 	<div class="col-12">
 		<h6 style="font-weight: 600" class="text-primary">CVA Tenderness</h6>
 	</div>
-	<div class="col-6">
+	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Left</label>
-			<input type="text" class="form-control" name="physical_exam__cva_tenderness_left" value="{{$kasus->physical_exam->cva_tenderness_left ?? ''}}">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->cva_tenderness_left ?? '','label'=>'Left','name'=>'physical_exam__cva_tenderness_left','options' => ['Normal','Abnormal']])
 		</div>
 	</div>
-	<div class="col-6">
+	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Right</label>
-			<input type="text" class="form-control" name="physical_exam__cva_tenderness_right" value="{{$kasus->physical_exam->cva_tenderness_right ?? ''}}">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->cva_tenderness_right ?? '','label'=>'Right','name'=>'physical_exam__cva_tenderness_right','options' => ['Normal','Abnormal']])
 		</div>
 	</div>
+
 	<div class="col-12">
 		<h6 style="font-weight: 600" class="text-primary">Renal Mass</h6>
 	</div>
-	<div class="col-6">
+	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Left</label>
-			<input type="text" class="form-control" name="physical_exam__renal_mass_left" value="{{$kasus->physical_exam->renal_mass_left ?? ''}}">
-		</div>
-	</div>
-	<div class="col-6">
-		<div class="form-group">
-			<label class="label">Right</label>
-			<input type="text" class="form-control" name="physical_exam__renal_mass_right" value="{{$kasus->physical_exam->renal_mass_right ?? ''}}">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->renal_mass_left ?? '','label'=>'Left','name'=>'physical_exam__renal_mass_left','options' => ['Normal','Abnormal']])
 		</div>
 	</div>
 	<div class="col-12">
-		<h6 style="font-weight: 600" class="text-primary">Vesica Urinary</h6>
-	</div>
-	<div class="col-6">
 		<div class="form-group">
-			<label class="label">Tenderness</label>
-			<input type="text" class="form-control" name="physical_exam__vesica_urinary_tenderness" value="{{$kasus->physical_exam->vesica_urinary_tenderness ?? ''}}">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->renal_mass_right ?? '','label'=>'Right','name'=>'physical_exam__renal_mass_right','options' => ['Normal','Abnormal']])
 		</div>
 	</div>
-	<div class="col-6">
+
+
+	<div class="col-12">
+		<h6 style="font-weight: 600" class="text-primary">Vesica Urinary</h6>
+	</div>
+	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Mass</label>
-			<input type="text" class="form-control" name="physical_exam__vesica_urinary_mass" value="{{$kasus->physical_exam->vesica_urinary_mass ?? ''}}">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->vesica_urinary_tenderness ?? '','label'=>'Tenderness','name'=>'physical_exam__vesica_urinary_tenderness','options' => ['Normal','Abnormal']])
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="form-group">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->vesica_urinary_mass ?? '','label'=>'Mass','name'=>'physical_exam__vesica_urinary_mass','options' => ['Normal','Abnormal']])
 		</div>
 	</div>
 	<div class="col-12">
@@ -52,24 +49,35 @@
 	</div>
 	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Hypospadia</label>
-			<input type="text" class="form-control" name="physical_exam__hypospadia" value="{{$kasus->physical_exam->hypospadia ?? ''}}">
+
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->hypospadia ?? '','label'=>'Hypospadia','name'=>'physical_exam__hypospadia','options' => ['Yes','No']])
 		</div>
 	</div>
+
 
 	<div class="col-12">
 		<h6 style="font-weight: 600" class="text-primary">Testis Morphology</h6>
 	</div>
-	<div class="col-6">
+	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Left</label>
-			<input type="text" class="form-control" name="physical_exam__testes_morphology_left" value="{{$kasus->physical_exam->testes_morphology_left ?? ''}}">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_morphology_left ?? '','label'=>'Left','name'=>'physical_exam__testes_morphology_left','options' => ['Normal','Abnormal']])
 		</div>
 	</div>
-	<div class="col-6">
+	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Right</label>
-			<input type="text" class="form-control" name="physical_exam__testes_morphology_right" value="{{$kasus->physical_exam->testes_morphology_right ?? ''}}">
+			<label class="label">Description</label>
+			<input type="text" class="form-control" name="physical_exam__testes_morphology_left_text" value="{{$kasus->physical_exam->testes_morphology_left_text ?? ''}}">
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="form-group">
+			@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_morphology_right ?? '','label'=>'Right','name'=>'physical_exam__testes_morphology_right','options' => ['Normal','Abnormal']])
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="form-group">
+			<label class="label">Description</label>
+			<input type="text" class="form-control" name="physical_exam__testes_morphology_right_text" value="{{$kasus->physical_exam->testes_morphology_right_text ?? ''}}">
 		</div>
 	</div>
 

@@ -8,8 +8,52 @@
             <hr>
             <form method="POST" action="{{url('kasus/trauma')}}/{{$kasus->id}}/save" enctype="multipart/form-data">
                 {{csrf_field()}}
-                @include('kasus.layouts.form.patient-data')
-                @include('kasus.layouts.form.pre-ops')
+                @include('kasus.layouts.form.patient-data')<div class="row">
+                    <div class="col-12">
+                        <hr style="width: 100%">
+                        <h1 class="display-4">PRE OPERATIVE</h1>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="label">Operation Date</label>
+                            <input type="date" class="form-control" name="tanggal_operasi" value="{{$kasus->tanggal_operasi}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="label">Length of Stay (days)</label>
+                            <input type="number" class="form-control" name="lama_perawatan_hari" value="{{$kasus->lama_perawatan_hari}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="label">Diagnosis (AAST)</label>
+                            <input type="text" class="form-control" name="diagnosis" value="{{$kasus->diagnosis}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="label">Comorbid</label>
+                            <input type="text" class="form-control" name="komorbid" value="{{$kasus->komorbid}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="label">Case</label>
+                            <select class="form-control" name="is_kasus_baru">
+                                <option value="0" @if($kasus->is_kasus_baru == 0) selected @endif>Redo</option>
+                                <option value="1" @if($kasus->is_kasus_baru == 1) selected @endif>New</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="label">Surgical History</label>
+                            <input type="text" class="form-control" name="riwayat_operasi" value="{{$kasus->riwayat_operasi}}">
+                        </div>
+                    </div>
+
+                </div>
                 @include('kasus.layouts.form.pre-ops-radiology')
                 @include('kasus.layouts.form.pre-ops-lab-sm')
                 <div class="row">
@@ -207,7 +251,7 @@
                         </div>
                     </div>
 
-                    @include('kasus.components-form.select',['default'=> $kasus->intraops_surgical_technique, 'label'=>'Surgical Technique','name'=>'intraops_surgical_technique','options' => ['Nefrostomy','DJ Stent','Ureter Cathete','Cystostomy']])
+                    @include('kasus.components-form.select',['default'=> $kasus->intraops_surgical_technique, 'label'=>'Diversion','name'=>'intraops_surgical_technique','options' => ['Nefrostomy','DJ Stent','Ureter Catheter','Cystostomy']])
                 </div>
                 <div class="row">
                     <div class="col-12 mt-2">
@@ -258,56 +302,56 @@
 
 @section('js')
 <script type="text/javascript">
-$('input[name=postops_death]').change(function(){
-    changePostOpsDeath(value)
-})
-$('input[name=postops_reoperation]').change(function(){
-    value = $(this).val();
-    changePostOpsReoperation(value)
-})
+    $('input[name=postops_death]').change(function(){
+        changePostOpsDeath(value)
+    })
+    $('input[name=postops_reoperation]').change(function(){
+        value = $(this).val();
+        changePostOpsReoperation(value)
+    })
 
-function changePostOpsDeath(value)
-{
-    if(value == 1) $('input[name=postops_death_cause]').parent().parent().show()
-    else $('input[name=postops_death_cause]').parent().parent().hide()
-}
-
-function changePostOpsReoperation(value)
-{
-    if(value == 1) 
+    function changePostOpsDeath(value)
     {
-        $('input[name=postops_reoperation_cause]').parent().parent().show()
-        $('input[name=postops_reoperation_days]').parent().parent().show()
-    }
-    else 
+        if(value == 1) $('input[name=postops_death_cause]').parent().parent().show()
+            else $('input[name=postops_death_cause]').parent().parent().hide()
+        }
+
+    function changePostOpsReoperation(value)
     {
-        $('input[name=postops_reoperation_cause]').parent().parent().hide()
-        $('input[name=postops_reoperation_days]').parent().parent().hide()
+        if(value == 1) 
+        {
+            $('input[name=postops_reoperation_cause]').parent().parent().show()
+            $('input[name=postops_reoperation_days]').parent().parent().show()
+        }
+        else 
+        {
+            $('input[name=postops_reoperation_cause]').parent().parent().hide()
+            $('input[name=postops_reoperation_days]').parent().parent().hide()
+        }
     }
-}
-$('select[name=trauma_type]').change(function(){
-    value = $(this).val();
-    if(value == 'other') $('input[name=trauma_type_others]').parent().parent().show()
-    else $('input[name=trauma_type_others]').parent().parent().hide()
-})
+    $('select[name=trauma_type]').change(function(){
+        value = $(this).val();
+        if(value == 'other') $('input[name=trauma_type_others]').parent().parent().show()
+            else $('input[name=trauma_type_others]').parent().parent().hide()
+        })
 
-$('select[name=main_complaint_pain_location]').change(function(){
-    value = $(this).val();
-    if(value == 'other') $('input[name=main_complaint_pain_location_others]').parent().parent().show()
-    else $('input[name=main_complaint_pain_location_others]').parent().parent().hide()
-})
+    $('select[name=main_complaint_pain_location]').change(function(){
+        value = $(this).val();
+        if(value == 'other') $('input[name=main_complaint_pain_location_others]').parent().parent().show()
+            else $('input[name=main_complaint_pain_location_others]').parent().parent().hide()
+        })
 
-$('#foto-klinis-radiology-add').click(function(){
-    var file_input = `<div class="mt-2"><input type="file" name="file_radiology[]"></div>`
-    $('#foto-klinis-radiology-container').append(file_input)
-})
-
+    $('#foto-klinis-radiology-add').click(function(){
+        var file_input = `<div class="mt-2"><input type="file" name="file_radiology[]"></div>`
+        $('#foto-klinis-radiology-container').append(file_input)
+    })
 
 
-$('select[name=trauma_type]').trigger('change');
-$('select[name=main_complaint_pain_location]').trigger('change');
-changePostOpsDeath('{{$kasus->postops_death}}')
-changePostOpsReoperation('{{$kasus->postops_reoperation}}')
+
+    $('select[name=trauma_type]').trigger('change');
+    $('select[name=main_complaint_pain_location]').trigger('change');
+    changePostOpsDeath('{{$kasus->postops_death}}')
+    changePostOpsReoperation('{{$kasus->postops_reoperation}}')
 
 
 

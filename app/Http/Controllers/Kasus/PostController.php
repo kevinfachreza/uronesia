@@ -181,4 +181,19 @@ class PostController extends Controller
 	{
 		return ['id','created_at','updated_at','deleted_at','deleted_by'];
 	}
+
+	public function delete(Request $request)
+	{
+		DB::beginTransaction();
+
+		$kasus = Kasus::find($request->id);
+		$kasus->delete();
+
+		DB::commit();
+		return redirect('kasus/'.$request->jenis_kasus)	
+		->with('message','Case Deleted')
+		->with('status', 1)
+		->with('title', 'Success');
+
+	}
 }

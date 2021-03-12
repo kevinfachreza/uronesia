@@ -76,16 +76,143 @@ $('input[name=post_operative__complication]').change(function(){
 
 function changePostOpsComplication(value)
 {
-    console.log(value)
     if(value == 1) $('input[name=post_operative__complication_action]').parent().parent().show()
     else $('input[name=post_operative__complication_action]').parent().parent().hide()
 }
 
 
+$('input[name=physical_exam__testes_left_size_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamTestisLeftSize(value)
+})
 
-changePostOpsDeath('{{$kasus->operative_post->death ?? ''}}')
-changePostOpsComplication('{{$kasus->operative_post->complication ?? ''}}')
-changeAnamnesisHistoryUrineStone('{{$kasus->anamnesis->history_of_urinarytract_stone ?? ''}}')
+$('input[name=physical_exam__testes_right_size_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamTestisRightSize(value)
+})
+
+$('input[name=physical_exam__testes_right_consistency_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamTestisRightCons(value)
+})
+$('input[name=physical_exam__testes_left_consistency_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamTestisLeftCons(value)
+})
+
+
+function changePhysicalExamTestisRightCons(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__testes_right_consistency_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__testes_right_consistency_text]').parent().parent().hide();
+}
+
+
+function changePhysicalExamTestisLeftCons(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__testes_left_consistency_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__testes_left_consistency_text]').parent().parent().hide();
+}
+
+
+function changePhysicalExamTestisRightSize(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__testes_right_size_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__testes_right_size_text]').parent().parent().hide();
+}
+
+
+function changePhysicalExamTestisLeftSize(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__testes_left_size_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__testes_left_size_text]').parent().parent().hide();
+}
+
+
+
+$('input[name=physical_exam__inguinal_gland_right_size_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamInguinalGlandRightSize(value)
+})
+$('input[name=physical_exam__inguinal_gland_left_size_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamInguinalGlandLeftSize(value)
+})
+
+function changePhysicalExamInguinalGlandRightSize(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__inguinal_gland_right_size_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__inguinal_gland_right_size_text]').parent().parent().hide();
+}
+
+
+function changePhysicalExamInguinalGlandLeftSize(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__inguinal_gland_left_size_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__inguinal_gland_left_size_text]').parent().parent().hide();
+}
+
+
+
+$('input[name=physical_exam__superclavicula_gland_right_size_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamSuperclaviculaGlandRightSize(value)
+})
+$('input[name=physical_exam__superclavicula_gland_left_size_normal]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamSuperclaviculaGlandLeftSize(value)
+})
+
+function changePhysicalExamSuperclaviculaGlandRightSize(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__superclavicula_gland_right_size_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__superclavicula_gland_right_size_text]').parent().parent().hide();
+}
+
+
+function changePhysicalExamSuperclaviculaGlandLeftSize(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__superclavicula_gland_left_size_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__superclavicula_gland_left_size_text]').parent().parent().hide();
+}
+
+
+
+$(document).ready(function(){
+    changePhysicalExamInguinalGlandRightSize('{{$kasus->physical_exam->inguinal_gland_right_size_normal ?? ''}}')
+    
+    changePhysicalExamInguinalGlandLeftSize('{{$kasus->physical_exam->inguinal_gland_left_size_normal ?? ''}}')
+
+
+    changePhysicalExamSuperclaviculaGlandRightSize('{{$kasus->physical_exam->superclavicula_gland_right_size_normal ?? ''}}')
+    
+    changePhysicalExamSuperclaviculaGlandLeftSize('{{$kasus->physical_exam->superclavicula_gland_left_size_normal ?? ''}}')
+
+    changePhysicalExamTestisLeftCons('{{$kasus->physical_exam->testes_left_consistency_normal ?? ''}}')
+    changePhysicalExamTestisRightCons('{{$kasus->physical_exam->testes_right_consistency_normal ?? ''}}')
+    changePhysicalExamTestisLeftSize('{{$kasus->physical_exam->testes_left_size_normal ?? ''}}')
+    changePhysicalExamTestisRightSize('{{$kasus->physical_exam->testes_right_size_normal ?? ''}}')
+
+    changePostOpsDeath('{{$kasus->operative_post->death ?? ''}}')
+    changePostOpsComplication('{{$kasus->operative_post->complication ?? ''}}')
+    changeAnamnesisHistoryUrineStone('{{$kasus->anamnesis->history_of_urinarytract_stone ?? ''}}')
+})
 
 
 </script>

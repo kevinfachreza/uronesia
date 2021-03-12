@@ -133,8 +133,9 @@
             <tr>
                 <td style="width: 150px">Complication</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->complication==1 ? 'Yes' : 'No' }} 
-                    @if($kasus->operative_post->complication == 1)
+                @php $temp = $kasus->operative_post->complication ?? '' @endphp
+                <td>{{$temp == 1 ? 'Yes' : 'No' }} 
+                    @if($temp == 1)
                         - Action : {{$kasus->operative_post->complication_action ?? '-'}}
                     @endif
                 </td>
@@ -142,8 +143,9 @@
             <tr>
                 <td>Death</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->death==1 ? 'Yes' : 'No' }} 
-                    @if($kasus->operative_post->death == 1)
+                @php $temp = $kasus->operative_post->death ?? '' @endphp
+                <td>{{$temp ==1 ? 'Yes' : 'No' }} 
+                    @if($temp  == 1)
                         ( {{$kasus->operative_post->death_cause ?? '-'}} )
                     @endif
                 </td>

@@ -69,12 +69,18 @@
             <tr>
                 <td style="width: 150px">Right</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->cva_tenderness_right ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->cva_tenderness_right ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
             <tr>
                 <td>Left</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->cva_tenderness_left ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->cva_tenderness_left ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
         </table>
 
@@ -84,12 +90,18 @@
             <tr>
                 <td style="width: 150px">Right</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->renal_mass_right ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->renal_mass_right ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
             <tr>
                 <td>Left</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->renal_mass_left ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->renal_mass_left ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
         </table>
 
@@ -98,12 +110,18 @@
             <tr>
                 <td style="width: 150px">Tenderness</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->vesica_urinary_tenderness ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->vesica_urinary_tenderness ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
             <tr>
                 <td>Mass</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->vesica_urinary_mass ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->vesica_urinary_mass ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
         </table>
 
@@ -112,27 +130,45 @@
             <tr>
                 <td style="width: 150px">Urethral Meatus</td>
                 <td style="width: 5px">:</td>
-                <td>{{unslugify($kasus->physical_exam->urethral_meatus) ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->urethral_meatus ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
             <tr>
                 <td>Hypospadia</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->hypospadia ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->hypospadia ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                </td>
             </tr>
         </table>
 
 
-        <h6 style="font-weight: 600" class="text-primary">Testes Morphology</h6>
+        <h6 style="font-weight: 600" class="text-primary">Testis Morphology</h6>
         <table class="table table-no-border view-data">
             <tr>
                 <td style="width: 150px">Right</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->testes_morphology_right ?? ''}}</td>
+                <td>    
+                    @php $temp = $kasus->physical_exam->testes_morphology_right ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->testes_morphology_right_text}})
+                    @endif
+                </td>
             </tr>
             <tr>
                 <td>Left</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->testes_morphology_left ?? ''}}</td>
+                <td>    
+                    @php $temp = $kasus->physical_exam->testes_morphology_left ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->testes_morphology_left_text}})
+                    @endif
+                </td>
             </tr>
         </table>
 

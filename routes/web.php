@@ -32,6 +32,8 @@ Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::post('/settings/user', 'Settings\PostController@edit');
 	Route::post('/settings/password', 'Settings\PostController@password');
 
+	Route::get('/kasus/delete/{id}', 'Kasus\PostController@delete');
+
 	Route::get('/kasus/striktur-uretra', 'Kasus\StrikturUretra\ViewController@index');
 	Route::get('/kasus/striktur-uretra/print', 'Kasus\StrikturUretra\ViewController@print');
 	Route::get('/kasus/striktur-uretra/{id}/form', 'Kasus\StrikturUretra\ViewController@form');

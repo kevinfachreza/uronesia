@@ -103,5 +103,42 @@ changePostOpsComplication('{{$kasus->operative_post->complication ?? ''}}')
 changeAnamnesisHistoryUrineStone('{{$kasus->anamnesis->history_of_urinarytract_stone ?? ''}}')
 
 
+
+
+
+
+$('input[name=physical_exam__testes_morphology_right]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamTestisRightMorph(value)
+})
+
+$('input[name=physical_exam__testes_morphology_left]').change(function(){
+    var value = $(this).val();
+    changePhysicalExamTestisLeftMorph(value)
+})
+
+
+function changePhysicalExamTestisLeftMorph(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__testes_morphology_left_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__testes_morphology_left_text]').parent().parent().hide();
+}
+
+function changePhysicalExamTestisRightMorph(value)
+{
+    if(value == 'abnormal')
+        $('input[name=physical_exam__testes_morphology_right_text]').parent().parent().show();
+    else
+        $('input[name=physical_exam__testes_morphology_right_text]').parent().parent().hide();
+}
+
+
+changePhysicalExamTestisLeftMorph('{{$kasus->physical_exam->testes_morphology_right ?? ''}}')
+changePhysicalExamTestisRightMorph('{{$kasus->physical_exam->testes_morphology_left ?? ''}}')
+
+
+
 </script>
 @endsection

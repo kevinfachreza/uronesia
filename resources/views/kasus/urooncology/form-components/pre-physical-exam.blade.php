@@ -36,8 +36,7 @@
             </div>
             <div class="col-12">
                 <div class="form-group">
-                    <label class="label">MASS</label>
-                    <input type="text" class="form-control" name="physical_exam__bladder_mass" value="{{$kasus->physical_exam->bladder_mass ?? ''}}">
+                    @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->bladder_mass ?? '','label'=>'MASS','name'=>'physical_exam__bladder_mass',])
                 </div>
             </div>
             <div class="col-12">
@@ -47,46 +46,124 @@
                 @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->penis_circumcision ?? '','label'=>'Circumcision','name'=>'physical_exam__penis_circumcision',])
             </div>
             <div class="col-12">
+                @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->penis_mass ?? '','label'=>'MASS','name'=>'physical_exam__penis_mass',])
+            </div>
+
+
+            <div class="col-12">
+                <h6 style="font-weight: 600" class="text-primary">Right Testis</h6>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_right_size_normal ?? '','label'=>'Size','name'=>'physical_exam__testes_right_size_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
                 <div class="form-group">
-                    <label class="label">MASS</label>
-                    <input type="text" class="form-control" name="physical_exam__penis_mass" value="{{$kasus->physical_exam->penis_mass ?? ''}}">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__testes_right_size_text" value="{{$kasus->physical_exam->testes_right_size_text ?? ''}}">
                 </div>
             </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_right_consistency_normal ?? '','label'=>'Consistency','name'=>'physical_exam__testes_right_consistency_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__testes_right_consistency_text" value="{{$kasus->physical_exam->testes_right_consistency_text ?? ''}}">
+                </div>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_right_hydrocele ?? '','label'=>'Hydrocele','name'=>'physical_exam__testes_right_hydrocele','options' => ['Yes','No']])
+            </div>
+
+             <div class="col-12">
+                <h6 style="font-weight: 600" class="text-primary">Left Testis</h6>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_left_size_normal ?? '','label'=>'Size','name'=>'physical_exam__testes_left_size_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__testes_left_size_text" value="{{$kasus->physical_exam->testes_left_size_text ?? ''}}">
+                </div>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_left_consistency_normal ?? '','label'=>'Consistency','name'=>'physical_exam__testes_left_consistency_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__testes_left_consistency_text" value="{{$kasus->physical_exam->testes_left_consistency_text ?? ''}}">
+                </div>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_left_hydrocele ?? '','label'=>'Hydrocele','name'=>'physical_exam__testes_left_hydrocele','options' => ['Yes','No']])
+            </div>
 
 
             <div class="col-12">
-                <h6 style="font-weight: 600" class="text-primary">Testes</h6>
+                <h6 style="font-weight: 600" class="text-primary">Right Inguinal Gland</h6>
             </div>
             <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_size ?? '','label'=>'Circumcision','name'=>'physical_exam__testes_size','options' => ['Right','Left']])
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->inguinal_gland_right_size_normal ?? '','label'=>'Size','name'=>'physical_exam__inguinal_gland_right_size_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__inguinal_gland_right_size_text" value="{{$kasus->physical_exam->inguinal_gland_right_size_text ?? ''}}">
+                </div>
             </div>
             <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_consistency ?? '','label'=>'Consistency','name'=>'physical_exam__testes_consistency','options' => ['Right','Left']])
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->inguinal_gland_right_fixed_normal ?? '','label'=>'Fixed','name'=>'physical_exam__inguinal_gland_right_fixed_normal','options' => ['Yes','No']])
+            </div>
+
+
+            <div class="col-12">
+                <h6 style="font-weight: 600" class="text-primary">Left Inguinal Gland</h6>
             </div>
             <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->testes_hydrocele ?? '','label'=>'Hydrocele','name'=>'physical_exam__testes_hydrocele','options' => ['Right','Left']])
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->inguinal_gland_left_size_normal ?? '','label'=>'Size','name'=>'physical_exam__inguinal_gland_left_size_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__inguinal_gland_left_size_text" value="{{$kasus->physical_exam->inguinal_gland_left_size_text ?? ''}}">
+                </div>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->inguinal_gland_left_fixed_normal ?? '','label'=>'Fixed','name'=>'physical_exam__inguinal_gland_left_fixed_normal','options' => ['Yes','No']])
+            </div>
+            <div class="col-12">
+                <h6 style="font-weight: 600" class="text-primary">Right Supraclavicula Gland</h6>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->superclavicula_gland_right_size_normal ?? '','label'=>'Size','name'=>'physical_exam__superclavicula_gland_right_size_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__superclavicula_gland_right_size_text" value="{{$kasus->physical_exam->superclavicula_gland_right_size_text ?? ''}}">
+                </div>
+            </div>
+            <div class="col-12">
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->superclavicula_gland_right_fixed ?? '','label'=>'Fixed','name'=>'physical_exam__superclavicula_gland_right_fixed','options' => ['Yes','No']])
             </div>
 
             <div class="col-12">
-                <h6 style="font-weight: 600" class="text-primary">Inguinal Gland</h6>
+                <h6 style="font-weight: 600" class="text-primary">Left Supraclavicula Gland</h6>
             </div>
             <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->inguinal_gland_size ?? '','label'=>'Size','name'=>'physical_exam__inguinal_gland_size','options' => ['Right','Left']])
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->superclavicula_gland_left_size_normal ?? '','label'=>'Size','name'=>'physical_exam__superclavicula_gland_left_size_normal','options' => ['Normal','Abnormal']])
+            </div>
+            <div class="col-12" style="display: none">
+                <div class="form-group">
+                    <label class="label">Description</label>
+                    <input type="text" class="form-control" name="physical_exam__superclavicula_gland_left_size_text" value="{{$kasus->physical_exam->superclavicula_gland_left_size_text ?? ''}}">
+                </div>
             </div>
             <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->inguinal_gland_fixed ?? '','label'=>'Fixed','name'=>'physical_exam__inguinal_gland_fixed','options' => ['Right','Left']])
+                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->superclavicula_gland_left_fixed ?? '','label'=>'Fixed','name'=>'physical_exam__superclavicula_gland_left_fixed','options' => ['Yes','No']])
             </div>
-
-            <div class="col-12">
-                <h6 style="font-weight: 600" class="text-primary">Supraclavicula Gland</h6>
-            </div>
-            <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->superclavicula_gland_size ?? '','label'=>'Size','name'=>'physical_exam__superclavicula_gland_size','options' => ['Right','Left']])
-            </div>
-            <div class="col-12">
-                @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->superclavicula_gland_fixed ?? '','label'=>'Fixed','name'=>'physical_exam__superclavicula_gland_fixed','options' => ['Right','Left']])
-            </div>
-
             <div class="col-12">
                 <h6 style="font-weight: 600" class="text-primary">Prostate</h6>
             </div>

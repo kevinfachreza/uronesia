@@ -131,6 +131,8 @@
                     <input type="text" class="form-control" name="penunjang_lab_pre__lab_urine_cult_resistance" value="{{$kasus->penunjang_lab_pre->lab_urine_cult_resistance ?? ''}}">
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-6">
                 <div class="form-group">
                     <label class="label">Cytology - Class</label>

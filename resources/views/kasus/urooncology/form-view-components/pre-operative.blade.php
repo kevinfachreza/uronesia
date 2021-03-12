@@ -47,32 +47,32 @@
             <tr>
                 <td style="width: 150px">Mass</td>
                 <td style="width: 5px">:</td>
-                <td>{{unslugify($kasus->physical_exam->renal_mass) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->renal_mass ?? '' ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td>Size</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->renal_size) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->renal_size ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td>Solid</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->renal_solid) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->renal_solid ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td>Cystic</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->renal_cystic) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->renal_cystic ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td>Fixed</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->renal_fixed) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->renal_fixed ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td>Pain</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->renal_pain) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->renal_pain ?? '') ?? ''}}</td>
             </tr>
         </table>
 
@@ -82,12 +82,14 @@
             <tr>
                 <td style="width: 150px">Full</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->bladder_full = 1 ? 'Yes' : 'No'}}</td>
+                @php $temp = $kasus->physical_exam->bladder_full ?? '' @endphp
+                <td>{{$temp = 1 ? 'Yes' : 'No'}}</td>
             </tr>
             <tr>
                 <td>Mass</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->bladder_mass ?? ''}}</td>
+                @php $temp = $kasus->physical_exam->bladder_mass ?? '' @endphp
+                <td>{{$temp = 1 ? 'Yes' : 'No'}}</td>
             </tr>
         </table>
 
@@ -96,59 +98,161 @@
             <tr>
                 <td style="width: 150px">Circumcision</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->penis_circumcision = 1 ? 'Yes' : 'No'}}</td>
+                @php $temp = $kasus->physical_exam->penis_circumcision ?? '' @endphp
+                <td>{{$temp = 1 ? 'Yes' : 'No'}}</td>
             </tr>
             <tr>
                 <td>Mass</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->penis_mass ?? ''}}</td>
+                @php $temp = $kasus->physical_exam->penis_mass ?? '' @endphp
+                <td>{{$temp = 1 ? 'Yes' : 'No'}}</td>
             </tr>
         </table>
 
-        <h6 style="font-weight: 600" class="text-primary">Testes</h6>
+        <h6 style="font-weight: 600" class="text-primary">Right Testis</h6>
         <table class="table table-no-border">
             <tr>
                 <td style="width: 150px">Size</td>
                 <td style="width: 5px">:</td>
-                <td>{{unslugify($kasus->physical_exam->testes_size) ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->testes_right_size_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->testes_right_size_text}})
+                    @endif
+                </td>
             </tr>
             <tr>
                 <td>Consistency</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->testes_consistency) ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->testes_right_consistency_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->testes_right_consistency_text}})
+                    @endif
+                </td>
             </tr>
             <tr>
                 <td>Hydrocele</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->testes_hydrocele) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->testes_right_hydrocele ?? '') ?? ''}}</td>
             </tr>
         </table>
-
-        <h6 style="font-weight: 600" class="text-primary">Inguinal Gland</h6>
+        <h6 style="font-weight: 600" class="text-primary">Left Testis</h6>
         <table class="table table-no-border">
             <tr>
                 <td style="width: 150px">Size</td>
                 <td style="width: 5px">:</td>
-                <td>{{unslugify($kasus->physical_exam->inguinal_gland_size) ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->testes_left_size_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->testes_left_size_text}})
+                    @endif
+                </td>
             </tr>
             <tr>
-                <td>Fixed</td>
+                <td>Consistency</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->inguinal_gland_fixed) ?? ''}}</td>
+                <td>
+                    @php $temp = $kasus->physical_exam->testes_left_consistency_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->testes_left_consistency_text}})
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <td>Hydrocele</td>
+                <td>:</td>
+                <td>{{unslugify($kasus->physical_exam->testes_left_hydrocele ?? '') ?? ''}}</td>
             </tr>
         </table>
 
-        <h6 style="font-weight: 600" class="text-primary">Supraclavicula Gland</h6>
+        <h6 style="font-weight: 600" class="text-primary">Right Inguinal Gland</h6>
         <table class="table table-no-border">
             <tr>
                 <td style="width: 150px">Size</td>
                 <td style="width: 5px">:</td>
-                <td>{{unslugify($kasus->physical_exam->superclavicula_gland_size) ?? ''}}</td>
+
+                <td>
+                    @php $temp = $kasus->physical_exam->inguinal_gland_right_size_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->inguinal_gland_right_size_text}})
+                    @endif
+                </td>
             </tr>
             <tr>
                 <td>Fixed</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->superclavicula_gland_fixed) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->inguinal_gland_right_fixed_normal ?? '') ?? ''}}</td>
+            </tr>
+        </table>
+
+        <h6 style="font-weight: 600" class="text-primary">Left Inguinal Gland</h6>
+        <table class="table table-no-border">
+            <tr>
+                <td style="width: 150px">Size</td>
+                <td style="width: 5px">:</td>
+
+                <td>
+                    @php $temp = $kasus->physical_exam->inguinal_gland_left_size_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->inguinal_gland_left_size_text}})
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <td>Fixed</td>
+                <td>:</td>
+                <td>{{unslugify($kasus->physical_exam->inguinal_gland_left_fixed_normal ?? '') ?? ''}}</td>
+            </tr>
+        </table>
+
+
+
+        <h6 style="font-weight: 600" class="text-primary">Right Supraclavicula Gland</h6>
+        <table class="table table-no-border">
+            <tr>
+                <td style="width: 150px">Size</td>
+                <td style="width: 5px">:</td>
+
+                <td>
+                    @php $temp = $kasus->physical_exam->superclavicula_gland_right_size_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->superclavicula_gland_right_size_text}})
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <td>Fixed</td>
+                <td>:</td>
+                <td>{{unslugify($kasus->physical_exam->superclavicula_gland_right_fixed ?? '') ?? ''}}</td>
+            </tr>
+        </table>
+
+        <h6 style="font-weight: 600" class="text-primary">Left Supraclavicula Gland</h6>
+        <table class="table table-no-border">
+            <tr>
+                <td style="width: 150px">Size</td>
+                <td style="width: 5px">:</td>
+
+                <td>
+                    @php $temp = $kasus->physical_exam->superclavicula_gland_left_size_normal ?? '' @endphp
+                    {{unslugify($temp ?? '') ?? ''}}
+                    @if($temp == 'abnormal')
+                    ({{$kasus->physical_exam->superclavicula_gland_left_size_text}})
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <td>Fixed</td>
+                <td>:</td>
+                <td>{{unslugify($kasus->physical_exam->superclavicula_gland_left_fixed ?? '') ?? ''}}</td>
             </tr>
         </table>
 

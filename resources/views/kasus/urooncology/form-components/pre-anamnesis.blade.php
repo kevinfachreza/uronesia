@@ -19,7 +19,7 @@
 	</div>
 	<div class="col-12" style="display: none">
 		<div class="form-group">
-			<label class="label">Location of Urinarytract Stone</label>
+			<label class="label">Location of Urinary Tract Stone</label>
 			<input type="text" class="form-control" name="anamnesis__history_of_urinarytract_stone_location" value="{{$kasus->anamnesis->history_of_urinarytract_stone_location ?? ''}}">
 		</div>
 	</div>

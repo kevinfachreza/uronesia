@@ -65,12 +65,12 @@
                                     <label class="label">Gender</label><br>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="pasien_jenis_kelamin" checked value="lk" id="input-radio-px-jk-lk">Laki Laki
+                                            <input type="radio" class="form-check-input" name="pasien_jenis_kelamin" checked value="lk" id="input-radio-px-jk-lk">Man
                                         </label>
                                     </div>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="pasien_jenis_kelamin" value="pr" id="input-radio-px-jk-pr">Perempuan
+                                            <input type="radio" class="form-check-input" name="pasien_jenis_kelamin" value="pr" id="input-radio-px-jk-pr">Woman
                                         </label>
                                     </div>
 
