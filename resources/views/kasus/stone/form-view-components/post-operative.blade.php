@@ -34,42 +34,42 @@
             <tr>
                 <td>HB</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_hb}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_hb ?? ''}}</td>
             </tr>
             <tr>
                 <td>HT</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_ht}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_ht ?? ''}}</td>
             </tr>
             <tr>
                 <td>L</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_l}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_l ?? ''}}</td>
             </tr>
             <tr>
                 <td>TR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_tr}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_tr ?? ''}}</td>
             </tr>
             <tr>
                 <td>UR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_ur}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_ur ?? ''}}</td>
             </tr>
             <tr>
                 <td>CR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_cr}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_cr ?? ''}}</td>
             </tr>
             <tr>
                 <td>Na</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_na}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_na ?? ''}}</td>
             </tr>
             <tr>
                 <td>K</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_k}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_k ?? ''}}</td>
             </tr>
         </table>
     </div>
@@ -92,11 +92,35 @@
                 </td>
             </tr>
             <tr>
-                <td>Analgetics</td>
+                <td>Analgetics IV</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_post->analgetics) ?? ''}} 
+                <td>{{viewAttrYesNo($kasus->operative_post->analgetics_iv ?? '')}}</td>
                 </td>
             </tr>
+            @php $value = $kasus->operative_post->analgetics_iv ?? 0 @endphp
+            @if($value == 1)
+            <tr>
+                <td>Drug Name</td>
+                <td>:</td>
+                <td>{{$kasus->operative_post->analgetics_iv_drug ?? ''}}</td>
+                </td>
+            </tr>
+            @endif
+            <tr>
+                <td>Analgetics Oral</td>
+                <td>:</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->analgetics_oral ?? '')}}</td>
+                </td>
+            </tr>
+            @php $value = $kasus->operative_post->analgetics_oral ?? 0 @endphp
+            @if($value == 1)
+            <tr>
+                <td>Drug Name</td>
+                <td>:</td>
+                <td>{{$kasus->operative_post->analgetics_oral_drug ?? ''}}</td>
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td>Catheter Production</td>
                 <td>:</td>
@@ -112,7 +136,7 @@
             <tr>
                 <td>Wound Dehicense</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->wound_dehicense == 1 ? 'Yes' : 'No'}}
+                <td>{{viewAttrYesNo($kasus->operative_post->wound_dehicense ?? '')}}</td>
                 </td>
             </tr>
         </table>

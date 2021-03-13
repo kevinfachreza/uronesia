@@ -7,7 +7,17 @@
 		<h6 class="text-primary">Non Invasive</h6> 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->non_invasive_empiric ?? '','label'=>'Empiric','name'=>'intra_operative__non_invasive_empiric'])
 
+		<div class="form-group">
+			<label class="label">Drug Name</label>
+			<input type="text" class="form-control" name="intra_operative__non_invasive_empiric_drug_name" value="{{$kasus->operative_intra->non_invasive_empiric_drug_name ?? ''}}">
+		</div>
+
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->non_invasive_hormonal ?? '','label'=>'Hormonal','name'=>'intra_operative__non_invasive_hormonal'])
+
+		<div class="form-group">
+			<label class="label">Drug Name</label>
+			<input type="text" class="form-control" name="intra_operative__non_invasive_hormonal_drug_name" value="{{$kasus->operative_intra->non_invasive_hormonal_drug_name ?? ''}}">
+		</div>
 
 		<h6 class="text-primary">Invasive</h6> 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->invasive_mesa ?? '','label'=>'MESA','name'=>'intra_operative__invasive_mesa'])

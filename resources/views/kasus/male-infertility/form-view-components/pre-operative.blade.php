@@ -33,57 +33,57 @@
             <tr>
                 <td style="width: 150px">Semen Discharge When Ejaculation</td>
                 <td style="width: 10px">:</td>
-                <td>{{unslugify($kasus->operative_pre->semen_discharge_ejaculation) ?? ''}}</td>
+                <td>{{unslugify($kasus->operative_pre->semen_discharge_ejaculation ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td>Morning Erection</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->erection_morning == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->erection_morning ?? '')}}</td>
             </tr>
             <tr>
                 <td>Erection With Stimulation</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->erection_stimulation == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->erection_stimulation ?? '')}}</td>
             </tr>
             <tr>
                 <td>Pain Post Ejaculation</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->pain_post_ejaculation == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->pain_post_ejaculation ?? '')}}</td>
             </tr>
             <tr>
                 <td>Hematospermia</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->hematospermia == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->hematospermia ?? '')}}</td>
             </tr>
             <tr>
                 <td>Uretritis History</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->uretritis_history == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->uretritis_history ?? '')}}</td>
             </tr>
             <tr>
                 <td>Obstructive/Iritative Symptoms</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->iritative_symptomps == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->iritative_symptomps ?? '')}}</td>
             </tr>
             <tr>
                 <td>Secondary Sex Abnormality</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->secondary_sex_abnormalities == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->secondary_sex_abnormalities ?? '')}}</td>
             </tr>
             <tr>
                 <td>Other Congenital Disease</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->other_congenital_disease == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->other_congenital_disease ?? '')}}</td>
             </tr>
             <tr>
                 <td>Scrotal Tenderness</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->scrotal_tenderness == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->scrotal_tenderness ?? '')}}</td>
             </tr>
             <tr>
                 <td>Inguinal Mass</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->inguinal_mass == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->inguinal_mass ?? '')}}</td>
             </tr>
         </table>
         <h6 class="text-primary">History</h6>
@@ -91,32 +91,32 @@
             <tr>
                 <td style="width: 150px">UDT</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_pre->history_udt == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_udt ?? '')}}</td>
             </tr>
             <tr>
                 <td>Varicocele</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->history_varicocele == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_varicocele ?? '')}}</td>
             </tr>
             <tr>
                 <td>Trauma</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->history_trauma == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_trauma ?? '')}}</td>
             </tr>
             <tr>
                 <td>Genital Surgery</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->history_genital_surgery == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_genital_surgery ?? '')}}</td>
             </tr>
             <tr>
                 <td>Reccurent UTI</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->history_reccurent_uti == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_reccurent_uti ?? '')}}</td>
             </tr>
             <tr>
                 <td>Malignancy</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->history_malignancy == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_malignancy ?? '')}}</td>
             </tr>
             <tr>
                 <td>Other History</td>
@@ -126,7 +126,7 @@
             <tr>
                 <td>Family History of Infertility</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->history_family_infertility == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->history_family_infertility ?? '')}}</td>
             </tr>
         </table>
 
@@ -182,22 +182,22 @@
             <tr>
                 <td style="width: 150px">Epididimis</td>
                 <td style="width: 10px">:</td>
-                <td>{{unslugify($kasus->physical_exam->epididimis_condition) ?? ''}} </td>
+                <td>{{unslugify($kasus->physical_exam->epididimis_condition ?? '') ?? ''}} </td>
             </tr>
             <tr>
                 <td>Vas Deferens</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->vas_deferens_condition) ?? ''}} </td>
+                <td>{{unslugify($kasus->physical_exam->vas_deferens_condition ?? '') ?? ''}} </td>
             </tr>
             <tr>
                 <td>Urethritis</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->urethritis ? 'Yes' : 'No'}} </td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->urethritis ?? '')}}</td>
             </tr>
             <tr>
                 <td>Prostate</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->prostate_status) ?? ''}} </td>
+                <td>{{unslugify($kasus->physical_exam->prostate_status ?? '') ?? ''}} </td>
             </tr>
         </table>
 
@@ -334,17 +334,35 @@
             <tr>
                 <td style="width: 150px"> Non Obstructive Azoospermia</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->operative_pre->diagnosis_p_infertile_nonobs_azoo == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->diagnosis_p_infertile_nonobs_azoo ?? '')}}</td>
             </tr>
             <tr>
                 <td> Obstructive Azoospermia</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->diagnosis_p_infertile_obs_azoo == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->diagnosis_p_infertile_obs_azoo ?? '')}}</td>
             </tr>
             <tr>
                 <td>Sperm Amount</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_pre->diagnosis_p_infertile_sperm_type) ?? ''}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        @php $value = $kasus->operative_pre->diagnosis_p_infertile_sp_am_oligo ?? 0 @endphp
+                        @if($value)
+                            <li>Oligospermia</li>
+                        @endif
+                        @php $value = $kasus->operative_pre->diagnosis_p_infertile_sp_am_oligo ?? 0 @endphp
+                        @if($value)
+                            <li>Asthenospermia</li>
+                        @endif
+                        @php $value = $kasus->operative_pre->diagnosis_p_infertile_sp_am_oligo ?? 0 @endphp
+                        @if($value)
+                            <li>Teratospermia</li>
+                        @endif
+                    </ul>
+
+                </td>
             </tr>
             <tr>
                 <td colspan="3"><strong class="text-primary">Secondary Infertility</strong></td>
@@ -352,17 +370,35 @@
             <tr>
                 <td style="width: 150px"> Non Obstructive Azoospermia</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->operative_pre->diagnosis_s_infertile_nonobs_azoo == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->diagnosis_s_infertile_nonobs_azoo ?? '')}}</td>
             </tr>
             <tr>
                 <td> Obstructive Azoospermia</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->diagnosis_s_infertile_obs_azoo == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->diagnosis_s_infertile_obs_azoo ?? '')}}</td>
             </tr>
             <tr>
                 <td>Sperm Amount</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_pre->diagnosis_s_infertile_sperm_type) ?? ''}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        @php $value = $kasus->operative_pre->diagnosis_s_infertile_sp_am_oligo ?? 0 @endphp
+                        @if($value)
+                            <li>Oligospermia</li>
+                        @endif
+                        @php $value = $kasus->operative_pre->diagnosis_s_infertile_sp_am_oligo ?? 0 @endphp
+                        @if($value)
+                            <li>Asthenospermia</li>
+                        @endif
+                        @php $value = $kasus->operative_pre->diagnosis_s_infertile_sp_am_oligo ?? 0 @endphp
+                        @if($value)
+                            <li>Teratospermia</li>
+                        @endif
+                    </ul>
+
+                </td>
             </tr>
         </table>
     </div>

@@ -10,17 +10,17 @@
             <tr>
                 <td style="width: 150px">Haematoma</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_post->haematoma == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->haematoma ?? '')}}</td>
             </tr>
             <tr>
                 <td>Oedema Scrotum</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->oedema_scrotum == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->oedema_scrotum ?? '')}}</td>
             </tr>
             <tr>
                 <td>Wound Dehicense</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->wound_dehicense == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->wound_dehicense ?? '')}}</td>
             </tr>
         </table>
     </div>

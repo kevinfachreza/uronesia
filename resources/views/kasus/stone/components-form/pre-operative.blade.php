@@ -40,7 +40,7 @@
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_hypertension ?? '','label'=>'Hypertension','name'=>'pre_operative__comorbid_hypertension'])
     </div>
     <div class="col-12">
-        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_heart_stroke ?? '','label'=>'Heart Stroke','name'=>'pre_operative__comorbid_heart_stroke'])
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_heart_stroke ?? '','label'=>'Heart Disease','name'=>'pre_operative__comorbid_heart_stroke'])
     </div>
     <div class="col-12">
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_stroke ?? '','label'=>'Stroke','name'=>'pre_operative__comorbid_stroke'])

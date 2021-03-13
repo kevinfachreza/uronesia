@@ -34,8 +34,20 @@
         @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_post->nefrostomy_production ?? '','label'=>'Nefrostomy Production','name'=>'post_operative__nefrostomy_production','options' => ['Dx','Sin','Bil']])
 
 
+        <div class="form-group">
+            <label class="label">Nefrostomy Production Dex (cc)</label>
+            <input type="number" class="form-control" value="{{$kasus->operative_post->nefrostomy_production_dx ?? ''}}" name="post_operative__nefrostomy_production_dx" >
+        </div>
+        <div class="form-group">
+            <label class="label">Nefrostomy Production Sin (cc)</label>
+            <input type="number" class="form-control" value="{{$kasus->operative_post->nefrostomy_production_sin ?? ''}}" name="post_operative__nefrostomy_production_sin" >
+        </div>
+        <div class="form-group">
+            <label class="label">Urethral Cathether Production (cc)</label>
+            <input type="number" class="form-control" value="{{$kasus->operative_post->urethral_cath_production ?? ''}}" name="post_operative__urethral_cath_production" >
+        </div>
 		<div class="form-group">
-			<label class="label">Catheter Production (cc/color)</label>
+			<label class="label">Catheter Production (cc)</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_post->cath_production ?? ''}}" name="post_operative__cath_production" >
 		</div>
 	</div>

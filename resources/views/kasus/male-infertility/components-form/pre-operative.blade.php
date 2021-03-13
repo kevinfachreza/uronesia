@@ -304,7 +304,13 @@
 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_p_infertile_obs_azoo ?? '','label'=>'Obstructive Azoospermia','name'=>'pre_operative__diagnosis_p_infertile_obs_azoo'])
 
-        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_pre->diagnosis_p_infertile_sperm_type ?? '','label'=>'Sperm Amount','name'=>'pre_operative__diagnosis_p_infertile_sperm_type','options' => ['Oligospermia','Asthenospermia','Teratospermia']])
+        <label>SPERM AMOUNT</label>
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_p_infertile_sp_am_oligo ?? '','label'=>' Oligospermia','name'=>'pre_operative__diagnosis_p_infertile_sp_am_oligo'])
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_p_infertile_sp_am_astheno ?? '','label'=>' Asthenospermia','name'=>'pre_operative__diagnosis_p_infertile_sp_am_astheno'])
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_p_infertile_sp_am_teratos ?? '','label'=>' Teratospermia','name'=>'pre_operative__diagnosis_p_infertile_sp_am_teratos'])
 
 
         <h6 class="text-primary">Secondary Infertility</h6>
@@ -312,6 +318,13 @@
 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_s_infertile_obs_azoo ?? '','label'=>'Obstructive Azoospermia','name'=>'pre_operative__diagnosis_s_infertile_obs_azoo'])
 
-        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_pre->diagnosis_s_infertile_sperm_type ?? '','label'=>'Sperm Amount','name'=>'pre_operative__diagnosis_s_infertile_sperm_type','options' => ['Oligospermia','Asthenospermia','Teratospermia']])
+        <label>SPERM AMOUNT</label>
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_s_infertile_sp_am_oligo ?? '','label'=>' Oligospermia','name'=>'pre_operative__diagnosis_s_infertile_sp_am_oligo'])
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_s_infertile_sp_am_astheno ?? '','label'=>' Asthenospermia','name'=>'pre_operative__diagnosis_s_infertile_sp_am_astheno'])
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->diagnosis_s_infertile_sp_am_teratos ?? '','label'=>' Teratospermia','name'=>'pre_operative__diagnosis_s_infertile_sp_am_teratos'])
+
     </div>
 </div>

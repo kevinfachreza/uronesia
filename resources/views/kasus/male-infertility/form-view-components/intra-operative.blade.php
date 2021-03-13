@@ -18,6 +18,15 @@
                     {{$value == 1 ? 'Yes' : 'No'}}
                 </td>
             </tr>
+            @if($value == 1)
+            <tr>
+                <td>Drug Name</td>
+                <td>:</td>
+                <td>
+                    {{$kasus->operative_intra->non_invasive_empiric_drug_name}}
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td>Hormonal</td>
                 <td>:</td>
@@ -26,6 +35,15 @@
                     {{$value == 1 ? 'Yes' : 'No'}}
                 </td>
             </tr>
+            @if($value == 1)
+            <tr>
+                <td>Drug Name</td>
+                <td>:</td>
+                <td>
+                    {{$kasus->operative_intra->non_invasive_hormonal_drug_name}}
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td colspan="3"><h6 class="text-primary">Invasive</h6></td>
             </tr>

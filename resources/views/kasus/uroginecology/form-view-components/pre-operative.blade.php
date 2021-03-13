@@ -36,32 +36,32 @@
             <tr>
                 <td style="width: 150px">DM</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_pre->comorbid_dm == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_dm ?? '')}}</td>
             </tr>
             <tr>
                 <td>Hypertension</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_hypertension == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_hypertension ?? '')}}</td>
             </tr>
             <tr>
-                <td>Heart Stroke</td>
+                <td>Heart Disease</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_heart_stroke == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_heart_stroke ?? '')}}</td>
             </tr>
             <tr>
                 <td>Stroke</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_stroke == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_stroke ?? '')}}</td>
             </tr>
             <tr>
                 <td>CKD</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_ckd == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_ckd ?? '')}}</td>
             </tr>
             <tr>
                 <td>Others</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_others}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_others ?? '')}}</td>
             </tr>
         </table>
     </div>
@@ -79,42 +79,42 @@
             <tr>
                 <td>HB</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_hb}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_hb ?? ''}}</td>
             </tr>
             <tr>
                 <td>HT</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_ht}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_ht ?? ''}}</td>
             </tr>
             <tr>
                 <td>L</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_l}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_l ?? ''}}</td>
             </tr>
             <tr>
                 <td>TR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_tr}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_tr ?? ''}}</td>
             </tr>
             <tr>
                 <td>UR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_ur}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_ur ?? ''}}</td>
             </tr>
             <tr>
                 <td>CR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_cr}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_cr ?? ''}}</td>
             </tr>
             <tr>
                 <td>Na</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_na}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_na ?? ''}}</td>
             </tr>
             <tr>
                 <td>K</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_k}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_k ?? ''}}</td>
             </tr>
         </table>
     </div>

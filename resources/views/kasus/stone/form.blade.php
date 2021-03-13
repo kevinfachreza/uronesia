@@ -127,5 +127,34 @@ changeIntraOpsComplication('{{$kasus->operative_intra->complication ?? ''}}')
 changeIntraOpsFailedProcedure('{{$kasus->operative_intra->failed_procedure ?? ''}}')
 
 
+
+$('input[name=post_operative__analgetics_iv]').change(function(){
+    changePostOpsAnalgeticsIV(value)
+})
+$('input[name=post_operative__analgetics_oral]').change(function(){
+    changePostOpsAnalgeticsOral(value)
+})
+
+function changePostOpsAnalgeticsIV(value)
+{
+    if(value == 1)
+        $('input[name=post_operative__analgetics_iv_drug]').parent().show()
+    else
+        $('input[name=post_operative__analgetics_iv_drug]').parent().hide()
+}
+
+function changePostOpsAnalgeticsOral(value)
+{
+    if(value == 1)
+        $('input[name=post_operative__analgetics_oral_drug]').parent().show()
+    else
+        $('input[name=post_operative__analgetics_oral_drug]').parent().hide()
+}
+
+
+changePostOpsAnalgeticsIV('{{$kasus->operative_post->analgetics_iv ?? ''}}')
+changePostOpsAnalgeticsOral('{{$kasus->operative_post->analgetics_oral ?? ''}}')
+
+
 </script>
 @endsection

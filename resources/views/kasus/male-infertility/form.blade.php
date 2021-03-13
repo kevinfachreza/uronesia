@@ -63,5 +63,35 @@ function changeMaritalStatus(value)
 changeMaritalStatus('{{$kasus->marital_status ?? ''}}')
 
 
+
+
+$('input[name=intra_operative__non_invasive_empiric]').change(function(){
+    changeIntraOpsNonInvasiveEmpiric(value)
+})
+$('input[name=intra_operative__non_invasive_hormonal]').change(function(){
+    changeIntraOpsNonInvasiveHormonal(value)
+})
+
+function changeIntraOpsNonInvasiveEmpiric(value)
+{
+    if(value == 1)
+        $('input[name=intra_operative__non_invasive_empiric_drug_name]').parent().show()
+    else
+        $('input[name=intra_operative__non_invasive_empiric_drug_name]').parent().hide()
+}
+
+function changeIntraOpsNonInvasiveHormonal(value)
+{
+    if(value == 1)
+        $('input[name=intra_operative__non_invasive_hormonal_drug_name]').parent().show()
+    else
+        $('input[name=intra_operative__non_invasive_hormonal_drug_name]').parent().hide()
+}
+
+
+changeIntraOpsNonInvasiveEmpiric('{{$kasus->operative_intra->non_invasive_empiric ?? ''}}')
+changeIntraOpsNonInvasiveHormonal('{{$kasus->operative_intra->non_invasive_hormonal ?? ''}}')
+
+
 </script>
 @endsection

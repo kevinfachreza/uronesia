@@ -10,13 +10,13 @@
             <tr>
                 <td>Position</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->surgical_technique_position) ?? ''}}</td>
+                <td>{{unslugify($kasus->operative_intra->surgical_technique_position ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td colspan="3"><h4 class="mb-0">Surgical Technique</h4></td>
             </tr>
             <tr>
-                <td>Is Open</td>
+                <td>Open</td>
                 <td>:</td>
                 <td>
                     @php $value = $kasus->operative_intra->surgical_technique_is_open ?? '0' @endphp
@@ -30,7 +30,7 @@
             <tr>
                 <td>Position</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->pcnl_pos) ?? ''}}</td>
+                <td>{{unslugify($kasus->operative_intra->pcnl_pos ?? '') ?? ''}}</td>
             </tr>
             <tr>
                 <td colspan="3"><strong class="text-primary">Operation Time</strong></td>
@@ -41,27 +41,27 @@
                 <td>{{$kasus->operative_intra->pcnl_time_cystocopy ?? ''}} Minutes</td>
             </tr>
             <tr>
-                <td>PCNL - Puncture</td>
+                <td>Puncture</td>
                 <td>:</td>
                 <td>{{$kasus->operative_intra->pcnl_time_puncture ?? ''}} Minutes</td>
             </tr>
             <tr>
-                <td>PCNL - Dilatation</td>
+                <td>Dilatation</td>
                 <td>:</td>
                 <td>{{$kasus->operative_intra->pcnl_time_dilatation ?? ''}} Minutes</td>
             </tr>
             <tr>
-                <td>PCNL - Lithotripsi</td>
+                <td>Lithotripsi</td>
                 <td>:</td>
                 <td>{{$kasus->operative_intra->pcnl_time_lithotripsi ?? ''}} Minutes</td>
             </tr>
             <tr>
-                <td>PCNL - DJ Stent</td>
+                <td>DJ Stent</td>
                 <td>:</td>
                 <td>{{$kasus->operative_intra->pcnl_time_dj_stent ?? ''}} Minutes</td>
             </tr>
             <tr>
-                <td>PCNL - Nefrostomy</td>
+                <td>Nefrostomy</td>
                 <td>:</td>
                 <td>{{$kasus->operative_intra->pcnl_time_nefrostomy ?? ''}} Minutes</td>
             </tr>
@@ -98,7 +98,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Type</td>
+                <td>Site</td>
                 <td>:</td>
                 <td>
                     {{unslugify($kasus->operative_intra->pcnl_puncture_type ?? '')}}
@@ -117,7 +117,7 @@
             </tr>
 
             <tr>
-                <td>Type</td>
+                <td>Site</td>
                 <td>:</td>
                 <td>
                     {{unslugify($kasus->operative_intra->pcnl_dilatation_type ?? '')}}
@@ -146,6 +146,14 @@
                 <td>:</td>
                 <td>
                     @php $value = $kasus->operative_intra->surgical_technique_urs ?? '0' @endphp
+                    {{$value == 1 ? 'Yes' : 'No'}}
+                </td>
+            </tr>
+            <tr>
+                <td>Laparoscopic</td>
+                <td>:</td>
+                <td>
+                    @php $value = $kasus->operative_intra->surgical_technique_laparoscopic ?? '0' @endphp
                     {{$value == 1 ? 'Yes' : 'No'}}
                 </td>
             </tr>
@@ -288,7 +296,7 @@
         <h6 class="text-primary">Complication</h6>
         <table class="table table-no-border view-data">
             <tr>
-                <td style="width: 150px">Is Complication</td>
+                <td style="width: 150px">Complication</td>
                 <td style="width: 5px">:</td>
                 <td>
                     @php $value = $kasus->operative_intra->complication ?? '0' @endphp
@@ -367,7 +375,7 @@
         <h6 class="text-primary">Rest Stone</h6>
         <table class="table table-no-border view-data">
             <tr>
-                <td style="width: 150px">Is Rest Stone</td>
+                <td style="width: 150px">Rest Stone</td>
                 <td style="width: 5px">:</td>
                 <td>
                     @php $value = $kasus->operative_intra->rest_stone_is ?? '0' @endphp
@@ -375,6 +383,11 @@
                 </td>
             </tr>
             @if($value == 1)
+            <tr>
+                <td>Site</td>
+                <td>:</td>
+                <td>{{unslugify($kasus->operative_intra->rest_stone_type ?? '')}}</td>
+            </tr>
             <tr>
                 <td>Size</td>
                 <td>:</td>

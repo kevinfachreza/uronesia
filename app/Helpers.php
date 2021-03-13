@@ -39,4 +39,12 @@ function unslugify($text)
   return $text;
 }
 
+
+function viewAttrYesNo($variable)
+{
+  $text = $variable == 1 ? 'Yes' : 'No';
+
+  return $text;
+}
+
 ?>

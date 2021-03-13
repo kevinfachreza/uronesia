@@ -93,7 +93,21 @@
 			<label class="label">Nefrostomy Production (cc/color) </label>
 			<input type="number" class="form-control" value="{{$kasus->operative_post->nefrostomy_production ?? ''}}" name="post_operative__nefrostomy_production" >
 		</div>
-		@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_post->analgetics ?? '','label'=>'Analgetics','name'=>'post_operative__analgetics','options' => ['IV','Oral']])
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_post->analgetics_iv ?? '','label'=>'Analgetics IV','name'=>'post_operative__analgetics_iv'])
+
+
+        <div class="form-group">
+            <label class="label">Drug Name </label>
+            <input type="text" class="form-control" value="{{$kasus->operative_post->analgetics_iv_drug ?? ''}}" name="post_operative__analgetics_iv_drug" >
+        </div>
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_post->analgetics_oral ?? '','label'=>'Analgetics Oral','name'=>'post_operative__analgetics_oral'])
+
+        <div class="form-group">
+            <label class="label">Drug Name </label>
+            <input type="text" class="form-control" value="{{$kasus->operative_post->analgetics_oral_drug ?? ''}}" name="post_operative__analgetics_oral_drug" >
+        </div>
+
 		<div class="form-group">
 			<label class="label">Catheter Production (cc/color)</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_post->cath_production ?? ''}}" name="post_operative__cath_production" >

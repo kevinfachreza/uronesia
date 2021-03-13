@@ -16,7 +16,7 @@
 	</div>
 	<div class="col-12">
 
-        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->surgical_technique_is_open ?? '','label'=>'Is Open','name'=>'intra_operative__surgical_technique_is_open'])
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->surgical_technique_is_open ?? '','label'=>'Open','name'=>'intra_operative__surgical_technique_is_open'])
 
 		<div class="form-group">
 			<label class="label">Description</label>
@@ -27,7 +27,7 @@
 
 	<div class="col-12">
 		<h5>PCNL</h5>
-        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_intra->pcnl_pos ?? '','label'=>'Case Type','name'=>'intra_operative__pcnl_pos','options' => ['Supine','Prone','Lateral']])
+        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_intra->pcnl_pos ?? '','label'=>'Case Site','name'=>'intra_operative__pcnl_pos','options' => ['Supine','Prone','Lateral']])
 
         <h6 class="text-primary">Operation Time (Minutes)</h6>
 
@@ -37,27 +37,27 @@
 		</div>
         
 		<div class="form-group">
-			<label class="label">PCNL - Puncture</label>
+			<label class="label">Puncture</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_intra->pcnl_time_puncture ?? ''}}" name="intra_operative__pcnl_time_puncture" >
 		</div>
         
 		<div class="form-group">
-			<label class="label">PCNL - Dilatation</label>
+			<label class="label">Dilatation</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_intra->pcnl_time_dilatation ?? ''}}" name="intra_operative__pcnl_time_dilatation" >
 		</div>
         
 		<div class="form-group">
-			<label class="label">PCNL - Lithotripsi</label>
+			<label class="label">Lithotripsi</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_intra->pcnl_time_lithotripsi ?? ''}}" name="intra_operative__pcnl_time_lithotripsi" >
 		</div>
         
 		<div class="form-group">
-			<label class="label">PCNL - DJ Stent</label>
+			<label class="label">DJ Stent</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_intra->pcnl_time_dj_stent ?? ''}}" name="intra_operative__pcnl_time_dj_stent" >
 		</div>
         
 		<div class="form-group">
-			<label class="label">PCNL - Nefrostomy</label>
+			<label class="label">Nefrostomy</label>
 			<input type="number" class="form-control" value="{{$kasus->operative_intra->pcnl_time_nefrostomy ?? ''}}" name="intra_operative__pcnl_time_nefrostomy" >
 		</div>
         
@@ -74,7 +74,7 @@
 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->pcnl_puncture_above_costa_11 ?? '','label'=>'Above Costa 11','name'=>'intra_operative__pcnl_puncture_above_costa_11'])
 
-        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_intra->pcnl_puncture_type ?? '','label'=>'Type','name'=>'intra_operative__pcnl_puncture_type','options' => ['Calyx Inferior','Media','Superior']])
+        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_intra->pcnl_puncture_type ?? '','label'=>'Site','name'=>'intra_operative__pcnl_puncture_type','options' => ['Calyx Inferior','Calyx Media','Calyx Superior']])
 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->pcnl_puncture_multi ?? '','label'=>'Multi Puncture','name'=>'intra_operative__pcnl_puncture_multi'])
 
@@ -92,6 +92,8 @@
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->surgical_technique_rirs ?? '','label'=>'RIRS','name'=>'intra_operative__surgical_technique_rirs'])
 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->surgical_technique_urs ?? '','label'=>'URS','name'=>'intra_operative__surgical_technique_urs'])
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->surgical_technique_laparoscopic ?? '','label'=>'Laparoscopic','name'=>'intra_operative__surgical_technique_laparoscopic'])
 
         @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->surgical_vesico ?? '','label'=>'Vesicolithotripsi','name'=>'intra_operative__surgical_vesico'])
 
@@ -152,7 +154,7 @@
 	<div class="col-12">
 		<h5>Complication</h5>
 
-        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->complication ?? '','label'=>'Is Complication','name'=>'intra_operative__complication'])
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->complication ?? '','label'=>'Complication','name'=>'intra_operative__complication'])
 
 		<div class="form-group complication-intra-form" style="display: none">
 			<label class="label">Perforation</label>
@@ -214,7 +216,7 @@
 		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->rest_stone_is ?? '','label'=>'','name'=>'intra_operative__rest_stone_is'])
 	</div>
 	<div class="col-12 rest-stone-intra-form" style="display: none">
-        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_intra->rest_stone_type ?? '','label'=>'Case Type','name'=>'intra_operative__rest_stone_type','options' => ['Right','Left','Both']])
+        @include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_intra->rest_stone_type ?? '','label'=>'Case Site','name'=>'intra_operative__rest_stone_type','options' => ['Right','Left','Both']])
 	</div>
 	<div class="col-12 rest-stone-intra-form" style="display: none">
 		<div class="row">

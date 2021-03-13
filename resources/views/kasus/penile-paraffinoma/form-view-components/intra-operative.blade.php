@@ -13,7 +13,7 @@
             <tr>
                 <td>Primary Closure</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->surgical_technique_primary_closure == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->surgical_technique_primary_closure ?? '')}}</td>
             </tr>
             <tr>
                 <td colspan="3"><h6 class="text-primary">Graft</h6></td>
@@ -21,12 +21,12 @@
             <tr>
                 <td>STSG</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->surgical_technique_graft_stsg == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->surgical_technique_graft_stsg ?? '')}}</td>
             </tr>
             <tr>
                 <td>FTSG</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->surgical_technique_graft_ftsg == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->surgical_technique_graft_ftsg ?? '')}}</td>
             </tr>
             <tr>
                 <td colspan="3"><h6 class="text-primary">Stage</h6></td>
@@ -34,17 +34,17 @@
             <tr>
                 <td>One Stage</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->surgical_technique_one_stage == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->surgical_technique_one_stage ?? '')}}</td>
             </tr>
             <tr>
                 <td>Two Stages</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->surgical_technique_two_stage == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->surgical_technique_two_stage ?? '')}}</td>
             </tr>
             <tr>
                 <td>Second Stage</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->surgical_technique_second_stage == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->surgical_technique_second_stage ?? '')}}</td>
             </tr>
         </table>
     </div>
