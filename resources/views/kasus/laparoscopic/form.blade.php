@@ -46,7 +46,7 @@ $('select[name=main_complaint_pain_location]').change(function(){
 
 $('select[name=main_complaint_pain_location]').trigger('change');
 
-@php $photo_slugs = ['radiology-pre-usg','radiology-pre-bno','radiology-pre-ivp','radiology-pre-ct','radiology-pre-mri','radiology-post-ct','radiology-post-mri','intra-operative-clinical','post-operative-bno'] @endphp
+@php $photo_slugs = ['radiology-pre-usg','radiology-pre-bno','radiology-pre-ivp','radiology-pre-ct','radiology-pre-mri','radiology-post-ct','radiology-post-mri','intra-operative-clinical','post-operative-bno','intra-operative-finding'] @endphp
 
 @foreach($photo_slugs as $slug)
 @php $slug_kebab = str_replace("-","_",$slug); @endphp
@@ -120,6 +120,35 @@ changePostOpsComplication('{{$kasus->operative_post->complication ?? ''}}')
 changeAnamnesisHistoryUrineStone('{{$kasus->anamnesis->history_of_urinarytract_stone ?? ''}}')
 changeIntraOpsComplication('{{$kasus->operative_intra->complication ?? ''}}')
 changeIntraOpsFailedProcedure('{{$kasus->operative_intra->failed_procedure ?? ''}}')
+
+
+
+$('input[name=post_operative__analgetics_iv]').change(function(){
+    changePostOpsAnalgeticsIV(value)
+})
+$('input[name=post_operative__analgetics_oral]').change(function(){
+    changePostOpsAnalgeticsOral(value)
+})
+
+function changePostOpsAnalgeticsIV(value)
+{
+    if(value == 1)
+        $('input[name=post_operative__analgetics_iv_drug]').parent().show()
+    else
+        $('input[name=post_operative__analgetics_iv_drug]').parent().hide()
+}
+
+function changePostOpsAnalgeticsOral(value)
+{
+    if(value == 1)
+        $('input[name=post_operative__analgetics_oral_drug]').parent().show()
+    else
+        $('input[name=post_operative__analgetics_oral_drug]').parent().hide()
+}
+
+
+changePostOpsAnalgeticsIV('{{$kasus->operative_post->analgetics_iv ?? ''}}')
+changePostOpsAnalgeticsOral('{{$kasus->operative_post->analgetics_oral ?? ''}}')
 
 
 </script>

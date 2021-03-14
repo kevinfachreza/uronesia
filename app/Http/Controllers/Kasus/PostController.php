@@ -24,6 +24,14 @@ class PostController extends Controller
 			->with('title', 'Error');	
 		}
 
+		if(!empty($request->pre_operative__recepient_status_pasien))
+		{
+			$recepient_pasien = app('App\Http\Controllers\Kasus\PostController')->saveRecepientPatient($request);
+			$recepient_pasien_id = $recepient_pasien->id;
+			$request['pre_operative__recepient_pasien_id'] = $recepient_pasien_id;
+		}
+
+
 		app('App\Http\Controllers\Kasus\PostController')->savePreData($request,$kasus_id);
 		$data_split = app('App\Http\Controllers\Kasus\PostController')->dataSaveSplit($request,$kasus_id);
 
@@ -75,6 +83,34 @@ class PostController extends Controller
 		->with('status', 1)
 		->with('title', 'Success');
 
+	}
+
+	public function saveRecepientPatient(Request $request)
+	{
+		if($request->pre_operative__recepient_status_pasien == 'baru'){
+			$px = new Pasien;
+		}
+		else
+		{
+			$px = Pasien::where('id',$request->pre_operative__recepient_pasien_id)->first();
+		}
+		if(empty($px))
+		{
+			return back()			
+			->with('message','Patient Not Found')
+			->with('status', -1)
+			->with('title', 'Error');	
+		}
+		$px->no_rm = $request->pre_operative__recepient_pasien_no_rm;
+		$px->nama = $request->pre_operative__recepient_pasien_nama;
+		$px->tanggal_lahir = $request->pre_operative__recepient_pasien_tanggal_lahir;
+		$px->jenis_kelamin = $request->pre_operative__recepient_pasien_jenis_kelamin;
+		$px->nomor_telpon = $request->pre_operative__recepient_pasien_nomor_telpon;
+		$px->tb = $request->pre_operative__recepient_pasien_tb;
+		$px->bb = $request->pre_operative__recepient_pasien_bb;
+		$px->save();
+
+		return $px;
 	}
 
 	public function savePreData(Request $request, $kasus_id)

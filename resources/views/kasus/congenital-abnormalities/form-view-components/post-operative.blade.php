@@ -105,6 +105,26 @@
                 <td>{{$kasus->penunjang_lab_post->lab_k ?? ''}}</td>
             </tr>
         </table>
+
+        
+        <h6 style="font-weight: 600" class="text-primary">Urine Culture</h6>
+        <table class="table table-no-border view-data">
+            <tr>
+                <td>BACTERIA</td>
+                <td>:</td>
+                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_bacteria}}</td>
+            </tr>
+            <tr>
+                <td>SENSITIVE</td>
+                <td>:</td>
+                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_sensitive}}</td>
+            </tr>
+            <tr>
+                <td>RESISTANCE</td>
+                <td>:</td>
+                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_resistance}}</td>
+            </tr>
+        </table>
     </div>
 </div>
 

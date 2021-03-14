@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Kasus;
 use App\Exports\KidneyTransplantExcel;
+use App\Models\Pasien;
 use Auth;
 
 class ViewController extends Controller
@@ -23,7 +24,7 @@ class ViewController extends Controller
 	public function form($kasus_id)
 	{
 		$data['kasus'] = Kasus::where('id',$kasus_id)->with('pasien','penunjang','anamnesis')->first();
-
+		$data['pasien'] = Pasien::all();
 		return view('kasus.kidney-transplant.form',$data);
 	}
 

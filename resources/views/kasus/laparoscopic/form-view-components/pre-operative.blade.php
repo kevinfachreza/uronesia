@@ -24,19 +24,9 @@
                 <td>{{$kasus->operative_pre->comorbid_stroke == 1 ? 'Yes' : 'No'}}</td>
             </tr>
             <tr>
-                <td>Depression</td>
+                <td>Heart Disease</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_depression == 1 ? 'Yes' : 'No'}}</td>
-            </tr>
-            <tr>
-                <td>Renal</td>
-                <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_renal == 1 ? 'Yes' : 'No'}}</td>
-            </tr>
-            <tr>
-                <td>TB</td>
-                <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_tb == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{$kasus->operative_pre->heart_stroke == 1 ? 'Yes' : 'No'}}</td>
             </tr>
             <tr>
                 <td>Others</td>

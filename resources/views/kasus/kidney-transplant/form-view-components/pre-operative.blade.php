@@ -1,6 +1,42 @@
 <div class="row">
     <div class="col-12">
         <h4 class="display-4">PRE OPERATIVE</h4>
+
+        <h6 style="font-weight: 600" class="text-primary">RECEPIENT DATA</h6>
+        <table class="table table-no-border view-data">
+            <tr>
+                <td style="width: 150px">MEDICAL RECORD</td>
+                <td>:</td>
+                <td>{{$kasus->operative_pre->recepient_pasien->no_rm}}</td>
+            </tr>
+            <tr>
+                <td>NAME</td>
+                <td style="width: 10px">:</td>
+                <td>{{$kasus->operative_pre->recepient_pasien->nama}}</td>
+            </tr>
+            <tr>
+                <td>GENDER</td>
+                <td>:</td>
+                @php $value = $kasus->operative_pre->recepient_pasien->jenis_kelamin ?? ''@endphp
+                <td>{{$value == 'lk' ? 'Man' : 'Woman'}}</td>
+            </tr>
+            <tr>
+                <td>AGE (Years)</td>
+                <td>:</td>
+                <td>{{$kasus->operative_pre->recepient_pasien->age}}</td>
+            </tr>
+            <tr>
+                <td>HEIGHT (CM)</td>
+                <td>:</td>
+                <td>{{$kasus->operative_pre->recepient_pasien_tb}} cm</td>
+            </tr>
+            <tr>
+                <td>WEIGHT (KG)</td>
+                <td>:</td>
+                <td>{{$kasus->operative_pre->recepient_pasien_bb}} kg</td>
+            </tr>
+        </table>
+
         <table class="table table-no-border">
             <tr>
                 <td style="width: 150px">Donor Relationship</td>

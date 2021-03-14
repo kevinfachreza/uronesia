@@ -11,4 +11,10 @@ class KasusOperativePre extends Model
 	protected $table = 'kasus_operative_pre';
 
     use SoftDeletes;
+
+
+    public function recepient_pasien()
+    {
+        return $this->hasOne('App\Models\Pasien', 'id', 'recepient_pasien_id');
+    }
 }

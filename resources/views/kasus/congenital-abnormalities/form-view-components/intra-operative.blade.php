@@ -68,7 +68,7 @@
             <tr>
                 <td>Cystotomy</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->cystostomy_desc ?? '-'}}</td>
+                <td>{{unslugify($kasus->operative_intra->cystostomy_desc) ?? '-'}}</td>
             </tr>
             <tr>
                 <td>Cystotomy Size</td>
@@ -76,9 +76,9 @@
                 <td>{{$kasus->operative_intra->cystostomy_size ?? '-'}}</td>
             </tr>
             <tr>
-                <td>Urethral Cath Position</td>
+                <td>Urethral Cath</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->urinary_diversion_urethral_cath_pos) ?? '-'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->urinary_diversion_urethral_cath_pos ?? '-')}}</td>
             </tr>
             <tr>
                 <td>Urethral Cath Size</td>

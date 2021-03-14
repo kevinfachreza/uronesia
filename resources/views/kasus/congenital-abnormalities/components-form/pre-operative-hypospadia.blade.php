@@ -70,7 +70,7 @@
 					<input type="text" class="form-control" name="physical_exam__penoscotral_transposition" value="{{$kasus->physical_exam->penoscotral_transposition ?? ''}}">
 				</div>
 
-				<h6 class="text-primary">Testes</h6>
+				<h6 class="text-primary">Testis</h6>
 				<div class="form-group">
 					<label class="label">UDT</label>
 					<input type="text" class="form-control" name="physical_exam__testes_udt" value="{{$kasus->physical_exam->testes_udt ?? ''}}">

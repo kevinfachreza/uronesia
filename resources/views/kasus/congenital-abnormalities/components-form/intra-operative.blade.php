@@ -73,21 +73,17 @@
 	</div>
 	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Cystotomy</label>
-			<input type="text" class="form-control" name="intra_operative__cystostomy_desc" value="{{$kasus->operative_intra->cystostomy_desc ?? ''}}">
+			@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->cystostomy_desc ?? '','label'=>'Premature','name'=>'intra_operative__cystostomy_desc'])
 		</div>
 	</div>
 	<div class="col-12">
 		<div class="form-group">
-			<label class="label">Cystotomy Size</label>
+			<label class="label">Cystostomy Size</label>
 			<input type="text" class="form-control" name="intra_operative__cystostomy_size" value="{{$kasus->operative_intra->cystostomy_size ?? ''}}">
 		</div>
 	</div>
 	<div class="col-12">
-		<div class="form-group">
-			<label class="label">Urethral Cath Position</label>
-			<input type="text" class="form-control" name="intra_operative__urinary_diversion_urethral_cath_pos" value="{{$kasus->operative_intra->urinary_diversion_urethral_cath_pos ?? ''}}">
-		</div>
+		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_intra->urinary_diversion_urethral_cath_pos ?? '','label'=>'Urethral Cath','name'=>'intra_operative__urinary_diversion_urethral_cath_pos'])
 	</div>
 	<div class="col-12">
 		<div class="form-group">

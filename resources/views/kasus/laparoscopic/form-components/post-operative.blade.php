@@ -18,14 +18,14 @@
 
 
 	@php 
-		$files_title[] = 'BNO Post Operative';
+  $files_title[] = 'BNO Post Operative';
 
-		$files_names[] = 'post-operative-bno'; 
-	@endphp 
+  $files_names[] = 'post-operative-bno'; 
+  @endphp 
 
-	@foreach($files_title as $index => $title)
-		@include('kasus.components-form.file-uploader',['title'=>$title,'slug'=>$files_names[$index]])
-	@endforeach
+  @foreach($files_title as $index => $title)
+  @include('kasus.components-form.file-uploader',['title'=>$title,'slug'=>$files_names[$index]])
+  @endforeach
 </div>
 
 
@@ -92,7 +92,25 @@
 		</div>
 	</div>
 
-	<div class="col-12">
-		@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->operative_post->analgetics ?? '','label'=>'Analgetics','name'=>'post_operative__analgetics','options' => ['IV','PO']])
-	</div>
+    <div class="col-12">
+
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_post->analgetics_iv ?? '','label'=>'Analgetics IV','name'=>'post_operative__analgetics_iv'])
+    </div>
+    <div class="col-12">
+
+        <div class="form-group">
+            <label class="label">Drug Name </label>
+            <input type="text" class="form-control" value="{{$kasus->operative_post->analgetics_iv_drug ?? ''}}" name="post_operative__analgetics_iv_drug" >
+        </div>
+    </div>
+    <div class="col-12">
+        @include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_post->analgetics_oral ?? '','label'=>'Analgetics Oral','name'=>'post_operative__analgetics_oral'])
+    </div>
+
+    <div class="col-12">
+        <div class="form-group">
+            <label class="label">Drug Name </label>
+            <input type="text" class="form-control" value="{{$kasus->operative_post->analgetics_oral_drug ?? ''}}" name="post_operative__analgetics_oral_drug" >
+        </div>
+    </div>
 </div>

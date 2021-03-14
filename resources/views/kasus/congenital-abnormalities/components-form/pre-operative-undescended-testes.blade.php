@@ -12,7 +12,8 @@
 				<h5>Right Testis</h5>
 			</div>
 			<div class="col-12">
-				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->testes_right_palpable ?? '','label'=>'Palpable','name'=>'physical_exam__testes_right_palpable'])
+				@include('kasus.components-form.radio-button-multi-opsi-without-label',['default'=> $kasus->physical_exam->testes_right_palpable ?? '','label'=>'','name'=>'physical_exam__testes_right_palpable','options' => ['Non Palpable','Palpable']])
+
 			</div>
 			<div class="col-12">
 				<div class="form-group">
@@ -30,7 +31,7 @@
 				<h5>Left Testis</h5>
 			</div>
 			<div class="col-12">
-				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->testes_left_palpable ?? '','label'=>'Palpable','name'=>'physical_exam__testes_left_palpable'])
+				@include('kasus.components-form.radio-button-multi-opsi-without-label',['default'=> $kasus->physical_exam->testes_left_palpable ?? '','label'=>'','name'=>'physical_exam__testes_left_palpable','options' => ['Non Palpable','Palpable']])
 			</div>
 			<div class="col-12">
 				<div class="form-group">

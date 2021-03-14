@@ -81,7 +81,7 @@
             <tr>
                 <td style="width: 150px">Palpable</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->testes_right_palpable == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{unslugify($kasus->physical_exam->testes_right_palpable ?? '')}}</td>
             </tr>
             <tr>
                 <td>Size</td>
@@ -100,7 +100,7 @@
             <tr>
                 <td style="width: 150px">Palpable</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->testes_left_palpable == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{unslugify($kasus->physical_exam->testes_left_palpable ?? '')}}</td>
             </tr>
             <tr>
                 <td>Size</td>
@@ -122,14 +122,14 @@
                 <td>{{$kasus->physical_exam->bladder_epispadia == 1 ? 'Yes' : 'No'}}</td>
             </tr>
             <tr>
-                <td>Gender</td>
+                <td>Classic Extrophy</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->bladder_gender) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->bladder_gender ?? '')}}</td>
             </tr>
             <tr>
                 <td>Cloacal Extrophy</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->bladder_cloacal_extrophy ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->bladder_cloacal_extrophy ?? '')}}</td>
             </tr>
         </table>
 
@@ -176,22 +176,21 @@
             <tr>
                 <td style="width: 150px">Head Dismorphic</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->child_hydro_head_dismorphic ?? ''}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_head_dismorphic ?? '')}}</td>
             </tr>
             <tr>
                 <td>Abdominal Mass</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->child_hydro_abdominal_mass ?? ''}}</td>
-            </tr>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_abdominal_mass ?? '')}}</td>
             <tr>
                 <td>Meningocele/Spina Bifida</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->child_hydro_meningocele ?? ''}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_meningocele ?? '')}}</td>
             </tr>
             <tr>
                 <td>Limb</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->child_hydro_limb ?? ''}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_limb ?? '')}}</td>
             </tr>
         </table>
         <h6>Urological Status</h6>
@@ -199,17 +198,17 @@
             <tr>
                 <td style="width: 150px">Flank</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->child_hydro_urogical_flank ?? ''}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_urogical_flank ?? '')}}</td>
             </tr>
             <tr>
                 <td>Suprapubic</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->child_hydro_urogical_suprapubic ?? ''}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_urogical_suprapubic ?? '')}}</td>
             </tr>
             <tr>
                 <td>External Genitalia</td>
                 <td>:</td>
-                <td>{{$kasus->physical_exam->child_hydro_ext_genitalia ?? ''}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_ext_genitalia ?? '')}}</td>
             </tr>
         </table>
 
@@ -294,7 +293,7 @@
                 <td>{{$kasus->physical_exam->penoscotral_transposition ?? ''}}</td>
             </tr>
         </table>
-        <h6>Testes</h6>
+        <h6>Testis</h6>
         <table class="table table-no-border view-data">
             <tr>
                 <td style="width: 150px">UDT</td>
@@ -394,6 +393,25 @@
                 <td>K</td>
                 <td>:</td>
                 <td>{{$kasus->penunjang_lab_pre->lab_k ?? ''}}</td>
+            </tr>
+        </table>
+        
+        <h6 style="font-weight: 600" class="text-primary">Urine Culture</h6>
+        <table class="table table-no-border view-data">
+            <tr>
+                <td>BACTERIA</td>
+                <td>:</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_bacteria}}</td>
+            </tr>
+            <tr>
+                <td>SENSITIVE</td>
+                <td>:</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_sensitive}}</td>
+            </tr>
+            <tr>
+                <td>RESISTANCE</td>
+                <td>:</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_resistance}}</td>
             </tr>
         </table>
 

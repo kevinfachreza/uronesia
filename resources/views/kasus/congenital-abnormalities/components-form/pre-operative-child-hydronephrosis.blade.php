@@ -44,37 +44,25 @@
 			<div class="col-12">
 				<h5>Physical Examination</h5>
 				<h6 class="text-primary">General Status</h6>
-				<div class="form-group">
-					<label class="label">Head Dismorphic</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_head_dismorphic" value="{{$kasus->physical_exam->child_hydro_head_dismorphic ?? ''}}">
-				</div>
-				<div class="form-group">
-					<label class="label">Abdominal Mass</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_abdominal_mass" value="{{$kasus->physical_exam->child_hydro_abdominal_mass ?? ''}}">
-				</div>
-				<div class="form-group">
-					<label class="label">Meningocele/Spina Bifida</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_meningocele" value="{{$kasus->physical_exam->child_hydro_meningocele ?? ''}}">
-				</div>
-				<div class="form-group">
-					<label class="label">Limb</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_limb" value="{{$kasus->physical_exam->child_hydro_limb ?? ''}}">
-				</div>
+
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_head_dismorphic ?? '','label'=>'Head Dismorphic','name'=>'physical_exam__child_hydro_head_dismorphic'])
+
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_abdominal_mass ?? '','label'=>'Abdominal Mass','name'=>'physical_exam__child_hydro_abdominal_mass'])
+
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_meningocele ?? '','label'=>'Meningocele/Spina Bifida','name'=>'physical_exam__child_hydro_meningocele'])
+
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_limb ?? '','label'=>'Limb','name'=>'physical_exam__child_hydro_limb'])
 			</div>
 			<div class="col-12">
 				<h6 class="text-primary">Urological Status</h6>
-				<div class="form-group">
-					<label class="label">Flank</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_urogical_flank" value="{{$kasus->physical_exam->child_hydro_urogical_flank ?? ''}}">
-				</div>
-				<div class="form-group">
-					<label class="label">Suprapubic</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_urogical_suprapubic" value="{{$kasus->physical_exam->child_hydro_urogical_suprapubic ?? ''}}">
-				</div>
-				<div class="form-group">
-					<label class="label">External Genitalia</label>
-					<input type="text" class="form-control" name="physical_exam__child_hydro_ext_genitalia" value="{{$kasus->physical_exam->child_hydro_ext_genitalia ?? ''}}">
-				</div>
+
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_urogical_flank ?? '','label'=>'Flank','name'=>'physical_exam__child_hydro_urogical_flank'])
+				
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_urogical_suprapubic ?? '','label'=>'Suprapubic','name'=>'physical_exam__child_hydro_urogical_suprapubic'])
+
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->child_hydro_ext_genitalia ?? '','label'=>'External Genitalia','name'=>'physical_exam__child_hydro_ext_genitalia'])
+
+				
 			</div>
 		</div>
 	</div>

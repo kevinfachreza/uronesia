@@ -102,7 +102,25 @@
 					<input type="text" class="form-control" name="penunjang_lab_post__lab_k" value="{{$kasus->penunjang_lab_post->lab_k ?? ''}}">
 				</div>
 			</div>
-
+			
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="label">Urine Culture - Bacteria</label>
+                    <input type="text" class="form-control" name="penunjang_lab_post__lab_urine_cult_bacteria" value="{{$kasus->penunjang_lab_post->lab_urine_cult_bacteria ?? ''}}">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="label">Urine Culture - Sensitive</label>
+                    <input type="text" class="form-control" name="penunjang_lab_post__lab_urine_cult_sensitive" value="{{$kasus->penunjang_lab_post->lab_urine_cult_sensitive ?? ''}}">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="label">Urine Culture - Resistance</label>
+                    <input type="text" class="form-control" name="penunjang_lab_post__lab_urine_cult_resistance" value="{{$kasus->penunjang_lab_post->lab_urine_cult_resistance ?? ''}}">
+                </div>
+            </div>
 
 
 		</div>

@@ -18,10 +18,7 @@
 		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_stroke ?? '','label'=>'Stroke','name'=>'pre_operative__comorbid_stroke'])
 	</div>
 	<div class="col-12">
-		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_depression ?? '','label'=>'Depression','name'=>'pre_operative__comorbid_depression'])
-	</div>
-	<div class="col-12">
-		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_renal ?? '','label'=>'Renal','name'=>'pre_operative__comorbid_renal'])
+		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->heart_stroke ?? '','label'=>'Heart Disease','name'=>'pre_operative__heart_stroke'])
 	</div>
 	<div class="col-12">
 		@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->operative_pre->comorbid_tb ?? '','label'=>'TB','name'=>'pre_operative__comorbid_tb'])
