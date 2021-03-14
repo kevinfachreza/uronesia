@@ -6,27 +6,27 @@
             <tr>
                 <td style="width: 150px">DM</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_pre->comorbid_dm == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_dm ?? '')}}</td>
             </tr>
             <tr>
                 <td>Hypertension</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_hypertension == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_hypertension ?? '')}}</td>
             </tr>
             <tr>
                 <td>Cardiac</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_cardiac == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_cardiac ?? '')}}</td>
             </tr>
             <tr>
                 <td>Stroke</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_stroke == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_stroke ?? '')}}</td>
             </tr>
             <tr>
                 <td>Heart Disease</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->heart_stroke == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->heart_stroke ?? '')}}</td>
             </tr>
             <tr>
                 <td>Others</td>

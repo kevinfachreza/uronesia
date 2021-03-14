@@ -66,7 +66,7 @@
             <tr>
                 <td>Technique</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->recipient_technique) ?? ''}}</td>
+                <td>{{unslugify($kasus->operative_intra->recipient_technique ?? '')}}</td>
             </tr>
             <tr>
                 <td>Iliaca Externa</td>

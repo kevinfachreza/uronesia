@@ -10,7 +10,7 @@
     <div class="col-lg-12 col-md-12">
         <div class="row">
             @php 
-                $files_title[] = 'BNO Post Ops';
+                $files_title[] = 'BNO Post Op';
 
                 $files_names[] = 'post-ops-bno'; 
             @endphp 

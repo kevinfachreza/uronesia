@@ -211,8 +211,8 @@
     <div class="col-lg-12 col-md-12">
         <div class="row">
             @php 
-            $files_title[] = 'Intra Ops';
-            $files_title[] = 'Post Ops';
+            $files_title[] = 'Intra Op';
+            $files_title[] = 'Post Op';
 
             $files_names[] = 'fluoroscopy-intra'; 
             $files_names[] = 'fluoroscopy-post'; 

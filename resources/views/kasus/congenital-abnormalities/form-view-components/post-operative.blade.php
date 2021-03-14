@@ -112,17 +112,17 @@
             <tr>
                 <td>BACTERIA</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_bacteria}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_bacteria ?? ''}}</td>
             </tr>
             <tr>
                 <td>SENSITIVE</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_sensitive}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_sensitive ?? ''}}</td>
             </tr>
             <tr>
                 <td>RESISTANCE</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_resistance}}</td>
+                <td>{{$kasus->penunjang_lab_post->lab_urine_cult_resistance ?? ''}}</td>
             </tr>
         </table>
     </div>
@@ -177,8 +177,9 @@
             <tr>
                 <td>Complication</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->complication==1 ? 'Yes' : 'No' }} 
-                    @if($kasus->operative_post->complication == 1)
+                @php $value = $kasus->operative_post->complication ?? '' @endphp
+                <td>{{$value==1 ? 'Yes' : 'No' }} 
+                    @if($value == 1)
                         - Action : {{$kasus->operative_post->complication_action ?? '-'}}
                     @endif
                 </td>
@@ -186,8 +187,9 @@
             <tr>
                 <td>Death</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->death==1 ? 'Yes' : 'No' }} 
-                    @if($kasus->operative_post->death == 1)
+                @php $value = $kasus->operative_post->death ?? '' @endphp
+                <td>{{$value==1 ? 'Yes' : 'No' }} 
+                    @if($value == 1)
                         ( {{$kasus->operative_post->death_cause ?? '-'}} )
                     @endif
                 </td>

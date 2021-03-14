@@ -13,10 +13,11 @@
             <tr>
                 <td style="width: 150px">Complication</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->complication==1 ? 'Yes' : 'No' }}
+                <td>{{viewAttrYesNo($kasus->operative_post->complication ?? '')}}</td>
                 </td>
             </tr>
-            @if($kasus->operative_post->complication == 1)
+            @php $value = $kasus->operative_post->complication ?? '' @endphp
+            @if( $value == 1)
             <tr>
                 <td>Complication Cause</td>
                 <td>:</td>
@@ -31,10 +32,11 @@
             <tr>
                 <td>Death</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->death==1 ? 'Yes' : 'No' }} 
+                <td>{{viewAttrYesNo($kasus->operative_post->death ?? '')}}</td>
                 </td>
             </tr>
-            @if($kasus->operative_post->death == 1)
+            @php $value = $kasus->operative_post->death ?? '' @endphp
+            @if( $value == 1)
             <tr>
                 <td>Death Cause</td>
                 <td>:</td>

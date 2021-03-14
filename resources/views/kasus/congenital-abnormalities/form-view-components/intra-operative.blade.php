@@ -36,7 +36,7 @@
             <tr>
                 <td style="width: 150px">Nephrostomy Position</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->urinary_diversion_nephrostomy_pos) ?? ''}}</td>
+                <td>{{unslugify($kasus->operative_intra->urinary_diversion_nephrostomy_pos ?? '')}}</td>
             </tr>
             <tr>
                 <td>Nephrostomy Size</td>
@@ -48,7 +48,7 @@
             <tr>
                 <td>DJ Stent Position</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->urinary_diversion_dj_stent_pos) ?? '-'}}</td>
+                <td>{{unslugify($kasus->operative_intra->urinary_diversion_dj_stent_pos ?? '-')}}</td>
             </tr>
             <tr>
                 <td>DJ Stent Size</td>
@@ -58,7 +58,7 @@
             <tr>
                 <td>Ureter Catheter Position</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->urinary_diversion_ureter_cath_pos) ?? '-'}}</td>
+                <td>{{unslugify($kasus->operative_intra->urinary_diversion_ureter_cath_pos ?? '-')}}</td>
             </tr>
             <tr>
                 <td>Ureter Catheter Size</td>
@@ -68,7 +68,7 @@
             <tr>
                 <td>Cystotomy</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->operative_intra->cystostomy_desc) ?? '-'}}</td>
+                <td>{{unslugify($kasus->operative_intra->cystostomy_desc ?? '-')}}</td>
             </tr>
             <tr>
                 <td>Cystotomy Size</td>

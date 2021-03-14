@@ -49,13 +49,12 @@
             <tr>
                 <td style="width: 150px">Site</td>
                 <td style="width: 10px">:</td>
-                <td>{{unslugify($kasus->operative_intra->operation_site) ?? ''}}</td>
+                <td>{{unslugify($kasus->operative_intra->operation_site ?? '')}}</td>
             </tr>
             <tr>
                 <td>DJ Stent</td>
                 <td>:</td>
-                <td>{{$kasus->operative_intra->dj_stent = 1 ? 'Yes' : 
-                'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->dj_stent ?? '')}}</td>
             </tr>
             <tr>
                 <td>Blood Loss (cc)</td>
@@ -95,9 +94,10 @@
             <tr>
                 <td style="width: 150px">Is Complication</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_intra->complication == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->complication ?? '')}}</td>
             </tr>
-            @if($kasus->operative_intra->complication == 1)
+            @php $value = $kasus->operative_intra->complication ?? '' @endphp
+            @if($value == 1)
             <tr>
                 <td>Description</td>
                 <td>:</td>
@@ -112,9 +112,10 @@
             <tr>
                 <td style="width: 150px">Is Failed Procedure</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_intra->failed_procedure == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_intra->failed_procedure ?? '')}}</td>
             </tr>
-            @if($kasus->operative_intra->failed_procedure == 1)
+            @php $value = $kasus->operative_intra->failed_procedure ?? '' @endphp
+            @if($value == 1)
             <tr>
                 <td>Cause</td>
                 <td>:</td>

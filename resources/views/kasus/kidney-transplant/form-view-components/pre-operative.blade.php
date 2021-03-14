@@ -7,12 +7,12 @@
             <tr>
                 <td style="width: 150px">MEDICAL RECORD</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->recepient_pasien->no_rm}}</td>
+                <td>{{$kasus->operative_pre->recepient_pasien->no_rm ?? ''}}</td>
             </tr>
             <tr>
                 <td>NAME</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_pre->recepient_pasien->nama}}</td>
+                <td>{{$kasus->operative_pre->recepient_pasien->nama ?? ''}}</td>
             </tr>
             <tr>
                 <td>GENDER</td>
@@ -23,17 +23,17 @@
             <tr>
                 <td>AGE (Years)</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->recepient_pasien->age}}</td>
+                <td>{{$kasus->operative_pre->recepient_pasien->age ?? ''}}</td>
             </tr>
             <tr>
                 <td>HEIGHT (CM)</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->recepient_pasien_tb}} cm</td>
+                <td>{{$kasus->operative_pre->recepient_pasien_tb ?? ''}} cm</td>
             </tr>
             <tr>
                 <td>WEIGHT (KG)</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->recepient_pasien_bb}} kg</td>
+                <td>{{$kasus->operative_pre->recepient_pasien_bb ?? ''}} kg</td>
             </tr>
         </table>
 
@@ -49,37 +49,37 @@
             <tr>
                 <td style="width: 150px">DM</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_pre->comorbid_dm == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_dm ?? '')}}</td>
             </tr>
             <tr>
                 <td>Hypertension</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_hypertension == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_hypertension ?? '')}}</td>
             </tr>
             <tr>
                 <td>Cardiac</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_cardiac == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_cardiac ?? '')}}</td>
             </tr>
             <tr>
                 <td>Stroke</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_stroke == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_stroke ?? '')}}</td>
             </tr>
             <tr>
                 <td>Depression</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_depression == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_depression ?? '')}}</td>
             </tr>
             <tr>
                 <td>Renal</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_renal == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_renal ?? '')}}</td>
             </tr>
             <tr>
                 <td>TB</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_tb == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_tb ?? '')}}</td>
             </tr>
             <tr>
                 <td>Others</td>

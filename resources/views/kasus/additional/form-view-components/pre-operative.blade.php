@@ -30,32 +30,32 @@
             <tr>
                 <td>HB</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_hb}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_hb ?? ''}}</td>
             </tr>
             <tr>
                 <td>HT</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_ht}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_ht ?? ''}}</td>
             </tr>
             <tr>
                 <td>L</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_l}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_l ?? ''}}</td>
             </tr>
             <tr>
                 <td>TR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_tr}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_tr ?? ''}}</td>
             </tr>
             <tr>
                 <td>UR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_ur}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_ur ?? ''}}</td>
             </tr>
             <tr>
                 <td>CR</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_cr}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_cr ?? ''}}</td>
             </tr>
         </table>
         <h6 style="font-weight: 600" class="text-primary">Urine Culture</h6>
@@ -63,17 +63,17 @@
             <tr>
                 <td>BACTERIA</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_bacteria}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_bacteria ?? ''}}</td>
             </tr>
             <tr>
                 <td>SENSITIVE</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_sensitive}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_sensitive ?? ''}}</td>
             </tr>
             <tr>
                 <td>RESISTANCE</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_resistance}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_resistance ?? ''}}</td>
             </tr>
         </table>
     </div>

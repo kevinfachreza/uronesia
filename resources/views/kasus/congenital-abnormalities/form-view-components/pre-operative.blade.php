@@ -13,7 +13,7 @@
                 <td>Others Complaint</td>
                 <td>:</td>
                 <td>
-                   {{$kasus->anamnesis->complaint_others}}
+                   {{$kasus->anamnesis->complaint_others ?? ''}}
                 </td>
             </tr>
             
@@ -23,37 +23,37 @@
             <tr>
                 <td style="width: 150px">Premature</td>
                 <td style="width: 10px">:</td>
-                <td>{{$kasus->operative_pre->comorbid_premature == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_premature ?? '')}}</td>
             </tr>
             <tr>
                 <td>Hypospadia</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->pre_operative__comorbid_hypospadia == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_hypospadia ?? '')}}</td>
             </tr>
             <tr>
                 <td>Ambigous Genitalia</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->pre_operative__comorbid_ambigous_genitalia == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_ambigous_genitalia ?? '')}}</td>
             </tr>
             <tr>
                 <td>Anorectal Malformation</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_anorectal_malformation == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_anorectal_malformation ?? '')}}</td>
             </tr>
             <tr>
                 <td>Down Syndrome</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_down_syndrome == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_down_syndrome ?? '')}}</td>
             </tr>
             <tr>
                 <td>Omphalocele</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_omphalocele == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_omphalocele ?? '')}}</td>
             </tr>
             <tr>
                 <td>Gastrosciziz</td>
                 <td>:</td>
-                <td>{{$kasus->operative_pre->comorbid_gastrosciziz == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->comorbid_gastrosciziz ?? '')}}</td>
             </tr>
             <tr>
                 <td>Others</td>
@@ -119,7 +119,7 @@
             <tr>
                 <td style="width: 150px">Epispadia</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->bladder_epispadia == 1 ? 'Yes' : 'No'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_pre->bladder_epispadia ?? '')}}</td>
             </tr>
             <tr>
                 <td>Classic Extrophy</td>
@@ -144,7 +144,7 @@
             <tr>
                 <td>Gender</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->child_hydro_gender) ?? ''}}</td>
+                <td>{{unslugify($kasus->physical_exam->child_hydro_gender ?? '')}}</td>
             </tr>
             <tr>
                 <td>History Antenatal Care</td>
@@ -401,17 +401,17 @@
             <tr>
                 <td>BACTERIA</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_bacteria}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_bacteria ?? ''}}</td>
             </tr>
             <tr>
                 <td>SENSITIVE</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_sensitive}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_sensitive ?? ''}}</td>
             </tr>
             <tr>
                 <td>RESISTANCE</td>
                 <td>:</td>
-                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_resistance}}</td>
+                <td>{{$kasus->penunjang_lab_pre->lab_urine_cult_resistance ?? ''}}</td>
             </tr>
         </table>
 
