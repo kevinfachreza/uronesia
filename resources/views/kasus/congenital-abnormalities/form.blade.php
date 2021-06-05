@@ -13,7 +13,7 @@
                 @include('kasus.congenital-abnormalities.components-form.pre-operative-undescended-testes')
                 @include('kasus.congenital-abnormalities.components-form.pre-operative-bladder-extrophy')
                 @include('kasus.congenital-abnormalities.components-form.pre-operative-child-hydronephrosis')
-                @include('kasus.congenital-abnormalities.components-form.pre-operative-hypospadia')
+                @include('kasus.congenital-abnormalities.components-form.pre-operative-hypospadia-new')
                 @include('kasus.congenital-abnormalities.components-form.pre-operative-lab')
                 @include('kasus.congenital-abnormalities.components-form.pre-operative-2')
                 @include('kasus.congenital-abnormalities.components-form.intra-operative')

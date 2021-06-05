@@ -32,17 +32,17 @@
             <tr>
                 <td style="width: 150px">Orchitis</td>
                 <td style="width: 5px">:</td>
-                <td>{{$kasus->operative_post->orchitis == '1' ? 'Ya' : 'Tidak'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->orchitis ?? '')}}</td>
             </tr>
             <tr>
                 <td>Septic</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->septic == '1' ? 'Ya' : 'Tidak'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->septic ?? '')}}</td>
             </tr>
             <tr>
                 <td>Uremia</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->uremia == '1' ? 'Ya' : 'Tidak'}}</td>
+                <td>{{viewAttrYesNo($kasus->operative_post->uremia ?? '')}}</td>
             </tr>
         </table>
     </div>
@@ -55,7 +55,7 @@
             <tr>
                 <td>Death</td>
                 <td>:</td>
-                <td>{{$kasus->operative_post->death==1 ? 'Yes' : 'No' }}
+                <td>{{viewAttrYesNo($kasus->operative_post->death ?? '')}}</td>
                 </td>
             </tr>
             <tr>

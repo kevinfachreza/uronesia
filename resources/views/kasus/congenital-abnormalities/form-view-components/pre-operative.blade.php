@@ -12,11 +12,9 @@
             <tr>
                 <td>Others Complaint</td>
                 <td>:</td>
-                <td>
-                   {{$kasus->anamnesis->complaint_others ?? ''}}
-                </td>
+                <td>{{$kasus->anamnesis->complaint_others ?? ''}}</td>
             </tr>
-            
+
         </table>
         <h6 style="font-weight: 600" class="text-primary">Comorbid</h6>
         <table class="table table-no-border view-data">
@@ -119,7 +117,7 @@
             <tr>
                 <td style="width: 150px">Epispadia</td>
                 <td style="width: 5px">:</td>
-                <td>{{viewAttrYesNo($kasus->operative_pre->bladder_epispadia ?? '')}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->bladder_epispadia ?? '')}}</td>
             </tr>
             <tr>
                 <td>Classic Extrophy</td>
@@ -129,7 +127,7 @@
             <tr>
                 <td>Cloacal Extrophy</td>
                 <td>:</td>
-                <td>{{unslugify($kasus->physical_exam->bladder_cloacal_extrophy ?? '')}}</td>
+                <td>{{viewAttrYesNo($kasus->physical_exam->bladder_cloacal_extrophy ?? '')}}</td>
             </tr>
         </table>
 
@@ -182,6 +180,7 @@
                 <td>Abdominal Mass</td>
                 <td>:</td>
                 <td>{{viewAttrYesNo($kasus->physical_exam->child_hydro_abdominal_mass ?? '')}}</td>
+            </tr>
             <tr>
                 <td>Meningocele/Spina Bifida</td>
                 <td>:</td>
@@ -215,122 +214,97 @@
 
         <h5>Hypospadia</h5>
         <h6 style="font-weight: 600" class="text-primary">Physical Examination</h6>
-        <h6>Glans</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Hole</td>
-                <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->glans_hole ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Shape</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->glans_shape ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Meatus</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Size</td>
-                <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->meatus_size ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Position</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->meatus_position ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Phallus</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Size</td>
-                <td style="width: 5px">:</td>
-                <td>{{$kasus->physical_exam->phallus_size ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Urethral Plate</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->phallus_urethral_plate ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Chordee</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->phallus_chordee ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Torque</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Level</td>
-                <td style="width: 10px">:</td>
-                <td>{{$kasus->physical_exam->torque_level ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Direction</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->torque_direction ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Foreskin</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Hooded</td>
-                <td style="width: 10px">:</td>
-                <td>{{$kasus->physical_exam->foreskin_hooded ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Size</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->foreskin_size ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Penoscrotal Transposition/Scrotal Bifid</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Description</td>
-                <td style="width: 10px">:</td>
-                <td>{{$kasus->physical_exam->penoscotral_transposition ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Testis</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">UDT</td>
-                <td style="width: 10px">:</td>
-                <td>{{$kasus->physical_exam->testes_udt ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Size</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->testes_size ?? ''}}</td>
-            </tr>
-        </table>
-        <h6>Measurement (mm/Penis On Traction)</h6>
-        <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Penoscrotal Junction - Tip</td>
-                <td style="width: 10px">:</td>
-                <td>{{$kasus->physical_exam->penis_meas_penoscrotal_junction_tip ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Penoscrotal Junction - Meatus</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->penis_meas_penoscrotal_junction_meatus ?? ''}}</td>
-            </tr>
-            <tr>
-                <td>Meatus - Tip</td>
-                <td>:</td>
-                <td>{{$kasus->physical_exam->penis_meas_meatus_tip ?? ''}}</td>
-            </tr>
-        </table>
+
+        <h6 class="text-primary">Site of Urethral Meatus <small>Before Chordee Correction</small></h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_site_urethral_before ?? '',
+        'name'=>'physical_exam__hypospadia_site_urethral_before',
+        'path' => url('img/hypospadia'),
+        'options' => ['1-glanular.jpg','1-distal-penile.jpg','1-proximal.jpg'],
+        'values'=>['glanular','distal-penile','proximal'],
+        'titles'=>['Glanular Hypospadias','Distal Penile Hypospadias','Proximal Hypospadias']])
+
+        <h6 class="text-primary">Site of Urethral Meatus <small>After Chordee Correction</small></h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_site_urethral_after ?? '',
+        'name'=>'physical_exam__hypospadia_site_urethral_after',
+        'path' => url('img/hypospadia'),
+        'options' => ['2-glanular.jpg','2-distal-penile.jpg','2-proximal.jpg'],
+        'values'=>['glanular','distal-penile','proximal'],
+        'titles'=>['Glanular Hypospadias','Distal Penile Hypospadias','Proximal Hypospadias']])
+
+        <h6 class="text-primary">Prepuce</h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_prepuce ?? '',
+        'name'=>'physical_exam__hypospadia_prepuce',
+        'path' => url('img/hypospadia'),
+        'options' => ['3-complete.jpg','3-incomplete.jpg'],
+        'values'=>['complete','incomplete'],
+        'titles'=>['Complete','Incomplete']])
+
+        <h6 class="text-primary">Glans</h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_glans ?? '',
+        'name'=>'physical_exam__hypospadia_glans',
+        'path' => url('img/hypospadia'),
+        'options' => ['4-cleft.jpg','4-incomplete-cleft.jpg','4-flat.jpg'],
+        'values'=>['cleft','incomplete-cleft','flat'],
+        'titles'=>['Cleft','Incomplete Cleft','Flat']])
+
+        <h6 class="text-primary">Chordee</h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_chordee ?? '',
+        'name'=>'physical_exam__hypospadia_chordee',
+        'path' => url('img/hypospadia'),
+        'options' => ['5-no.jpg','5-superficial.jpg','5-deep.jpg'],
+        'values'=>['no','superficial','deep'],
+        'titles'=>['No Chordee','Superficial Chordee','Deep Chordee']])
+
+        <h6 class="text-primary">Urethral Plate Width</h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_urethral_plate_width ?? '',
+        'name'=>'physical_exam__hypospadia_urethral_plate_width',
+        'path' => url('img/hypospadia'),
+        'options' => ['6-less.jpg','6-more.jpg'],
+        'values'=>['less','more'],
+        'titles'=>['<1cm','>=1cm']])
+
+        <h6 class="text-primary">Penile Torsion</h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_penile_torsion ?? '',
+        'name'=>'physical_exam__hypospadia_penile_torsion',
+        'path' => url('img/hypospadia'),
+        'options' => ['7-no.jpg','7-present.jpg'],
+        'values'=>['no','present'],
+        'titles'=>['No Torsion','Present']])
+
+        <h6 class="text-primary">Penile Torsion</h6>
+
+        @include('kasus.components-view.radio-button-multi-opsi-images',[
+        'label'=>'',
+        'default'=> $kasus->physical_exam->hypospadia_scrotal_transposition ?? '',
+        'name'=>'physical_exam__hypospadia_scrotal_transposition',
+        'path' => url('img/hypospadia'),
+        'options' => ['8-no.jpg','8-present.jpg'],
+        'values'=>['no','present'],
+        'titles'=>['No Transposition','Present']])
+
         <h6>Others Data</h6>
         <table class="table table-no-border view-data">
-            <tr>
-                <td style="width: 150px">Hormonal Manipulated Before Surgery</td>
-                <td style="width: 10px">:</td>
-                <td>{{$kasus->physical_exam->hormonal_manipulated_before_surgery ?? ''}}</td>
-            </tr>
             <tr>
                 <td>History Of Surgery</td>
                 <td>:</td>
@@ -343,8 +317,11 @@
             </tr>
         </table>
 
-        <h5>Other Congenital Abnormalities</h5>
-        <span>{{$kasus->physical_exam->other_congenital_abnormalities ?? ''}}</span>
+
+        <h5>Other Congenital Abnormalities</h5><br>
+        
+        <table class="table table-no-border view-data"><tr><td>{{$kasus->physical_exam->other_congenital_abnormalities ?? ''}}</td></tr>
+        </table>
     </div>
 </div>
 
@@ -430,23 +407,23 @@
                 <h5>Radiology Result</h5>
             </div>
             @php 
-                $files_title[] = 'USG';
-                $files_title[] = 'BNO';
-                $files_title[] = 'IVP';
-                $files_title[] = 'CT';
-                $files_title[] = 'MRI';
-                $files_title[] = 'VCUG';
+            $files_title[] = 'USG';
+            $files_title[] = 'BNO';
+            $files_title[] = 'IVP';
+            $files_title[] = 'CT';
+            $files_title[] = 'MRI';
+            $files_title[] = 'VCUG';
 
-                $files_names[] = 'radiology-pre-usg'; 
-                $files_names[] = 'radiology-pre-bno'; 
-                $files_names[] = 'radiology-pre-ivp'; 
-                $files_names[] = 'radiology-pre-ct'; 
-                $files_names[] = 'radiology-pre-mri'; 
-                $files_names[] = 'radiology-pre-vcug'; 
+            $files_names[] = 'radiology-pre-usg'; 
+            $files_names[] = 'radiology-pre-bno'; 
+            $files_names[] = 'radiology-pre-ivp'; 
+            $files_names[] = 'radiology-pre-ct'; 
+            $files_names[] = 'radiology-pre-mri'; 
+            $files_names[] = 'radiology-pre-vcug'; 
             @endphp 
 
             @foreach($files_title as $index => $title)
-                @include('kasus.components-form.file-view',['title'=>$title,'slug'=>$files_names[$index]])
+            @include('kasus.components-form.file-view',['title'=>$title,'slug'=>$files_names[$index]])
             @endforeach
             
             <div class="col-12">

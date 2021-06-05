@@ -9,10 +9,10 @@
 
 		<div class="row mt-2">
 			<div class="col-12">
-				@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->bladder_gender ?? '','label'=>'Classic Extrophy','name'=>'physical_exam__bladder_gender','options' => ['Male','Female']])
+				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->bladder_epispadia ?? '','label'=>'Epispadia','name'=>'physical_exam__bladder_epispadia'])
 			</div>
 			<div class="col-12">
-				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->bladder_epispadia ?? '','label'=>'Epispadia','name'=>'physical_exam__bladder_epispadia'])
+				@include('kasus.components-form.radio-button-multi-opsi',['default'=> $kasus->physical_exam->bladder_gender ?? '','label'=>'Classic Extrophy','name'=>'physical_exam__bladder_gender','options' => ['Male','Female']])
 			</div>
 			<div class="col-12">
 				@include('kasus.components-form.radio-button-yes-no',['default'=> $kasus->physical_exam->bladder_cloacal_extrophy ?? '','label'=>'Cloacal Extrophy','name'=>'physical_exam__bladder_cloacal_extrophy'])
