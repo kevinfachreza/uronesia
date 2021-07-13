@@ -68,7 +68,7 @@
             <td>{{$item->pasien->jenis_kelamin == 'lk' ? 'Man' : 'Woman'}}</td>
             <td>{{$item->tb}}</td>
             <td>{{$item->bb}}</td>
-            <td>{{number_format($item->bb / ($item->tb*$item->tb/100/100),2) }}</td>
+            @include('kasus.components-print.data-tb-bb')
             <td>{{$item->pasien->no_rm}}</td>
             <td>{{$item->pasien->nomor_telpon}}</td>
             
