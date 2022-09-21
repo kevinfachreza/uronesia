@@ -170,7 +170,7 @@
             <td>{{$item->tanggal_operasi}}</td>
             <td>{{$item->lama_perawatan_hari}}</td>
             <td>{{$item->diagnosis}}</td>
-            <td>{{unslugify($item->operative_pre->case_type) ?? ''}}</td>
+            <td>{{unslugify($item->operative_pre->case_type ?? '') ?? ''}}</td>
             <td>
                 @php $value = $item->operative_pre->comorbid_dm ?? 0 @endphp
                 @if($value == 1) Yes @else No @endif
