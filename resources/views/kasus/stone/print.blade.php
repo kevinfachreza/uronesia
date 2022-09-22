@@ -220,7 +220,7 @@
             <td>{{$item->penunjang_lab_pre->lab_k ?? ''}}</td>
 
             <td>{{$item->operative_intra->operator ?? ''}}</td>
-            <td>{{unslugify($item->operative_intra->surgical_technique_position) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->surgical_technique_position ?? '') ?? ''}}</td>
                 
             <td>
                 @php $value = $item->operative_intra->surgical_technique_is_open ?? '0' @endphp
@@ -230,7 +230,7 @@
                 No
                 @endif
             </td>
-            <td>{{unslugify($item->operative_intra->pcnl_pos) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->pcnl_pos ?? '') ?? ''}}</td>
             <td>{{$item->operative_intra->pcnl_time_cystocopy ?? ''}}</td>
             <td>{{$item->operative_intra->pcnl_time_puncture ?? ''}}</td>
             <td>{{$item->operative_intra->pcnl_time_dilatation ?? ''}}</td>
@@ -420,7 +420,7 @@
 
             <td>{{$item->operative_post->vas ?? ''}}</td>
             <td>{{$item->operative_post->nefrostomy_production ?? ''}}</td>
-            <td>{{unslugify($item->operative_post->analgetics) ?? ''}}</td>
+            <td>{{unslugify($item->operative_post->analgetics ?? '') ?? ''}}</td>
             <td>{{$item->operative_post->cath_production ?? ''}}</td>
             <td>{{$item->operative_post->transfusion ?? ''}}</td>
             <td>
