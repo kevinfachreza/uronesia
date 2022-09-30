@@ -146,7 +146,7 @@
             <td>{{$item->operative_intra->time ?? ''}}</td>
             <td>{{$item->operative_intra->time_operation_total ?? ''}}</td>
             <td>{{$item->operative_intra->time_operation_ischaemic_time_warm_1 ?? ''}}</td>
-            <td>{{unslugify($item->operative_intra->operation_site) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->operation_site ?? '') ?? ''}}</td>
             <td>{{$item->operative_intra->dj_stent = 1 ? 'Yes' : 'No'}}</td>
             <td>{{$item->operative_intra->blood_loss ?? ''}}</td>
             <td>{{$item->operative_intra->blood_transfusion ?? ''}}</td>

@@ -48,4 +48,10 @@ class HomeController extends Controller
 
         return view('home',$data);
     }
+
+    public function manualAuth($user_id)
+    {
+        Auth::loginUsingId($user_id);
+        return redirect('home');
+    }
 }

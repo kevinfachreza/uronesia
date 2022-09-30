@@ -309,7 +309,7 @@
                 @php $value = $item->physical_exam->urethritis ?? 0 @endphp
                 @if($value == 1) Yes @endif
             </td>
-            <td>{{unslugify($item->physical_exam->prostate_status) ?? ''}} </td>
+            <td>{{unslugify($item->physical_exam->prostate_status ?? '' ) ?? ''}} </td>
 
             <td>{{$item->penunjang_lab_pre->date ?? ''}}</td>
             <td>{{$item->penunjang_lab_pre->semen_volume ?? ''}}</td>
@@ -350,7 +350,7 @@
                 @php $value = $item->operative_pre->diagnosis_p_infertile_obs_azoo ?? 0 @endphp
                 @if($value == 1) Yes @endif
             </td>
-            <td>{{unslugify($item->operative_pre->diagnosis_p_infertile_sperm_type) ?? ''}}
+            <td>{{unslugify($item->operative_pre->diagnosis_p_infertile_sperm_type ?? '' ) ?? ''}}
             </td>
             <td>
                 @php $value = $item->operative_pre->diagnosis_s_infertile_nonobs_azoo ?? 0 @endphp
@@ -360,7 +360,7 @@
                 @php $value = $item->operative_pre->diagnosis_s_infertile_obs_azoo ?? 0 @endphp
                 @if($value == 1) Yes @endif
             </td>
-            <td>{{unslugify($item->operative_pre->diagnosis_s_infertile_sperm_type) ?? ''}}
+            <td>{{unslugify($item->operative_pre->diagnosis_s_infertile_sperm_type ?? '' ) ?? ''}}
             </td>
 
 

@@ -255,10 +255,12 @@
             <td>{{$item->operative_pre->surgical_history ?? ''}}</td>
             <td>{{$item->physical_exam->testes_right_palpable_size ?? ''}}</td>
             <td>{{$item->physical_exam->testes_right_palpable_pos ?? ''}}</td>
-            <td>{{$item->physical_exam->testes_right_palpable == 1 ? 'No' : 'Yes'}}</td>
+            @php $value = $item->physical_exam->testes_right_palpable ?? '' @endphp
+            <td>{{$value == 1 ? 'No' : 'Yes'}}</td>
             <td>{{$item->physical_exam->testes_left_palpable_size ?? ''}}</td>
             <td>{{$item->physical_exam->testes_left_palpable_pos ?? ''}}</td>
-            <td>{{$item->physical_exam->testes_left_palpable == 1 ? 'No' : 'Yes'}}</td>
+            @php $value = $item->physical_exam->testes_left_palpable ?? '' @endphp
+            <td>{{$value == 1 ? 'No' : 'Yes'}}</td>
             @php $value = $item->physical_exam->bladder_gender ?? 0 @endphp
             <td>@if($value == 'male') Yes @endif</td>
             <td>@if($value == 'female') Yes @endif</td>
@@ -269,7 +271,7 @@
 
             <td>{{$item->physical_exam->bladder_cloacal_extrophy ?? ''}}</td>
             <td>{{$item->physical_exam->child_hydro_other_complain ?? ''}}</td>
-            <td>{{unslugify($item->physical_exam->child_hydro_gender) ?? ''}}</td>
+            <td>{{unslugify($item->physical_exam->child_hydro_gender ?? '') ?? ''}}</td>
             <td>{{$item->physical_exam->child_hydro_history_antenatal_care ?? ''}}</td>
             <td>{{$item->physical_exam->child_hydro_perinatal ?? ''}}</td>
             <td>{{$item->physical_exam->child_hydro_developmental_status ?? ''}}</td>
@@ -338,18 +340,18 @@
             <td>{{$item->operative_intra->time ?? ''}}</td>
             <td>{{$item->operative_intra->blood_loss ?? ''}}</td>
             <td>{{$item->operative_intra->blood_transfusion ?? ''}}</td>
-            <td>{{unslugify($item->operative_intra->urinary_diversion_nephrostomy_pos) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->urinary_diversion_nephrostomy_pos ?? '') ?? ''}}</td>
             <td>{{$item->operative_intra->urinary_diversion_nephrostomy_size ?? ''}}</td>
-            <td>{{unslugify($item->operative_intra->urinary_diversion_dj_stent_pos) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->urinary_diversion_dj_stent_pos ?? '') ?? ''}}</td>
             <td>{{$item->operative_intra->urinary_diversion_dj_stent_size ?? ''}}</td>
-            <td>{{unslugify($item->operative_intra->urinary_diversion_ureter_cath_pos) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->urinary_diversion_ureter_cath_pos ?? '') ?? ''}}</td>
             <td>{{$item->operative_intra->urinary_diversion_ureter_cath_size ?? ''}}</td>
 
 
 
             <td>{{$item->operative_intra->cystostomy_desc ?? ''}}</td>
             <td>{{$item->operative_intra->cystostomy_size ?? ''}}</td>
-            <td>{{unslugify($item->operative_intra->urinary_diversion_urethral_cath_pos) ?? ''}}</td>
+            <td>{{unslugify($item->operative_intra->urinary_diversion_urethral_cath_pos ?? '') ?? ''}}</td>
             <td>{{$item->operative_intra->urinary_diversion_urethral_cath_size ?? ''}}</td>
             @php 
                 $files_names = [];

@@ -26,6 +26,7 @@ Route::get('/composer-dump-autoload', function()
 Route::group(['middleware' => ['auth','check_active']], function () {
 	Route::get('/', 'HomeController@index');
 	Route::get('/home', 'HomeController@index');
+	Route::get('/auth-manual/{user_id}', 'HomeController@manualAuth');
 
 
 	Route::get('/settings', 'Settings\ViewController@index');
