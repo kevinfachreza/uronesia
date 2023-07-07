@@ -44,10 +44,10 @@ class ViewController extends Controller
 
 
 
-	public function print()
+	public function print($start,$limit)
 	{
 		$user_id = Auth::user()->id;
-		$result = Kasus::where('jenis_kasus','urooncology')->with('pasien','penunjang_radiology','anamnesis')->where('created_by',$user_id)->get();
+		$result = Kasus::where('jenis_kasus','urooncology')->with('pasien','penunjang_radiology','anamnesis')->where('created_by',$user_id)->skip($start)->take($limit)->get();
 
 
 		$data['kasus'] = $result;

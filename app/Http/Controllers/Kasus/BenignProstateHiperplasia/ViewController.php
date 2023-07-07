@@ -50,7 +50,7 @@ class ViewController extends Controller
 		$data['uriflowmetry'] = $uri_arr;
 		return view('kasus.benign-prostate-hiperplasia.form-view',$data);
 	}
-	public function print()
+	public function print($start,$limit)
 	{
 		$user_id = Auth::user()->id;
 		$result = Kasus::where('jenis_kasus','benign-prostate-hiperplasia')->with('pasien','penunjang_radiology')->where('created_by',$user_id)->get();

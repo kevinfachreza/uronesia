@@ -4,10 +4,25 @@
 <div class="container pt-4">
     <div class="row">
         <div class="col-lg-8 col-md-12">
-            <h4>{{$title}} Cases</h4>
+            @php $kasus_total = count($kasus) @endphp
+            <h4>{{$title}} Cases - <small>Total data : {{$kasus_total}}</small></h4>
         </div>
         <div class="col-lg-4 col-md-12">
-            <a href="{{url('kasus')}}/{{$jenis_kasus}}/print" class="btn btn-success disable-loading" target="_blank"><i class="fa fa-print"></i> Print</a>
+            <div class="dropdown">
+                <button class="btn btn-success disable-loading dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-print"></i> Print
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    @php
+                        $iteration_chunk = 500;
+                        $iteration_needed = $kasus_total/$iteration_chunk;
+                    @endphp
+                    @for($i=0;$i<$iteration_needed;$i++)
+                    @php $max_range = ($i+1)*$iteration_chunk @endphp
+                    <a class="dropdown-item disable-loading " target="_blank" href="{{url('kasus')}}/{{$jenis_kasus}}/print/{{$i*$iteration_chunk}}/{{$iteration_chunk}}">Print {{$i*$iteration_chunk}} - {{ $max_range < $kasus_total ? $max_range : $kasus_total }} </a>
+                    @endfor
+                </div>
+            </div>
             <a href="{{url('kasus')}}/baru?jenis={{$jenis_kasus}}" class="btn btn-primary"><i class="fa fa-plus"></i> New Case</a>
         </div>
     </div>
