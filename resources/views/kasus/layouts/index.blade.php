@@ -26,8 +26,9 @@
             <a href="{{url('kasus')}}/baru?jenis={{$jenis_kasus}}" class="btn btn-primary"><i class="fa fa-plus"></i> New Case</a>
         </div>
     </div>
-    <hr style="width: 100%">
-
+    <hr style="width: 100%" class="mb-2">
+    <input type="text" onkeyup="myFunction()" class="form-control search-input mb-3" placeholder="Search" id="search-input">
+    <div id="daftar-kasus">
     @forelse($kasus as $item)
     <div class="card card-px">
         <div class="card-body">
@@ -35,7 +36,7 @@
                 <div class="col-8">
                     <div class="card-text">#{{$loop->iteration}} - {{$item->creator->name ?? ''}}</div>
                     <div class="card-title">{{$item->pasien->nama}}</div>
-                    <div class="card-text">{{$item->pasien->age}} {{$item->pasien->jenis_kelamin = 'lk' ? 'Man' : 'Woman'}}</div>
+                    <div class="card-text">{{$item->pasien->age}} {{$item->pasien->jenis_kelamin == 'lk' ? 'Man' : 'Woman'}}</div>
                     <div class="card-text">{{Carbon\Carbon::parse($item->tanggal_operasi)->format('d F Y')}}
                     </div>
                 </div>
@@ -51,6 +52,7 @@
             <p>Click <strong>"New Case"</strong> button to add cases</p>
         </div>
     @endforelse
+    </div>
 
 </div>
 @endsection
@@ -62,5 +64,23 @@
             "scrollX": true
         } );
     } );
+
+    function myFunction() {
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = document.getElementById("search-input");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("daftar-kasus");
+        cards = cardContainer.getElementsByClassName("card-px");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-body .card-title");
+            console.log(title)
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+
 </script>
 @endsection
