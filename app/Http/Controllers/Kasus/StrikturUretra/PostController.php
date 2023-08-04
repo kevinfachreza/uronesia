@@ -147,23 +147,22 @@ class PostController extends Controller
     	$uriflowmetry_bulan = [1,3,6,9,12,24,60];
 
 		app('App\Http\Controllers\KasusUriflowmetry\PostController')->deleteDataKasus($kasus_id);
-
     	foreach($uriflowmetry_bulan as $bulan)
     	{
     		$data = [];
     		$data['kasus_id'] = $kasus_id;
-    		$data['volume'] = $request->uriflowmetry_volume[$bulan];
+    		$data['volume'] = $request->uriflowmetry_volume[$bulan] ?? null;
     		$data['bulan_ke'] = $bulan;
-    		$data['max_rate'] = $request->uriflowmetry_max_rate[$bulan];
-    		$data['average_rate'] = $request->uriflowmetry_average_rate[$bulan];
-    		$data['voiding_time'] = $request->uriflowmetry_voiding_time[$bulan];
-    		$data['flow_time'] = $request->uriflowmetry_flow_time[$bulan];
+    		$data['max_rate'] = $request->uriflowmetry_max_rate[$bulan] ?? null;
+    		$data['average_rate'] = $request->uriflowmetry_average_rate[$bulan] ?? null;
+    		$data['voiding_time'] = $request->uriflowmetry_voiding_time[$bulan] ?? null;
+    		$data['flow_time'] = $request->uriflowmetry_flow_time[$bulan] ?? null;
     		$data['time_to_max_flow'] = $request->uriflowmetry_time_to_max_flow[$bulan];
     		$data['position'] = $request->uriflowmetry_position[$bulan];
     		$data['weight'] = $request->uriflowmetry_weight[$bulan];
     		$data['symptomps'] = $request->uriflowmetry_symptomps[$bulan];
-    		$data['advice'] = $request->uriflowmetry_advice[$bulan];
-            $data['residual_urine'] = $request->uriflowmetry_residual_urine[$bulan];
+    		$data['advice'] = $request->uriflowmetry_advice[$bulan] ?? null;
+            $data['residual_urine'] = $request->uriflowmetry_residual_urine[$bulan] ?? null;
 
     		$uriflow = app('App\Http\Controllers\KasusUriflowmetry\PostController')->create($data);
     	}
